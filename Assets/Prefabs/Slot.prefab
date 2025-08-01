@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SlotTag: LoopSlot
   SlotPlacementOffset: {x: -3, y: 0, z: 0}
-  DefaultColour: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
+  DefaultColour: {r: 0.12941177, g: 0.1254902, b: 0.12941177, a: 1}
   HighlightColour: {r: 0.1981577, g: 0.37295386, b: 0.5754717, a: 1}
   OccupyColour: {r: 0.06132078, g: 1, b: 0.2371441, a: 1}
   ReservedColour: {r: 0.3504806, g: 0.41509432, b: 0.35116795, a: 1}
