@@ -12,7 +12,8 @@ public class SlotCreator : MonoBehaviour
     {
         for (int i = 0; i < numSlots; i++)
         {
-            Instantiate(SlotPrefab, StartLocation + new Vector3(0f, -i * SlotGap, 0f), Quaternion.identity);
+            SlotObject slot = Instantiate(SlotPrefab, StartLocation + new Vector3(0f, -i * SlotGap, 0f), Quaternion.identity);
+            slot.Init(i, this);
         }
     }
 }

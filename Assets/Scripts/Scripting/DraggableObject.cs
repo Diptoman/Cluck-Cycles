@@ -6,6 +6,7 @@ using PrimeTween;
 public class DraggableObject : MonoBehaviour
 {
     public List<string> TargetSlotTag = new List<string>();
+    public int AdditionalSlotsToReserve = 0;
 
     private bool isDragging = false, isInSlot = false;
     private Vector3 dragOffset, initialPosition, initialScale;
@@ -39,13 +40,18 @@ public class DraggableObject : MonoBehaviour
         dragOffset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         isDragging = true;
         isInSlot = false;
+
+        if (currentSlot)
+        {
+            currentSlot.UnOccupy();
+        }
     }
 
     void OnMouseUp()
     {
         isDragging = false;
 
-        if (currentSlot)
+        if (currentSlot && (currentSlot.GetSlotState() != SlotState.Occupied))
         {
             //Add original offset
             transform.position = currentSlot.transform.position + currentSlot.SlotPlacementOffset;

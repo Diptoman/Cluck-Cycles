@@ -7,9 +7,11 @@ public class SlotObject : MonoBehaviour
 {
     public string SlotTag;
     public Vector3 SlotPlacementOffset;
-    public Color DefaultColour, HighlightColour, OccupyColour;
+    public Color DefaultColour, HighlightColour, OccupyColour, ReservedColour;
 
-    private bool isOccupied = false;
+    private SlotState state = SlotState.Unoccupied;
+    private int slotNum = -1;
+    private SlotCreator slotCreator;
 
     void Start()
     {
@@ -18,17 +20,65 @@ public class SlotObject : MonoBehaviour
 
     public void StartHighlight()
     {
-        Tween.Color(this.gameObject.GetComponent<SpriteRenderer>(), HighlightColour, .1f);
+        if (state == SlotState.Unoccupied)
+        {
+            Tween.Color(this.gameObject.GetComponent<SpriteRenderer>(), HighlightColour, .1f);
+            state = SlotState.Highlighted;
+        }
     }
 
     public void EndHighlight()
     {
-        Tween.Color(this.gameObject.GetComponent<SpriteRenderer>(), DefaultColour, .1f);
+        if (state == SlotState.Highlighted)
+        {
+            Tween.Color(this.gameObject.GetComponent<SpriteRenderer>(), DefaultColour, .1f);
+            state = SlotState.Unoccupied;
+        }
     }
 
     public void Occupy()
     {
-        Tween.Color(this.gameObject.GetComponent<SpriteRenderer>(), OccupyColour, .25f);
-        isOccupied = true;
+        if (state != SlotState.Occupied)
+        {
+            Tween.Color(this.gameObject.GetComponent<SpriteRenderer>(), OccupyColour, .25f);
+            state = SlotState.Occupied;
+        }
     }
+
+    public void UnOccupy()
+    {
+        if (state == SlotState.Occupied)
+        {
+            Tween.Color(this.gameObject.GetComponent<SpriteRenderer>(), DefaultColour, .1f);
+            state = SlotState.Unoccupied;
+        }
+    }
+
+    public void Reserve()
+    {
+        if (state != SlotState.Reserved && state != SlotState.Occupied)
+        {
+            Tween.Color(this.gameObject.GetComponent<SpriteRenderer>(), ReservedColour, .25f);
+            state = SlotState.Reserved;
+        }
+    }
+
+    public void Init(int num, SlotCreator creatorReference)
+    {
+        slotNum = num;
+        slotCreator = creatorReference;
+    }
+
+    public SlotState GetSlotState()
+    {
+        return state;
+    }
+}
+
+public enum SlotState
+{
+    Unoccupied,
+    Highlighted,
+    Occupied,
+    Reserved
 }
