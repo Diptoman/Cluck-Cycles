@@ -75,6 +75,31 @@ public class DraggableObject : MonoBehaviour
         Tween.Scale(this.transform, initialScale, .25f);
     }
 
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (!currentSlot)
+        {
+            if (other.gameObject.TryGetComponent<SlotObject>(out SlotObject slotObj) && !isInSlot)
+            {
+                if (TargetSlotTag.Contains(slotObj.SlotTag))
+                {
+                    if (SlotController.Instance.GetSlotAvailability(slotObj.GetSlotNumber(), AdditionalSlotsToReserve + AmountOfSlotsThisTakes))
+                    {
+                        //Remove the existing assigned slot
+                        if (currentSlot)
+                        {
+                            SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Unoccupied, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
+                        }
+
+                        //Assign new slot
+                        currentSlot = slotObj;
+                        SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Highlighted, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
+                    }
+                }
+            }
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.TryGetComponent<SlotObject>(out SlotObject slotObj) && !isInSlot)
