@@ -11,67 +11,49 @@ public class SlotObject : MonoBehaviour
 
     private SlotState state = SlotState.Unoccupied;
     private int slotNum = -1;
-    private SlotCreator slotCreator;
 
     void Start()
     {
         Tween.Color(this.gameObject.GetComponent<SpriteRenderer>(), DefaultColour, 0f);
     }
 
-    public void StartHighlight()
+    public void SetState(SlotState slotstate)
     {
-        if (state == SlotState.Unoccupied)
+        state = slotstate;
+
+        switch (state)
         {
-            Tween.Color(this.gameObject.GetComponent<SpriteRenderer>(), HighlightColour, .1f);
-            state = SlotState.Highlighted;
+            case SlotState.Unoccupied:
+                Tween.Color(this.gameObject.GetComponent<SpriteRenderer>(), DefaultColour, .1f);
+                break;
+
+            case SlotState.Occupied:
+                Tween.Color(this.gameObject.GetComponent<SpriteRenderer>(), OccupyColour, .1f);
+                break;
+
+            case SlotState.Highlighted:
+                Tween.Color(this.gameObject.GetComponent<SpriteRenderer>(), HighlightColour, .1f);
+                break;
+
+            case SlotState.Reserved:
+                Tween.Color(this.gameObject.GetComponent<SpriteRenderer>(), ReservedColour, .1f);
+                break;
         }
     }
 
-    public void EndHighlight()
-    {
-        if (state == SlotState.Highlighted)
-        {
-            Tween.Color(this.gameObject.GetComponent<SpriteRenderer>(), DefaultColour, .1f);
-            state = SlotState.Unoccupied;
-        }
-    }
-
-    public void Occupy()
-    {
-        if (state != SlotState.Occupied)
-        {
-            Tween.Color(this.gameObject.GetComponent<SpriteRenderer>(), OccupyColour, .25f);
-            state = SlotState.Occupied;
-        }
-    }
-
-    public void UnOccupy()
-    {
-        if (state == SlotState.Occupied)
-        {
-            Tween.Color(this.gameObject.GetComponent<SpriteRenderer>(), DefaultColour, .1f);
-            state = SlotState.Unoccupied;
-        }
-    }
-
-    public void Reserve()
-    {
-        if (state != SlotState.Reserved && state != SlotState.Occupied)
-        {
-            Tween.Color(this.gameObject.GetComponent<SpriteRenderer>(), ReservedColour, .25f);
-            state = SlotState.Reserved;
-        }
-    }
-
-    public void Init(int num, SlotCreator creatorReference)
+    public void Init(int num)
     {
         slotNum = num;
-        slotCreator = creatorReference;
     }
 
     public SlotState GetSlotState()
     {
         return state;
+    }
+
+    public int GetSlotNumber()
+    {
+        return slotNum;
     }
 }
 

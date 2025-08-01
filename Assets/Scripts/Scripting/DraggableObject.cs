@@ -6,7 +6,7 @@ using PrimeTween;
 public class DraggableObject : MonoBehaviour
 {
     public List<string> TargetSlotTag = new List<string>();
-    public int AdditionalSlotsToReserve = 0;
+    public int AmountOfSlotsThisTakes = 1, AdditionalSlotsToReserve = 0;
 
     private bool isDragging = false, isInSlot = false;
     private Vector3 dragOffset, initialPosition, initialScale;
@@ -43,7 +43,7 @@ public class DraggableObject : MonoBehaviour
 
         if (currentSlot)
         {
-            currentSlot.UnOccupy();
+            SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Unoccupied, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
         }
     }
 
@@ -51,12 +51,17 @@ public class DraggableObject : MonoBehaviour
     {
         isDragging = false;
 
-        if (currentSlot && (currentSlot.GetSlotState() != SlotState.Occupied))
+        if (currentSlot)
         {
             //Add original offset
             transform.position = currentSlot.transform.position + currentSlot.SlotPlacementOffset;
-            isInSlot = true;
-            currentSlot.Occupy(); //End highlighting slot
+
+            if (SlotController.Instance.GetSlotAvailability(currentSlot.GetSlotNumber(), AdditionalSlotsToReserve + AmountOfSlotsThisTakes))
+            {
+                isInSlot = true;
+                SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Occupied, AmountOfSlotsThisTakes); //Occupy
+                SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber() + AmountOfSlotsThisTakes, SlotState.Reserved, AdditionalSlotsToReserve); //Reserve
+            }
         }
     }
 
@@ -76,12 +81,18 @@ public class DraggableObject : MonoBehaviour
         {
             if (TargetSlotTag.Contains(slotObj.SlotTag))
             {
-                if (currentSlot)
+                if (SlotController.Instance.GetSlotAvailability(slotObj.GetSlotNumber(), AdditionalSlotsToReserve + AmountOfSlotsThisTakes))
                 {
-                    currentSlot.EndHighlight(); //Remove highlight from previous slot
+                    //Remove the existing assigned slot
+                    if (currentSlot)
+                    {
+                        SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Unoccupied, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
+                    }
+
+                    //Assign new slot
+                    currentSlot = slotObj;
+                    SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Highlighted, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
                 }
-                currentSlot = slotObj;
-                currentSlot.StartHighlight();
             }
         }
     }
@@ -92,7 +103,7 @@ public class DraggableObject : MonoBehaviour
         {
             if (slotObj == currentSlot)
             {
-                currentSlot.EndHighlight(); //Remove highlight from slot
+                SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Unoccupied, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
                 currentSlot = null;
             }
         }

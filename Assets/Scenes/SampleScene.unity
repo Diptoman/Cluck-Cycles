@@ -792,6 +792,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetSlotTag:
   - LoopSlot
+  AmountOfSlotsThisTakes: 2
+  AdditionalSlotsToReserve: 3
 --- !u!61 &822871871
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -939,6 +941,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetSlotTag:
   - LoopSlot
+  AmountOfSlotsThisTakes: 1
+  AdditionalSlotsToReserve: 1
 --- !u!61 &1106330766
 BoxCollider2D:
   m_ObjectHideFlags: 0
