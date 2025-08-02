@@ -5,6 +5,7 @@ public class FloatAnimation : MonoBehaviour
     private float randomStart;
     private Vector3 startRot;
     private Vector3 startPos;
+    public Vector3 rotOffset;
     public Vector3 rotSpeed;
     public Vector3 rotAmount;
 
@@ -32,17 +33,17 @@ public class FloatAnimation : MonoBehaviour
         if (!isActive)
             return;
 
-        var t = Time.time * Mathf.Deg2Rad + randomStart;
-        var x = Mathf.Sin(rotSpeed.x * t) * rotAmount.x;
-        var y = Mathf.Sin(rotSpeed.y * t) * rotAmount.y;
-        var z = Mathf.Sin(rotSpeed.z * t) * rotAmount.z;
+        var t = Time.time + randomStart;
+        var x = Mathf.Sin(rotSpeed.x * t + rotOffset.x) * rotAmount.x;
+        var y = Mathf.Sin(rotSpeed.y * t + rotOffset.y) * rotAmount.y;
+        var z = Mathf.Sin(rotSpeed.z * t + rotOffset.z) * rotAmount.z;
 
         var finalAngles = startRot + new Vector3(x, y, z);
         transform.localEulerAngles = finalAngles;
 
         var posX = Mathf.Sin(posSpeed.x * t) * posAmount.x;
-        var posY = Mathf.Sin(posSpeed.x * t) * posAmount.y;
-        var posZ = Mathf.Sin(posSpeed.x * t) * posAmount.z;
+        var posY = Mathf.Sin(posSpeed.y * t) * posAmount.y;
+        var posZ = Mathf.Sin(posSpeed.z * t) * posAmount.z;
         transform.localPosition = startPos + new Vector3(posX, posY, posZ);
     }
 }
