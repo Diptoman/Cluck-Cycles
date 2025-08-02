@@ -56,10 +56,13 @@ public class SlotController : MonoBehaviour
     {
         for (int i = startingNum; i < startingNum + totalSlots; i++)
         {
+            if (i >= SlotStates.Count)
+                return false;
+
             if (SlotStates[i] == SlotState.Occupied || SlotStates[i] == SlotState.Reserved)
                 return false;
         }
 
-        return true; ;
+        return true;
     }
 }

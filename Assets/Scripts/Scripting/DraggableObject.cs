@@ -8,9 +8,9 @@ public class DraggableObject : MonoBehaviour
     public List<string> TargetSlotTag = new List<string>();
     public int AmountOfSlotsThisTakes = 1, AdditionalSlotsToReserve = 0;
 
-    private bool isDragging = false, isInSlot = false;
-    private Vector3 dragOffset, initialPosition, initialScale;
-    private SlotObject currentSlot;
+    protected bool isDragging = false, isInSlot = false;
+    protected Vector3 dragOffset, initialPosition, initialScale;
+    protected SlotObject currentSlot, lastAssignedSlot;
 
     void Start()
     {
@@ -41,10 +41,7 @@ public class DraggableObject : MonoBehaviour
         isDragging = true;
         isInSlot = false;
 
-        if (currentSlot)
-        {
-            SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Unoccupied, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
-        }
+        CheckAndUnAssignSlot();
     }
 
     void OnMouseUp()
@@ -53,15 +50,11 @@ public class DraggableObject : MonoBehaviour
 
         if (currentSlot)
         {
-            //Add original offset
-            transform.position = currentSlot.transform.position + currentSlot.SlotPlacementOffset;
-
-            if (SlotController.Instance.GetSlotAvailability(currentSlot.GetSlotNumber(), AdditionalSlotsToReserve + AmountOfSlotsThisTakes))
-            {
-                isInSlot = true;
-                SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Occupied, AmountOfSlotsThisTakes); //Occupy
-                SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber() + AmountOfSlotsThisTakes, SlotState.Reserved, AdditionalSlotsToReserve); //Reserve
-            }
+            CheckAndAssignSlot(currentSlot);
+        }
+        else if (lastAssignedSlot)
+        {
+            CheckAndAssignSlot(lastAssignedSlot);
         }
     }
 
@@ -83,18 +76,7 @@ public class DraggableObject : MonoBehaviour
             {
                 if (TargetSlotTag.Contains(slotObj.SlotTag))
                 {
-                    if (SlotController.Instance.GetSlotAvailability(slotObj.GetSlotNumber(), AdditionalSlotsToReserve + AmountOfSlotsThisTakes))
-                    {
-                        //Remove the existing assigned slot
-                        if (currentSlot)
-                        {
-                            SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Unoccupied, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
-                        }
-
-                        //Assign new slot
-                        currentSlot = slotObj;
-                        SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Highlighted, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
-                    }
+                    CheckAndHighlightSlot(slotObj);
                 }
             }
         }
@@ -106,18 +88,7 @@ public class DraggableObject : MonoBehaviour
         {
             if (TargetSlotTag.Contains(slotObj.SlotTag))
             {
-                if (SlotController.Instance.GetSlotAvailability(slotObj.GetSlotNumber(), AdditionalSlotsToReserve + AmountOfSlotsThisTakes))
-                {
-                    //Remove the existing assigned slot
-                    if (currentSlot)
-                    {
-                        SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Unoccupied, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
-                    }
-
-                    //Assign new slot
-                    currentSlot = slotObj;
-                    SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Highlighted, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
-                }
+                CheckAndHighlightSlot(slotObj);
             }
         }
     }
@@ -128,9 +99,16 @@ public class DraggableObject : MonoBehaviour
         {
             if (slotObj == currentSlot)
             {
-                SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Unoccupied, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
-                currentSlot = null;
+                CheckAndUnhighlightSlot(slotObj);
             }
         }
     }
+
+    protected virtual void CheckAndHighlightSlot(SlotObject slotObj) { }
+
+    protected virtual void CheckAndUnhighlightSlot(SlotObject slotObj) { }
+
+    protected virtual void CheckAndAssignSlot(SlotObject slotObj) { }
+
+    protected virtual void CheckAndUnAssignSlot() { }
 }
