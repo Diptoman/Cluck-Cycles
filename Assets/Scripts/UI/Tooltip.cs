@@ -21,14 +21,12 @@ public class Tooltip : MonoBehaviour
         state.timer = 0f;
         state.isUnderMouse = true;
         state.mousePosition = Input.mousePosition;
-        Debug.Log($"MouseEnter");
     }
 
     void OnMouseExit()
     {
         state = default;
         Hide();
-        Debug.Log($"MousExit");
     }
 
     void Update()
@@ -63,7 +61,6 @@ public class Tooltip : MonoBehaviour
             return;
 
         isVisible = true;
-        Debug.Log($"SHOW");
 
         UIController.Instance.tooltip.Show(text, transform.position);
     }
@@ -74,7 +71,6 @@ public class Tooltip : MonoBehaviour
             return;
 
         isVisible = false;
-        Debug.Log($"HIDE");
 
         UIController.Instance.tooltip.Hide();
     }
