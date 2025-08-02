@@ -6,7 +6,7 @@ public class UIInventorySlot : MonoBehaviour
     public int stackSize { get; private set; }
     public SpriteRenderer slotBox;
     public SpriteRenderer slotSprite;
-    public FloatRotator floatAnim;
+    public FloatAnimation floatAnim;
     public TextMeshPro text;
     public DraggableObject_Item itemToSpawn;
     public Color activeTextColor;
