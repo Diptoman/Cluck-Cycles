@@ -99,10 +99,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SlotTag: ForEachSlot
-  SlotPlacementOffset: {x: -3, y: 0, z: 0}
+  SlotPlacementOffset: {x: 0, y: 0, z: 0}
   DefaultColour: {r: 0.6688323, g: 0.8490566, b: 0.84717923, a: 1}
   HighlightColour: {r: 0.36084908, g: 0.4159788, b: 0.4811321, a: 1}
-  OccupyColour: {r: 0.018689938, g: 0.5660378, b: 0.11945689, a: 1}
+  OccupyColour: {r: 0.018689938, g: 0.5660378, b: 0.11945689, a: 0}
   ReservedColour: {r: 0.25809896, g: 0.3773585, b: 0.26511425, a: 1}
 --- !u!61 &3208253344483297185
 BoxCollider2D:
