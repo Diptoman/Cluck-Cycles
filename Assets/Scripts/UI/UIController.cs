@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
+    public static UIController Instance;
+
     [InlineEditor]
     public UIControllerConfig config;
     public UIInventorySlot[] itemSlots;
@@ -14,6 +16,11 @@ public class UIController : MonoBehaviour
         InitItems();
         ArrangeItems();
         InventoryController.Init(this);
+        Instance = this;
+
+        //Test, remove later
+        InventoryController.SetItemCount(ItemType.Chicken, 10);
+        InventoryController.SetItemCount(ItemType.Egg, 16);
     }
 
     // Update is called once per frame
@@ -33,11 +40,20 @@ public class UIController : MonoBehaviour
         slotsParent.transform.localPosition = new Vector3(parentX, parentY, z);
 
         for (var i = 0; i < itemSlots.Length; i++)
+        {
             itemSlots[i].SetStackSize(0);
+            var isValid = i < (int)ItemType.MAX;
 
-        //Test, remove later
-        itemSlots[0].SetStackSize(10);
-        itemSlots[1].SetStackSize(12);
+            if (isValid)
+            {
+                itemSlots[i].itemType = (ItemType)i;
+                itemSlots[i].slotSprite.sprite = itemSlots[i].sprite;
+            }
+            else
+            {
+                itemSlots[i].itemType = ItemType.Invalid;
+            }
+        }
     }
 
     private void ArrangeItems()
@@ -62,8 +78,14 @@ public class UIController : MonoBehaviour
 
                 tf.localPosition = new Vector3(x, y, z);
                 slot.slotBox.size = config.gridSize;
-                // slot.boxCollider.size = config.gridSize;
             }
         }
+    }
+
+    [Button("Setup slots")]
+    void SetupStuff()
+    {
+        InitItems();
+        ArrangeItems();
     }
 }

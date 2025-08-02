@@ -3,14 +3,16 @@ using TMPro;
 
 public class UIInventorySlot : MonoBehaviour
 {
+    public ItemType itemType;
+    public Sprite sprite;
     public int stackSize { get; private set; }
     public SpriteRenderer slotBox;
     public SpriteRenderer slotSprite;
     public FloatAnimation floatAnim;
     public FloatAnimation floatAnimText;
     public TextMeshPro text;
-    public DraggableObject_Item itemToSpawn;
     public Color activeTextColor;
+    public DraggableObject_Item itemToSpawn;
 
     public void SetStackSize(int size)
     {
