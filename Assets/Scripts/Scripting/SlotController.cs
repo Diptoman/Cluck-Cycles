@@ -31,6 +31,7 @@ public class SlotController : MonoBehaviour
 
     private Dictionary<int, SlotState> SlotStates = new Dictionary<int, SlotState>();
     private Dictionary<int, SlotObject> SlotObjects = new Dictionary<int, SlotObject>();
+    private Dictionary<int, DraggableObject_Loop> LoopReference = new Dictionary<int, DraggableObject_Loop>();
 
     void Start()
     {
@@ -97,5 +98,18 @@ public class SlotController : MonoBehaviour
         }
 
         return true;
+    }
+
+    public void SetLoopReference(int startingIndex, int length, DraggableObject_Loop loopRef)
+    {
+        for (int i = startingIndex; i < (startingIndex + length); i++)
+        {
+            LoopReference[i] = loopRef;
+        }
+    }
+
+    public DraggableObject_Loop GetLoopReference(int index)
+    {
+        return LoopReference[index];
     }
 }

@@ -35,11 +35,6 @@ public class DraggableObject : MonoBehaviour
         }
     }
 
-    public void ProcessHover() { }
-    public void ProcessMouseHold() { }
-    public void ProcessMousePressed() { }
-    public void ProcessMouseReleased() { }
-
     void OnMouseDown()
     {
         //Diff between centre and clicked point on plane
