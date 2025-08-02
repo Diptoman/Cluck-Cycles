@@ -52,6 +52,11 @@ public class SlotController : MonoBehaviour
         }
     }
 
+    public SlotState GetSlotStatus(int num)
+    {
+        return SlotStates[num];
+    }
+
     public bool GetSlotAvailability(int startingNum, int totalSlots)
     {
         for (int i = startingNum; i < startingNum + totalSlots; i++)
@@ -60,6 +65,34 @@ public class SlotController : MonoBehaviour
                 return false;
 
             if (SlotStates[i] == SlotState.Occupied || SlotStates[i] == SlotState.Reserved)
+                return false;
+        }
+
+        return true;
+    }
+
+    public bool AreSlotsReserved(int startingNum, int totalSlots)
+    {
+        for (int i = startingNum; i < startingNum + totalSlots; i++)
+        {
+            if (i >= SlotStates.Count)
+                return false;
+
+            if (SlotStates[i] != SlotState.Reserved)
+                return false;
+        }
+
+        return true;
+    }
+
+    public bool AreSlotsHighlighted(int startingNum, int totalSlots)
+    {
+        for (int i = startingNum; i < startingNum + totalSlots; i++)
+        {
+            if (i >= SlotStates.Count)
+                return false;
+
+            if (SlotStates[i] != SlotState.Highlighted)
                 return false;
         }
 
