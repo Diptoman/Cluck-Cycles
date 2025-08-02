@@ -6,7 +6,8 @@ public class UIInventorySlot : MonoBehaviour
     public int stackSize { get; private set; }
     public SpriteRenderer slotBox;
     public SpriteRenderer slotSprite;
-    public FloatRotator floatAnim;
+    public FloatAnimation floatAnim;
+    public FloatAnimation floatAnimText;
     public TextMeshPro text;
     public DraggableObject_Item itemToSpawn;
     public Color activeTextColor;
@@ -18,13 +19,15 @@ public class UIInventorySlot : MonoBehaviour
 
         if (size > 0)
         {
-            floatAnim.SetActive(true);
+            floatAnim?.SetActive(true);
+            floatAnimText?.SetActive(true);
             slotSprite.color = Color.white;
             text.color = activeTextColor;
         }
         else
         {
-            floatAnim.SetActive(false);
+            floatAnim?.SetActive(false);
+            floatAnimText?.SetActive(false);
             slotSprite.color = Color.gray;
             text.color = Color.gray;
         }

@@ -57,7 +57,7 @@ public class UIController : MonoBehaviour
                 var slot = itemSlots[index];
                 var tf = slot.transform;
                 var x = j * config.gridSize.x + config.gridPadding.x / 2;
-                var y = i * config.gridSize.y + config.gridPadding.y / 2;
+                var y = (config.rows - 1 - i) * config.gridSize.y + config.gridPadding.y / 2;
                 var z = tf.localPosition.z;
 
                 tf.localPosition = new Vector3(x, y, z);
