@@ -41,7 +41,7 @@ public class InventoryController
         Instance = null;
     }
 
-    public static int SetItemCount(ItemType type)
+    public static int GetItemCount(ItemType type)
     {
         return Instance.itemIdToSlotMap[(int)type].stackSize;
     }
