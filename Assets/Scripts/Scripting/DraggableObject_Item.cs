@@ -65,7 +65,7 @@ public class DraggableObject_Item : DraggableObject
                 SlotController.Instance.SetSlotStatus(slot.GetSlotNumber() + AmountOfSlotsThisTakes, SlotState.Reserved, AdditionalSlotsToReserve); //Reserve
 
                 //Add original offset
-                transform.position = slot.transform.position + slot.SlotPlacementOffset + InsideLoopOffset + new Vector3(0f, 0f, -.2f);
+                Parent.transform.position = slot.transform.position + slot.SlotPlacementOffset + InsideLoopOffset + new Vector3(0f, 0f, -.2f);
 
                 currentSlot = slot;
             }
@@ -77,7 +77,7 @@ public class DraggableObject_Item : DraggableObject
             slot.SetState(SlotState.Highlighted);
 
             //Add original offset
-            transform.position = slot.transform.position + slot.SlotPlacementOffset;
+            Parent.transform.position = slot.transform.position + slot.SlotPlacementOffset;
 
             currentSlot = slot;
         }

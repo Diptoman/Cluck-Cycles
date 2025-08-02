@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using PrimeTween;
 
-public class DraggableObject : MonoBehaviour, IDraggable
+public class DraggableObject : MonoBehaviour
 {
+    public GameObject Parent;
     public List<string> TargetSlotTag = new List<string>();
     public int AmountOfSlotsThisTakes = 1, AdditionalSlotsToReserve = 0;
 
@@ -23,26 +24,26 @@ public class DraggableObject : MonoBehaviour, IDraggable
         if (isDragging)
         {
             //Add original offset
-            transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + dragOffset;
+            Parent.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + dragOffset;
         }
         else
         {
             if (!isInSlot)
             {
-                transform.position = initialPosition;
+                Parent.transform.position = initialPosition;
             }
         }
     }
 
-    public void ProcessHover() {}
-    public void ProcessMouseHold() {}
-    public void ProcessMousePressed() {}
-    public void ProcessMouseReleased() {}
+    public void ProcessHover() { }
+    public void ProcessMouseHold() { }
+    public void ProcessMousePressed() { }
+    public void ProcessMouseReleased() { }
 
     void OnMouseDown()
     {
         //Diff between centre and clicked point on plane
-        dragOffset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        dragOffset = Parent.transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         isDragging = true;
         isInSlot = false;
 

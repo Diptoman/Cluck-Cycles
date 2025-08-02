@@ -41,7 +41,7 @@ public class DraggableObject_Loop : DraggableObject
             SlotController.Instance.SetSlotStatus(slot.GetSlotNumber() + AmountOfSlotsThisTakes, SlotState.Reserved, AdditionalSlotsToReserve); //Reserve
 
             //Add original offset
-            transform.position = slot.transform.position + slot.SlotPlacementOffset;
+            Parent.transform.position = slot.transform.position + slot.SlotPlacementOffset;
 
             lastAssignedSlot = slot;
             currentSlot = slot;
