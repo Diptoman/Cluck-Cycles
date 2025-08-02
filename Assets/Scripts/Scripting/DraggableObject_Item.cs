@@ -24,13 +24,31 @@ public class DraggableObject_Item : DraggableObject
                 SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Highlighted, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
             }
         }
+
+        if (slotObj.SlotTag == "ForEachSlot")
+        {
+            //If anything is selected, unhighlight it
+            if (currentSlot)
+            {
+                SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Reserved, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
+            }
+            currentSlot = slotObj;
+            slotObj.SetState(SlotState.Highlighted);
+        }
     }
 
     protected override void CheckAndUnhighlightSlot(SlotObject slotObj)
     {
         base.CheckAndUnhighlightSlot(slotObj);
 
-        SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Reserved, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
+        if (slotObj.SlotTag == "LoopSlot")
+        {
+            SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Reserved, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
+        }
+        if (slotObj.SlotTag == "ForEachSlot")
+        {
+            slotObj.SetState(SlotState.Unoccupied);
+        }
         currentSlot = null;
     }
 
@@ -40,7 +58,6 @@ public class DraggableObject_Item : DraggableObject
 
         if (slot.SlotTag == "LoopSlot")
         {
-            Debug.Log(SlotController.Instance.GetSlotStatus(slot.GetSlotNumber()));
             if (SlotController.Instance.AreSlotsHighlighted(slot.GetSlotNumber(), AdditionalSlotsToReserve + AmountOfSlotsThisTakes))
             {
                 isInSlot = true;
@@ -48,11 +65,21 @@ public class DraggableObject_Item : DraggableObject
                 SlotController.Instance.SetSlotStatus(slot.GetSlotNumber() + AmountOfSlotsThisTakes, SlotState.Reserved, AdditionalSlotsToReserve); //Reserve
 
                 //Add original offset
-                transform.position = slot.transform.position + slot.SlotPlacementOffset + InsideLoopOffset;
+                transform.position = slot.transform.position + slot.SlotPlacementOffset + InsideLoopOffset + new Vector3(0f, 0f, -.2f);
 
-                lastAssignedSlot = slot;
                 currentSlot = slot;
             }
+        }
+
+        if (slot.SlotTag == "ForEachSlot")
+        {
+            isInSlot = true;
+            slot.SetState(SlotState.Highlighted);
+
+            //Add original offset
+            transform.position = slot.transform.position + slot.SlotPlacementOffset;
+
+            currentSlot = slot;
         }
     }
 
@@ -62,7 +89,15 @@ public class DraggableObject_Item : DraggableObject
 
         if (currentSlot)
         {
-            SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Unoccupied, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
+            if (currentSlot.SlotTag == "LoopSlot")
+            {
+                SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Reserved, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
+            }
+
+            if (currentSlot.SlotTag == "ForEachSlot")
+            {
+                currentSlot.SetState(SlotState.Unoccupied);
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1472445148338007752
+--- !u!1 &938684619333870840
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5485437098730422323}
-  - component: {fileID: 502678144222242914}
-  - component: {fileID: 1381078623696395262}
-  - component: {fileID: 3208253344483297185}
-  - component: {fileID: -3754230906278153953}
+  - component: {fileID: 1381321737247862403}
+  - component: {fileID: 1663597334456143240}
+  - component: {fileID: 7056645203253349604}
+  - component: {fileID: 1159100031513910033}
+  - component: {fileID: 8435962901900786618}
   m_Layer: 0
-  m_Name: ForEachSlot
+  m_Name: ChickenDraggable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5485437098730422323
+--- !u!4 &1381321737247862403
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1472445148338007752}
+  m_GameObject: {fileID: 938684619333870840}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 2.8, z: 0}
-  m_LocalScale: {x: 6, y: 0.4, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &502678144222242914
+--- !u!212 &1663597334456143240
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1472445148338007752}
+  m_GameObject: {fileID: 938684619333870840}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,44 +75,25 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 60
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_SortingOrder: 70
+  m_Sprite: {fileID: 21300000, guid: ef734e3e696dd5a40a6dfcdeb1bd5087, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.5555553, y: 5.5555553}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1381078623696395262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1472445148338007752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017db0169023c614bbcaf9d87d283f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SlotTag: ForEachSlot
-  SlotPlacementOffset: {x: 0, y: 0, z: 0}
-  DefaultColour: {r: 0.6688323, g: 0.8490566, b: 0.84717923, a: 1}
-  HighlightColour: {r: 0.36084908, g: 0.4159788, b: 0.4811321, a: 1}
-  OccupyColour: {r: 0.018689938, g: 0.5660378, b: 0.11945689, a: 0}
-  ReservedColour: {r: 0.25809896, g: 0.3773585, b: 0.26511425, a: 1}
-  SlotNumText: {fileID: 0}
---- !u!61 &3208253344483297185
+--- !u!61 &7056645203253349604
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1472445148338007752}
+  m_GameObject: {fileID: 938684619333870840}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -142,24 +123,24 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 5.5555553, y: 5.5555553}
+    newSize: {x: 5.5555553, y: 5.5555553}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.5555553, y: 5.5555553}
   m_EdgeRadius: 0
---- !u!50 &-3754230906278153953
+--- !u!50 &1159100031513910033
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1472445148338007752}
-  m_BodyType: 2
+  m_GameObject: {fileID: 938684619333870840}
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -176,5 +157,23 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &8435962901900786618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938684619333870840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0539c501f168edc4485728a223a6bc99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetSlotTag:
+  - ForEachSlot
+  - LoopSlot
+  AmountOfSlotsThisTakes: 1
+  AdditionalSlotsToReserve: 0
+  InsideLoopOffset: {x: 1.5, y: 0, z: 0}

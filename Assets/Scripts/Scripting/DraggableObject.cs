@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PrimeTween;
 
-public class DraggableObject : MonoBehaviour
+public class DraggableObject : MonoBehaviour, IDraggable
 {
     public List<string> TargetSlotTag = new List<string>();
     public int AmountOfSlotsThisTakes = 1, AdditionalSlotsToReserve = 0;
@@ -33,6 +33,11 @@ public class DraggableObject : MonoBehaviour
             }
         }
     }
+
+    public void ProcessHover() {}
+    public void ProcessMouseHold() {}
+    public void ProcessMousePressed() {}
+    public void ProcessMouseReleased() {}
 
     void OnMouseDown()
     {
