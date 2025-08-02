@@ -75,6 +75,7 @@ public class DraggableObject_Item : DraggableObject
                 //Add original offset
                 Parent.transform.position = slot.transform.position + slot.SlotPlacementOffset + InsideLoopOffset + new Vector3(0f, 0f, -.2f);
                 Parent.transform.SetParent(SlotController.Instance.GetLoopReference(slot.GetSlotNumber()).transform.parent);
+                SlotController.Instance.GetLoopReference(slot.GetSlotNumber()).SetActiveItem(slot.GetSlotNumber(), this); //Add this to loop
 
                 currentSlot = slot;
             }
@@ -101,6 +102,7 @@ public class DraggableObject_Item : DraggableObject
         {
             if (currentSlot.SlotTag == "LoopSlot")
             {
+                SlotController.Instance.GetLoopReference(currentSlot.GetSlotNumber()).SetActiveItem(currentSlot.GetSlotNumber(), null); //Remove this from loop
                 SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Reserved, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
             }
 
@@ -109,5 +111,11 @@ public class DraggableObject_Item : DraggableObject
                 currentSlot.SetState(SlotState.Unoccupied);
             }
         }
+    }
+
+    public void SetCurrentSlot(SlotObject slot)
+    {
+        currentSlot = slot;
+        isInSlot = true;
     }
 }

@@ -117,4 +117,9 @@ public class SlotController : MonoBehaviour
     {
         return LoopReference[index];
     }
+
+    public SlotObject GetSlotReference(int index)
+    {
+        return SlotObjects[index];
+    }
 }

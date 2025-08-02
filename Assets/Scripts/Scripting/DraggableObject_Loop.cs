@@ -4,6 +4,19 @@ using UnityEngine;
 
 public class DraggableObject_Loop : DraggableObject
 {
+    private List<DraggableObject_Item> itemList = new List<DraggableObject_Item>();
+    private int maxLoop = 19;
+
+    protected override void Init()
+    {
+        base.Init();
+
+        for (int i = 0; i < maxLoop; i++)
+        {
+            itemList.Add(null);
+        }
+    }
+
     protected override void CheckAndHighlightSlot(SlotObject slotObj)
     {
         base.CheckAndHighlightSlot(slotObj);
@@ -38,7 +51,22 @@ public class DraggableObject_Loop : DraggableObject
         {
             isInSlot = true;
             SlotController.Instance.SetSlotStatus(slot.GetSlotNumber(), SlotState.Occupied, AmountOfSlotsThisTakes); //Occupy
-            SlotController.Instance.SetSlotStatus(slot.GetSlotNumber() + AmountOfSlotsThisTakes, SlotState.Reserved, AdditionalSlotsToReserve); //Reserve
+
+            //Go through its list and occupy the slots that were occupied before drag
+            for (int i = 1; i <= AdditionalSlotsToReserve; i++)
+            {
+                if (itemList[i] != null)
+                {
+                    SlotController.Instance.SetSlotStatus(slot.GetSlotNumber() + AmountOfSlotsThisTakes + i - 1, SlotState.Occupied, 1); //Occupy
+                    itemList[i].SetCurrentSlot(SlotController.Instance.GetSlotReference(slot.GetSlotNumber() + AmountOfSlotsThisTakes + i - 1));
+                }
+                else
+                {
+                    SlotController.Instance.SetSlotStatus(slot.GetSlotNumber() + AmountOfSlotsThisTakes + i - 1, SlotState.Reserved, 1); //Reserve
+                }
+            }
+
+
             SlotController.Instance.SetLoopReference(slot.GetSlotNumber(), AmountOfSlotsThisTakes + AdditionalSlotsToReserve, this);
 
             //Add original offset
@@ -57,6 +85,24 @@ public class DraggableObject_Loop : DraggableObject
         {
             SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Unoccupied, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
             SlotController.Instance.SetLoopReference(currentSlot.GetSlotNumber(), AmountOfSlotsThisTakes + AdditionalSlotsToReserve, null);
+
+            //Go through its list and occupy the slots that were occupied before drag
+            for (int i = 1; i <= AdditionalSlotsToReserve; i++)
+            {
+                if (itemList[i] != null)
+                {
+                    itemList[i].SetCurrentSlot(null);
+                }
+            }
         }
+    }
+
+    public void SetActiveItem(int globalSlotNum, DraggableObject_Item item)
+    {
+        int currentSlotNum = currentSlot.GetSlotNumber(); //Current slot num
+
+        int index = globalSlotNum - currentSlotNum;
+
+        itemList[index] = item;
     }
 }
