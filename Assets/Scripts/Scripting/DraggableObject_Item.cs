@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
+using PrimeTween;
 using UnityEngine;
 
 public class DraggableObject_Item : DraggableObject
 {
     public Vector3 InsideLoopOffset = new Vector3(2f, 0f, 0f);
+    public FunctionContainer FunctionContainer;
+
     protected override void CheckAndHighlightSlot(SlotObject slotObj)
     {
         base.CheckAndHighlightSlot(slotObj);
@@ -17,7 +20,14 @@ public class DraggableObject_Item : DraggableObject
                 //Remove the existing assigned slot
                 if (currentSlot)
                 {
-                    SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Reserved, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
+                    if (currentSlot.SlotTag == "LoopSlot")
+                    {
+                        SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Reserved, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
+                    }
+                    else if (currentSlot.SlotTag == "ForEachSlot")
+                    {
+                        currentSlot.SetState(SlotState.Unoccupied);
+                    }
                 }
 
                 //Assign new slot
@@ -72,12 +82,23 @@ public class DraggableObject_Item : DraggableObject
                 SlotController.Instance.SetSlotStatus(slot.GetSlotNumber(), SlotState.Occupied, AmountOfSlotsThisTakes); //Occupy
                 SlotController.Instance.SetSlotStatus(slot.GetSlotNumber() + AmountOfSlotsThisTakes, SlotState.Reserved, AdditionalSlotsToReserve); //Reserve
 
-                //Add original offset
                 Parent.transform.position = slot.transform.position + slot.SlotPlacementOffset + InsideLoopOffset + new Vector3(0f, 0f, -.2f);
+                //Add original offset
+                /*if (slot.GetSlotNumber() % 2 == 1)
+                {
+                    Parent.transform.position = slot.transform.position + slot.SlotPlacementOffset + InsideLoopOffset + new Vector3(0f, 0f, -.2f);
+                }
+                else
+                {
+                    Parent.transform.position = slot.transform.position + slot.SlotPlacementOffset + InsideLoopOffset + new Vector3(-.5f, 0f, -.2f);
+                }*/
+
                 Parent.transform.SetParent(SlotController.Instance.GetLoopReference(slot.GetSlotNumber()).transform.parent);
                 SlotController.Instance.GetLoopReference(slot.GetSlotNumber()).SetActiveItem(slot.GetSlotNumber(), this); //Add this to loop
 
                 currentSlot = slot;
+
+                FunctionContainer.ShowSelector(true);
             }
         }
 
@@ -104,6 +125,8 @@ public class DraggableObject_Item : DraggableObject
             {
                 SlotController.Instance.GetLoopReference(currentSlot.GetSlotNumber()).SetActiveItem(currentSlot.GetSlotNumber(), null); //Remove this from loop
                 SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Reserved, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
+
+                FunctionContainer.ShowSelector(false);
             }
 
             if (currentSlot.SlotTag == "ForEachSlot")
@@ -116,6 +139,29 @@ public class DraggableObject_Item : DraggableObject
     public void SetCurrentSlot(SlotObject slot)
     {
         currentSlot = slot;
-        isInSlot = true;
+        if (slot == null)
+        {
+            return;
+        }
+        else
+        {
+            isInSlot = true;
+        }
+
+
+        /*if (slot.SlotTag == "LoopSlot")
+        {
+            //Add original offset
+            Parent.transform.SetParent(null);
+            if (slot.GetSlotNumber() % 2 == 1)
+            {
+                Parent.transform.position = slot.transform.position + slot.SlotPlacementOffset + InsideLoopOffset + new Vector3(0f, 0f, -.2f);
+            }
+            else
+            {
+                Parent.transform.position = slot.transform.position + slot.SlotPlacementOffset + InsideLoopOffset + new Vector3(-.5f, 0f, -.2f);
+            }
+            Parent.transform.SetParent(SlotController.Instance.GetLoopReference(slot.GetSlotNumber()).transform.parent);
+        }*/
     }
 }

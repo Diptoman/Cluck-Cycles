@@ -39,6 +39,9 @@ public class DraggableObject_Loop : DraggableObject
     {
         base.CheckAndUnhighlightSlot(slotObj);
 
+        if (currentSlot == null)
+            return;
+
         SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Unoccupied, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
         currentSlot = null;
     }
@@ -51,6 +54,8 @@ public class DraggableObject_Loop : DraggableObject
         {
             isInSlot = true;
             SlotController.Instance.SetSlotStatus(slot.GetSlotNumber(), SlotState.Occupied, AmountOfSlotsThisTakes); //Occupy
+
+            SlotController.Instance.SetLoopReference(slot.GetSlotNumber(), AmountOfSlotsThisTakes + AdditionalSlotsToReserve, this); //Set loop reference
 
             //Go through its list and occupy the slots that were occupied before drag
             for (int i = 1; i <= AdditionalSlotsToReserve; i++)
@@ -65,9 +70,6 @@ public class DraggableObject_Loop : DraggableObject
                     SlotController.Instance.SetSlotStatus(slot.GetSlotNumber() + AmountOfSlotsThisTakes + i - 1, SlotState.Reserved, 1); //Reserve
                 }
             }
-
-
-            SlotController.Instance.SetLoopReference(slot.GetSlotNumber(), AmountOfSlotsThisTakes + AdditionalSlotsToReserve, this);
 
             //Add original offset
             Parent.transform.position = slot.transform.position + slot.SlotPlacementOffset;

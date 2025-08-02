@@ -43,6 +43,7 @@ public class SlotController : MonoBehaviour
         for (int i = 0; i < numSlots; i++)
         {
             SlotObject slot = Instantiate(SlotPrefab, StartLocation + new Vector3(0f, -i * SlotGap, 0f), Quaternion.identity);
+            slot.name = "Slot " + i;
             slot.Init(i);
             SlotStates[i] = SlotState.Unoccupied;
             SlotObjects[i] = slot;
