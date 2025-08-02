@@ -1,16 +1,5 @@
 using UnityEngine;
-public enum ItemType
-{
-    Invalid = -1,
-    Chicken = 0,
-    Egg = 1,
-    Rooster = 2,
-    Feed = 3,
-    Crops = 4,
-    FertileEgg = 5,
-    Chick = 6,
-    MAX = 7 //Move this down and increase it as you add more
-}
+
 
 public class InventoryController
 {

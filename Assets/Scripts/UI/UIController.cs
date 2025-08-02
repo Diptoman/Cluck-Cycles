@@ -10,6 +10,7 @@ public class UIController : MonoBehaviour
     public UIInventorySlot[] itemSlots;
     public SpriteRenderer inventoryBase;
     public Transform slotsParent;
+    public TooltipBox tooltip;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class UIController : MonoBehaviour
         ArrangeItems();
         InventoryController.Init(this);
         Instance = this;
+        tooltip.Hide(isForced: true);
 
         //Test, remove later
         InventoryController.SetItemCount(ItemType.Chicken, 10);
@@ -74,9 +76,8 @@ public class UIController : MonoBehaviour
                 var tf = slot.transform;
                 var x = j * config.gridSize.x + config.gridPadding.x / 2;
                 var y = (config.rows - 1 - i) * config.gridSize.y + config.gridPadding.y / 2;
-                var z = tf.localPosition.z;
 
-                tf.localPosition = new Vector3(x, y, z);
+                tf.SetPosXYLocal(x, y);
                 slot.slotBox.size = config.gridSize;
             }
         }
