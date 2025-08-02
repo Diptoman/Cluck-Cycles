@@ -143,11 +143,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee5b05ce2dd12f49b79f97c63465a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Parent: {fileID: 6799100879005663873}
+  Root: {fileID: 6799100879005663873}
   TargetSlotTag:
   - LoopSlot
   AmountOfSlotsThisTakes: 1
   AdditionalSlotsToReserve: 1
+  dragOffset: {x: 0, y: 0, z: 0}
+  inventoryPosition: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
+  currentSlot: {fileID: 0}
+  lastAssignedSlot: {fileID: 0}
 --- !u!1 &6799100879005663873
 GameObject:
   m_ObjectHideFlags: 0

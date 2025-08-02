@@ -171,9 +171,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0539c501f168edc4485728a223a6bc99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Root: {fileID: 938684619333870840}
   TargetSlotTag:
   - ForEachSlot
   - LoopSlot
   AmountOfSlotsThisTakes: 1
   AdditionalSlotsToReserve: 0
+  dragOffset: {x: 0, y: 0, z: 0}
+  inventoryPosition: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
+  currentSlot: {fileID: 0}
+  lastAssignedSlot: {fileID: 0}
   InsideLoopOffset: {x: 1.5, y: 0, z: 0}

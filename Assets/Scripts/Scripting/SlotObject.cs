@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using PrimeTween;
 using TMPro;
 using UnityEngine;
@@ -11,7 +9,7 @@ public class SlotObject : MonoBehaviour
     public Color DefaultColour, HighlightColour, OccupyColour, ReservedColour;
     public TextMeshPro SlotNumText;
 
-    private SlotState state = SlotState.Unoccupied;
+    public SlotState state { get; private set; }
     private int slotNum = -1;
 
     void Start()

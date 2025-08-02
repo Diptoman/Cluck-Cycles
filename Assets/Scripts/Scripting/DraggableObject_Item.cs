@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Data.Common;
+
 using UnityEngine;
 
 public class DraggableObject_Item : DraggableObject
@@ -36,6 +34,11 @@ public class DraggableObject_Item : DraggableObject
             currentSlot = slotObj;
             slotObj.SetState(SlotState.Highlighted);
         }
+
+        if (slotObj.SlotTag == "InventorySlot")
+        {
+            InventoryController.CheckAndHighlightSlot(slotObj, this);
+        }
     }
 
     protected override void CheckAndUnhighlightSlot(SlotObject slotObj)
@@ -57,6 +60,12 @@ public class DraggableObject_Item : DraggableObject
         {
             slotObj.SetState(SlotState.Unoccupied);
         }
+
+        if (slotObj.SlotTag == "InventorySlot")
+        {
+            InventoryController.CheckAndUnhighlightSlot(slotObj, this);
+        }
+
         currentSlot = null;
     }
 
@@ -73,8 +82,8 @@ public class DraggableObject_Item : DraggableObject
                 SlotController.Instance.SetSlotStatus(slot.GetSlotNumber() + AmountOfSlotsThisTakes, SlotState.Reserved, AdditionalSlotsToReserve); //Reserve
 
                 //Add original offset
-                Parent.transform.position = slot.transform.position + slot.SlotPlacementOffset + InsideLoopOffset + new Vector3(0f, 0f, -.2f);
-                Parent.transform.SetParent(SlotController.Instance.GetLoopReference(slot.GetSlotNumber()).transform.parent);
+                Root.transform.position = slot.transform.position + slot.SlotPlacementOffset + InsideLoopOffset + new Vector3(0f, 0f, -.2f);
+                Root.transform.SetParent(SlotController.Instance.GetLoopReference(slot.GetSlotNumber()).transform.parent);
 
                 currentSlot = slot;
             }
@@ -86,10 +95,15 @@ public class DraggableObject_Item : DraggableObject
             slot.SetState(SlotState.Highlighted);
 
             //Add original offset
-            Parent.transform.position = slot.transform.position + slot.SlotPlacementOffset + new Vector3(0f, 0f, -.2f);
-            Parent.transform.SetParent(slot.transform.parent);
+            Root.transform.position = slot.transform.position + slot.SlotPlacementOffset + new Vector3(0f, 0f, -.2f);
+            Root.transform.SetParent(slot.transform.parent);
 
             currentSlot = slot;
+        }
+
+        if (slot.SlotTag == "InventorySlot")
+        {
+            InventoryController.CheckAndAssignSlot(slot, this);
         }
     }
 
@@ -107,6 +121,11 @@ public class DraggableObject_Item : DraggableObject
             if (currentSlot.SlotTag == "ForEachSlot")
             {
                 currentSlot.SetState(SlotState.Unoccupied);
+            }
+
+            if (currentSlot.SlotTag == "InventorySlot")
+            {
+                InventoryController.CheckAndUnAssignSlot(currentSlot, this);
             }
         }
     }

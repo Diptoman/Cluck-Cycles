@@ -17,6 +17,8 @@ public class Bootstrapper : MonoBehaviour
 
     void OnApplicationQuit()
     {
+        SlotController.Destroy();
+        InventoryController.Destroy();
         Debug.Log("Game Closed");
     }
 }

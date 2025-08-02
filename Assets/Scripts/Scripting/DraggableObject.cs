@@ -5,17 +5,17 @@ using PrimeTween;
 
 public class DraggableObject : MonoBehaviour
 {
-    public GameObject Parent;
+    public GameObject Root;
     public List<string> TargetSlotTag = new List<string>();
     public int AmountOfSlotsThisTakes = 1, AdditionalSlotsToReserve = 0;
 
     protected bool isDragging = false, isInSlot = false;
-    protected Vector3 dragOffset, initialPosition, initialScale;
-    protected SlotObject currentSlot, lastAssignedSlot;
+    public Vector3 dragOffset, inventoryPosition, initialScale;
+    public SlotObject currentSlot, lastAssignedSlot;
 
     void Start()
     {
-        initialPosition = this.transform.position;
+        inventoryPosition = this.transform.position;
         initialScale = this.transform.localScale;
     }
 
@@ -24,13 +24,13 @@ public class DraggableObject : MonoBehaviour
         if (isDragging)
         {
             //Add original offset
-            Parent.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + dragOffset;
+            Root.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + dragOffset;
         }
         else
         {
             if (!isInSlot)
             {
-                Parent.transform.position = initialPosition;
+                Root.transform.position = inventoryPosition;
             }
         }
     }
@@ -38,7 +38,7 @@ public class DraggableObject : MonoBehaviour
     void OnMouseDown()
     {
         //Diff between centre and clicked point on plane
-        dragOffset = Parent.transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        dragOffset = Root.transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         isDragging = true;
         isInSlot = false;
 
@@ -61,7 +61,7 @@ public class DraggableObject : MonoBehaviour
 
     void OnMouseEnter()
     {
-        Tween.Scale(this.transform, initialScale * 1.2f, .25f);
+        Tween.Scale(this.transform, initialScale * 1.2f, .25f, Ease.OutBounce);
     }
 
     void OnMouseExit()
@@ -98,9 +98,10 @@ public class DraggableObject : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent<SlotObject>(out SlotObject slotObj))
         {
-            if (slotObj == currentSlot)
+            if (TargetSlotTag.Contains(slotObj.SlotTag))
             {
                 CheckAndUnhighlightSlot(slotObj);
+                Debug.Log($"Trigger exit");
             }
         }
     }

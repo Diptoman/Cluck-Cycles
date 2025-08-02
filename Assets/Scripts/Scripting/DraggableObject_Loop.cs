@@ -42,7 +42,7 @@ public class DraggableObject_Loop : DraggableObject
             SlotController.Instance.SetLoopReference(slot.GetSlotNumber(), AmountOfSlotsThisTakes + AdditionalSlotsToReserve, this);
 
             //Add original offset
-            Parent.transform.position = slot.transform.position + slot.SlotPlacementOffset;
+            Root.transform.position = slot.transform.position + slot.SlotPlacementOffset;
 
             lastAssignedSlot = slot;
             currentSlot = slot;
