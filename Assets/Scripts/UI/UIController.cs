@@ -31,6 +31,13 @@ public class UIController : MonoBehaviour
         var parentY = -inventoryBase.size.y / 2 + config.gridSize.y / 2;
         var z = slotsParent.transform.localPosition.z;
         slotsParent.transform.localPosition = new Vector3(parentX, parentY, z);
+
+        for (var i = 0; i < itemSlots.Length; i++)
+            itemSlots[i].SetStackSize(0);
+
+        //Test, remove later
+        itemSlots[0].SetStackSize(10);
+        itemSlots[1].SetStackSize(12);
     }
 
     private void ArrangeItems()
