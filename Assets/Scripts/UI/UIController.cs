@@ -55,7 +55,7 @@ public class UIController : MonoBehaviour
 
                 tf.localPosition = new Vector3(x, y, z);
                 slot.slotBox.size = config.gridSize;
-                slot.boxCollider.size = config.gridSize;
+                // slot.boxCollider.size = config.gridSize;
             }
         }
     }

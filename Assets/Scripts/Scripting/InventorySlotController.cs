@@ -14,11 +14,11 @@ public class InventoryController
     public InventoryController(UIController controller)
     {
         var num = controller.itemSlots.Length;
-        slotToItemMap = new(num);
-        for (int i = 0; i < num; i++)
-        {
-            slotToItemMap.TryAdd(controller.itemSlots[i].slotObject, null);
-        }
+        // slotToItemMap = new(num);
+        // for (int i = 0; i < num; i++)
+        // {
+        //     slotToItemMap.TryAdd(controller.itemSlots[i].slotObject, null);
+        // }
     }
 
     public static void Destroy()
@@ -69,11 +69,11 @@ public class InventoryController
         Instance.slotToItemMap[slotObj] = item;
         slotObj.SetState(SlotState.Occupied);
         item.currentSlot = slotObj;
-        item.Root.transform.SetParent(slotObj.transform);
+        item.Parent.transform.SetParent(slotObj.transform);
         var pos = slotObj.transform.position;
-        pos.z = item.Root.transform.position.z;
-        item.Root.transform.position = pos;
-        item.inventoryPosition = pos;
+        pos.z = item.Parent.transform.position.z;
+        item.Parent.transform.position = pos;
+        item.initialPosition = pos;
         item.lastAssignedSlot = slotObj;
 
 

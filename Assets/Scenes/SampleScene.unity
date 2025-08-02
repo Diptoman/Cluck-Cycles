@@ -224,7 +224,6 @@ MonoBehaviour:
   StartLocation: {x: -5.75, y: 3.5, z: 0}
   SlotGap: 0.4
   numSlots: 20
-  uIControllerRef: {fileID: 1889792402}
 --- !u!4 &308636243
 Transform:
   m_ObjectHideFlags: 0
@@ -543,7 +542,7 @@ PrefabInstance:
       objectReference: {fileID: 421218567}
     - target: {fileID: 707239392726094440, guid: ff4064aac279d0f4ba8bef7aef72fdc4, type: 3}
       propertyPath: TargetSlotTag.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 707239392726094440, guid: ff4064aac279d0f4ba8bef7aef72fdc4, type: 3}
       propertyPath: TargetSlotTag.Array.data[2]
@@ -655,17 +654,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e59a30af1f3a7b3458c1b0fdcd4f8a40, type: 3}
---- !u!114 &1889792402 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8763597760824763750, guid: 09588861d506e1944bac5363e3546382, type: 3}
-  m_PrefabInstance: {fileID: 103606625}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c53caaa7f6a0f3c4286962b063db500b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2021592353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -728,7 +716,7 @@ PrefabInstance:
       objectReference: {fileID: 637655783}
     - target: {fileID: 8435962901900786618, guid: a1e1cbf860730604697db7fa66ac92b5, type: 3}
       propertyPath: TargetSlotTag.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8435962901900786618, guid: a1e1cbf860730604697db7fa66ac92b5, type: 3}
       propertyPath: TargetSlotTag.Array.data[2]

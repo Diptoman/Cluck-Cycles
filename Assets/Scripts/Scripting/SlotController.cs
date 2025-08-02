@@ -33,7 +33,6 @@ public class SlotController : MonoBehaviour
     public Vector3 StartLocation;
     public float SlotGap = .6f;
     public int numSlots = 20;
-    public UIController uIControllerRef;
 
     private Dictionary<int, SlotState> SlotStates = new Dictionary<int, SlotState>();
     private Dictionary<int, SlotObject> SlotObjects = new Dictionary<int, SlotObject>();
@@ -48,18 +47,6 @@ public class SlotController : MonoBehaviour
             SlotStates[i] = SlotState.Unoccupied;
             SlotObjects[i] = slot;
         }
-
-        // var slotCount = SlotObjects.Count;
-
-        // foreach (var inventorySlot in uIControllerRef.itemSlots)
-        // {
-        //     var slot = inventorySlot.slotObject;
-        //     slot.Init(slotCount);
-        //     SlotStates[slotCount] = SlotState.Unoccupied;
-        //     SlotObjects[slotCount] = slot;
-
-        //     slotCount++;
-        // }
     }
 
     public void SetSlotStatus(int num, SlotState state, int slotAmount = 1)
