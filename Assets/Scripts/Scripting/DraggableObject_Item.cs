@@ -11,6 +11,12 @@ public class DraggableObject_Item : DraggableObject
     public FunctionContainer FunctionContainer;
     public ItemType itemType;
 
+    protected override void Init()
+    {
+        base.Init();
+        destroyIfNotInSlot = true;
+    }
+
     protected override void CheckAndHighlightSlot(SlotObject slotObj)
     {
         base.CheckAndHighlightSlot(slotObj);

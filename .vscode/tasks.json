@@ -1,0 +1,46 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Start Unity",
+            "type": "shell",
+            "windows": {
+                "command": "${input:unityWinPath}",
+            },
+            "osx": {
+                "command": "${input:unityOSXPath}"
+            },
+            "linux": {
+                "command": "${input:unityLinuxPath}"
+            },
+            "args": [
+                "-projectPath",
+                "${workspaceFolder}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "unityWinPath",
+            "type": "promptString",
+            "default": "C:/Program Files/Unity/Hub/Editor/2022.3.51f1/Editor/Unity.exe",
+            "description": "The path to the Unity executable for Microsoft Windows."
+        },
+        {
+            "id": "unityOSXPath",
+            "type": "promptString",
+            "default": "/Applications/Unity/Hub/Editor/2022.3.51f1/Unity.app/Contents/MacOS/Unity",
+            "description": "The path to the Unity executable for MacOS."
+        },
+        {
+            "id": "unityLinuxPath",
+            "type": "promptString",
+            "default": "/Applications/Unity/Hub/Editor/2022.3.51f1/Unity.app/Contents/Linux/Unity",
+            "description": "The path to the Unity executable for Linux."
+        }
+    ]
+}

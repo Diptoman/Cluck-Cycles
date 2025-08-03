@@ -12,7 +12,7 @@ public class UIInventorySlot : MonoBehaviour
     public FloatAnimation floatAnimText;
     public TextMeshPro text;
     public Color activeTextColor;
-    public DraggableObject_Item itemToSpawn;
+    public GameObject itemToSpawn;
 
     public void SetStackSize(int size)
     {
@@ -35,8 +35,19 @@ public class UIInventorySlot : MonoBehaviour
         }
     }
 
-    void OnMouseDrag()
+    private DraggableObject_Item draggedItem;
+    void OnMouseDown()
     {
-        Debug.Log($"Draggin'");
+        var pos = transform.position;
+        pos.z = -3f;
+        var item = GameObject.Instantiate(itemToSpawn, pos, Quaternion.identity);
+        var draggable = item.GetComponentInChildren<DraggableObject_Item>();
+        draggedItem = draggable;
+        draggable.SpawnFromInventory();
+    }
+
+    void OnMouseUp()
+    {
+        draggedItem.DropFromInventory();
     }
 }

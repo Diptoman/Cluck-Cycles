@@ -5,6 +5,7 @@ using PrimeTween;
 
 public class DraggableObject : MonoBehaviour
 {
+    public bool destroyIfNotInSlot;
     public GameObject Parent;
     public List<string> TargetSlotTag = new List<string>();
     public int AmountOfSlotsThisTakes = 1, AdditionalSlotsToReserve = 0;
@@ -15,7 +16,6 @@ public class DraggableObject : MonoBehaviour
 
     void Start()
     {
-
         Init();
     }
 
@@ -23,6 +23,16 @@ public class DraggableObject : MonoBehaviour
     {
         initialPosition = this.transform.position;
         initialScale = this.transform.localScale;
+    }
+
+    public void SpawnFromInventory()
+    {
+        OnMouseDown();
+    }
+
+    public void DropFromInventory()
+    {
+        OnMouseUp();
     }
 
     void Update()
@@ -37,6 +47,10 @@ public class DraggableObject : MonoBehaviour
             if (!isInSlot)
             {
                 Parent.transform.position = initialPosition;
+                if (destroyIfNotInSlot)
+                {
+                    GameObject.Destroy(this.gameObject);
+                }
             }
         }
     }
