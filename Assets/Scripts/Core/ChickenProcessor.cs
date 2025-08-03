@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using PrimeTween;
 using Unity.Burst.CompilerServices;
+using TMPro;
 
 public class ChickenProcessor : MonoBehaviour
 {
+    public TextMeshPro errorText;
     int currentLine = 0, currentLoopRemainingRepeat = 0, loopStartLine = 0;
     DraggableObject_Loop lastActiveLoop = null;
 
@@ -28,7 +30,24 @@ public class ChickenProcessor : MonoBehaviour
 
     void OnMouseDown()
     {
+        ShowError("");
         StartCoroutine(Process());
+    }
+
+    void ShowError(string text)
+    {
+        errorText.text = text;
+    }
+
+    void Reset()
+    {
+        currentLine = 0;
+        lastActiveLoop = null;
+        currentLoopRemainingRepeat = 0;
+        loopStartLine = 0;
+        SlotController.Instance.MarkSlot(currentLine);
+        CluckController.IsProcessing = false;
+        CluckController.ResetClucks();
     }
 
     IEnumerator Process()
@@ -36,13 +55,7 @@ public class ChickenProcessor : MonoBehaviour
         CluckController.IsProcessing = true;
         if (currentLine == 20)
         {
-            currentLine = 0;
-            lastActiveLoop = null;
-            currentLoopRemainingRepeat = 0;
-            loopStartLine = 0;
-            SlotController.Instance.MarkSlot(currentLine);
-            CluckController.IsProcessing = false;
-            CluckController.ResetClucks();
+            Reset();
             yield break;
         }
 
@@ -69,7 +82,9 @@ public class ChickenProcessor : MonoBehaviour
                 else
                 {
                     //Throw error if not enough clucks
-                    Debug.Log("Clucks needed " + clucksNeeded + " but we have " + CluckController.ClucksRemaining);
+                    ShowError("You need " + clucksNeeded + " clucks to run that loop but got " + CluckController.ClucksRemaining + "!");
+                    Reset();
+                    yield break;
                 }
             }
 

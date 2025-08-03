@@ -157,6 +157,6 @@ public class DraggableObject_Loop : DraggableObject
                 totalActions++;
         }
 
-        return totalActions * LoopCount;
+        return totalActions * GetLoopCount();
     }
 }
