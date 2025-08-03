@@ -29,11 +29,7 @@ public class UIController : MonoBehaviour
 
 
         //Test, remove later
-        InventoryController.SetItemCount(ItemType.Chicken, 23);
-        InventoryController.SetItemCount(ItemType.Egg, 18);
-        InventoryController.SetItemCount(ItemType.Rooster, 5);
-        InventoryController.SetItemCount(ItemType.Chick, 5);
-        InventoryController.SetItemCount(ItemType.Feed, 10);
+        InventoryController.SetItemCount(ItemType.Chicken, 1);
 
 
 
@@ -41,7 +37,7 @@ public class UIController : MonoBehaviour
 
 
         //More test stuff
-        Global.Money = 32;
+        Global.Money = 25;
     }
 
     // Update is called once per frame

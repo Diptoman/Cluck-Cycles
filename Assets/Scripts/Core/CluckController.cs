@@ -28,8 +28,8 @@ public class CluckController : MonoBehaviour
     }
     #endregion
 
-    public static int ClucksPerRun = 20;
-    public static int ClucksRemaining = 20;
+    public static int ClucksPerRun = 4;
+    public static int ClucksRemaining = 4;
     public static bool IsProcessing = false;
 
     public static void Process(ItemType item, Actions action)

@@ -149,6 +149,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 285491927577454533, guid: 09588861d506e1944bac5363e3546382, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 285491927577454533, guid: 09588861d506e1944bac5363e3546382, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 285491927577454533, guid: 09588861d506e1944bac5363e3546382, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5019608
+      objectReference: {fileID: 0}
     - target: {fileID: 390711035570861840, guid: 09588861d506e1944bac5363e3546382, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1008,6 +1020,7 @@ GameObject:
   - component: {fileID: 1259981558}
   - component: {fileID: 1259981557}
   - component: {fileID: 1259981561}
+  - component: {fileID: 1259981562}
   m_Layer: 0
   m_Name: CPU - Play
   m_TagString: Untagged
@@ -1169,6 +1182,19 @@ MonoBehaviour:
   errorText: {fileID: 370467712}
   PlayClip: {fileID: 8300000, guid: cb2f087d62b9ea04f98140535ed61b5f, type: 3}
   ErrorClip: {fileID: 8300000, guid: 24b3ced69652aa74a8d362499e0c43ad, type: 3}
+--- !u!114 &1259981562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259981556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Run your Chicken Processing Unit.
 --- !u!1 &1437021092 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 724378049896721564, guid: 09588861d506e1944bac5363e3546382, type: 3}

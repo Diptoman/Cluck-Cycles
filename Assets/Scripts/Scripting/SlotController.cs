@@ -56,6 +56,8 @@ public class SlotController : MonoBehaviour
 
         spawnedMarker = Instantiate(ProcessingLineMarkerPrefab, SlotObjects[0].transform.position + new Vector3(-2.2f, 0f, 0f), Quaternion.identity);
         spawnedMarker.Reset();
+
+        AddForLoop(1, 1);
     }
 
     void Update()
