@@ -189,6 +189,7 @@ public static class EventController
     //Default trigger
     public static void TriggerEvent(string eventName)
     {
+        Global.ProcessEvent(eventName);
         if (eventDictionary.TryGetValue(eventName, out var thisEvent))
         {
             thisEvent.Invoke();
@@ -209,6 +210,8 @@ public static class EventController
     //Int trigger
     public static void TriggerEvent(string eventName, int intVal)
     {
+        Global.ProcessEvent(eventName, intVal);
+
         //UnityEngine.Debug.Log($"Triggering event {eventName} with int value {intVal}");
 
         if (intEventDictionary.TryGetValue(eventName, out var thisEvent))
@@ -220,6 +223,8 @@ public static class EventController
     //Float trigger
     public static void TriggerEvent(string eventName, float floatVal)
     {
+        Global.ProcessEvent(eventName, 0, floatVal);
+
         if (floatEventDictionary.TryGetValue(eventName, out var thisEvent))
         {
             thisEvent.Invoke(floatVal);

@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
 
 public class UIShopSlot : MonoBehaviour
 {
@@ -17,7 +16,7 @@ public class UIShopSlot : MonoBehaviour
     {
         this.price = price;
         this.itemType = type;
-        priceText.SetText("$" + price);    
+        priceText.SetText("$" + price);
         slotSprite.sprite = Global.GetItemInfo(type).sprite;
     }
 
@@ -33,7 +32,7 @@ public class UIShopSlot : MonoBehaviour
             this.gameObject.SetActive(true);
         }
 
-        if (price <= Global.Money && itemType != ItemType.Invalid) 
+        if (price <= Global.Money && itemType != ItemType.Invalid)
         {
             floatAnim?.SetActive(true);
             floatAnimText?.SetActive(true);
@@ -52,5 +51,17 @@ public class UIShopSlot : MonoBehaviour
     void OnMouseDown()
     {
         Debug.Log($"TRY BUY");
+        if (Global.Money >= price)
+        {
+            Global.Money -= price;
+            RandomizeItem();
+        }
+        else
+            Debug.Log($"Buy failed");
+    }
+
+    void RandomizeItem()
+    {
+
     }
 }

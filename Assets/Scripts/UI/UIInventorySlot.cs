@@ -11,7 +11,6 @@ public class UIInventorySlot : MonoBehaviour
     public FloatAnimation floatAnimText;
     public TextMeshPro text;
     public Color activeTextColor;
-    public GameObject itemToSpawn;
 
     public void SetStackSize(int size)
     {
@@ -39,6 +38,7 @@ public class UIInventorySlot : MonoBehaviour
     {
         var pos = transform.position;
         pos.z = -3f;
+        var itemToSpawn = Global.GetItemInfo(itemType).draggableItem;
         var item = GameObject.Instantiate(itemToSpawn, pos, Quaternion.identity);
         var draggable = item.GetComponentInChildren<DraggableObject_Item>();
         draggedItem = draggable;

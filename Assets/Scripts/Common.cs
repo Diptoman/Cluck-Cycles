@@ -24,6 +24,18 @@ public static class Global
         }
         return result;
     }
+
+
+    public static void ProcessEvent(string type, int intVal = 0, float floatVal = 0)
+    {
+        switch (type)
+        {
+            case Consts.SELL_EVENT:
+                Global.Money += intVal;
+                break;
+        }
+        return;
+    }
 }
 
 [Serializable]
@@ -33,6 +45,7 @@ public struct ItemInfo
     public Sprite sprite;
     public int sellPrice;
     public int buyPrice;
+    public GameObject draggableItem;
 }
 
 

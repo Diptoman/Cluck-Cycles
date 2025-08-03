@@ -39,7 +39,7 @@ public class UIController : MonoBehaviour
 
 
         //More test stuff
-        Global.Money = 10;
+        Global.Money = 32;
 
         ShopController.SetItem(0, ItemType.Egg);
         ShopController.SetItem(1, ItemType.Chicken);
