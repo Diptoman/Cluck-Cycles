@@ -26,12 +26,12 @@ Transform:
   m_GameObject: {fileID: 473933777107640950}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.72, y: 1.69, z: -1}
+  m_LocalPosition: {x: 2.72, y: 1.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2198514972366843032}
-  m_Father: {fileID: 1874556513964388097}
+  m_Father: {fileID: 1466955636429055913}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1925324697949801282
 SpriteRenderer:
@@ -195,12 +195,12 @@ Transform:
   m_GameObject: {fileID: 1946971796616254257}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.185, y: -2.98, z: -1}
+  m_LocalPosition: {x: -1.185, y: -2.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6644045214582494566}
-  m_Father: {fileID: 1874556513964388097}
+  m_Father: {fileID: 1466955636429055913}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3884243754647788299
 SpriteRenderer:
@@ -760,6 +760,8 @@ Transform:
   - {fileID: 3203066716696892787}
   - {fileID: 8311874034355132092}
   - {fileID: 9205251085801931542}
+  - {fileID: 3562675659234468490}
+  - {fileID: 2393051781242651167}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8763597760824763750
@@ -994,9 +996,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3562675659234468490}
-  - {fileID: 2393051781242651167}
+  m_Children: []
   m_Father: {fileID: 1466955636429055913}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3534168428590768479
@@ -1146,6 +1146,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2198514972366843032}
     m_Modifications:
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2.3200002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.8000001
+      objectReference: {fileID: 0}
     - target: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_Name
       value: UI_InventorySlot (9)
@@ -1275,6 +1283,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2198514972366843032}
     m_Modifications:
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2.3200002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.8000001
+      objectReference: {fileID: 0}
     - target: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_Name
       value: UI_InventorySlot (6)
@@ -1412,6 +1428,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2198514972366843032}
     m_Modifications:
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2.3200002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.8000001
+      objectReference: {fileID: 0}
     - target: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_Name
       value: UI_InventorySlot (8)
@@ -1541,6 +1565,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2198514972366843032}
     m_Modifications:
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2.3200002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.8000001
+      objectReference: {fileID: 0}
     - target: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_Name
       value: UI_InventorySlot (4)
@@ -1678,6 +1710,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2198514972366843032}
     m_Modifications:
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2.3200002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.8000001
+      objectReference: {fileID: 0}
     - target: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_Name
       value: UI_InventorySlot (3)
@@ -1815,6 +1855,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2198514972366843032}
     m_Modifications:
+    - target: {fileID: 50533651473765055, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: weight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2.3200002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.8000001
+      objectReference: {fileID: 0}
     - target: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_Name
       value: UI_InventorySlot (2)
@@ -1976,6 +2028,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2198514972366843032}
     m_Modifications:
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2.3200002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.8000001
+      objectReference: {fileID: 0}
     - target: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_Name
       value: UI_InventorySlot (12)
@@ -2105,6 +2165,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2198514972366843032}
     m_Modifications:
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2.3200002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.8000001
+      objectReference: {fileID: 0}
     - target: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_Name
       value: UI_InventorySlot (14)
@@ -2234,6 +2302,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2198514972366843032}
     m_Modifications:
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2.3200002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.8000001
+      objectReference: {fileID: 0}
     - target: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_Name
       value: UI_InventorySlot (5)
@@ -2371,6 +2447,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2198514972366843032}
     m_Modifications:
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2.3200002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.8000001
+      objectReference: {fileID: 0}
     - target: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_Name
       value: UI_InventorySlot (1)
@@ -2390,50 +2474,6 @@ PrefabInstance:
     - target: {fileID: 2997617755734645316, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_Color.r
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3107512389871692308, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
-      propertyPath: OccupyColour.b
-      value: 0.7584905
-      objectReference: {fileID: 0}
-    - target: {fileID: 3107512389871692308, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
-      propertyPath: OccupyColour.g
-      value: 0.5000155
-      objectReference: {fileID: 0}
-    - target: {fileID: 3107512389871692308, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
-      propertyPath: OccupyColour.r
-      value: 0.31341398
-      objectReference: {fileID: 0}
-    - target: {fileID: 3107512389871692308, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
-      propertyPath: ReservedColour.b
-      value: 0.2049769
-      objectReference: {fileID: 0}
-    - target: {fileID: 3107512389871692308, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
-      propertyPath: ReservedColour.g
-      value: 0.16705582
-      objectReference: {fileID: 0}
-    - target: {fileID: 3107512389871692308, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
-      propertyPath: ReservedColour.r
-      value: 0.89433956
-      objectReference: {fileID: 0}
-    - target: {fileID: 3107512389871692308, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
-      propertyPath: HighlightColour.b
-      value: 0.5803922
-      objectReference: {fileID: 0}
-    - target: {fileID: 3107512389871692308, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
-      propertyPath: HighlightColour.g
-      value: 0.7960785
-      objectReference: {fileID: 0}
-    - target: {fileID: 3107512389871692308, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
-      propertyPath: HighlightColour.r
-      value: 0.41960788
-      objectReference: {fileID: 0}
-    - target: {fileID: 4219157798839797736, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 2.3200002
-      objectReference: {fileID: 0}
-    - target: {fileID: 4219157798839797736, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 1.8000001
       objectReference: {fileID: 0}
     - target: {fileID: 5016564010393796144, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2556,6 +2596,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2198514972366843032}
     m_Modifications:
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2.3200002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.8000001
+      objectReference: {fileID: 0}
     - target: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_Name
       value: UI_InventorySlot (13)
@@ -2685,6 +2733,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2198514972366843032}
     m_Modifications:
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2.3200002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.8000001
+      objectReference: {fileID: 0}
     - target: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_Name
       value: UI_InventorySlot (11)
@@ -2814,6 +2870,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2198514972366843032}
     m_Modifications:
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2.3200002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.8000001
+      objectReference: {fileID: 0}
     - target: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_Name
       value: UI_InventorySlot (15)
@@ -2943,6 +3007,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2198514972366843032}
     m_Modifications:
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2.3200002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.8000001
+      objectReference: {fileID: 0}
     - target: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_Name
       value: UI_InventorySlot (7)
@@ -3080,6 +3152,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2198514972366843032}
     m_Modifications:
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2.3200002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020908540548881506, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.8000001
+      objectReference: {fileID: 0}
     - target: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_Name
       value: UI_InventorySlot (10)
@@ -3219,7 +3299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 718442333298404738, guid: dfa8c0bfec11d454aa77d5fb2f036848, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5
+      value: -9
       objectReference: {fileID: 0}
     - target: {fileID: 718442333298404738, guid: dfa8c0bfec11d454aa77d5fb2f036848, type: 3}
       propertyPath: m_LocalRotation.w

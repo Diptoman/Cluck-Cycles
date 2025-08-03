@@ -7,4 +7,7 @@ public class UIControllerConfig : ScriptableObject
     public int columns;
     public Vector2 gridSize;
     public Vector2 gridPadding;
+
+    // Mouse Enter Animation
+    public MousePointAnimation.Config pointAnimConfig;
 }

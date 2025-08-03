@@ -14,6 +14,7 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        MousePointAnimation.config = config.pointAnimConfig;
         InitItems();
         ArrangeItems();
         InventoryController.Init(this);
@@ -28,6 +29,9 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+#if UNITY_EDITOR
+        MousePointAnimation.config = config.pointAnimConfig;
+#endif
         ArrangeItems();
     }
 
