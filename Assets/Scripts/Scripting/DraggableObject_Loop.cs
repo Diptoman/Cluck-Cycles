@@ -88,7 +88,7 @@ public class DraggableObject_Loop : DraggableObject
             }
 
             //Add original offset
-            Parent.transform.position = slot.transform.position + slot.SlotPlacementOffset;
+            Parent.transform.position = slot.transform.position + slot.SlotPlacementOffset + new Vector3(0f, 0f, -.1f);
 
             lastAssignedSlot = slot;
             currentSlot = slot;
@@ -112,6 +112,23 @@ public class DraggableObject_Loop : DraggableObject
                     itemList[i].SetCurrentSlot(null);
                 }
             }
+        }
+    }
+
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            CheckAndUnAssignSlot();
+            foreach(DraggableObject_Item item in itemList)
+            {
+                if (item != null)
+                {
+                    item.Cleanup();
+                }
+            }
+            UIController.Instance.tooltip.Hide();
+            Destroy(transform.parent.gameObject);
         }
     }
 

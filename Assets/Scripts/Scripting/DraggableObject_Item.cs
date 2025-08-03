@@ -203,4 +203,10 @@ public class DraggableObject_Item : DraggableObject
         FunctionContainer.ResetItemCount();
         FunctionContainer.SetUsableCount();
     }
+
+    public void Cleanup()
+    {
+        FunctionContainer.ResetItemCount();
+        Destroy(transform.parent.gameObject);
+    }
 }
