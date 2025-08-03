@@ -32,6 +32,8 @@ public class UIController : MonoBehaviour
         InventoryController.SetItemCount(ItemType.Chicken, 23);
         InventoryController.SetItemCount(ItemType.Egg, 18);
         InventoryController.SetItemCount(ItemType.Rooster, 5);
+        InventoryController.SetItemCount(ItemType.Chick, 5);
+        InventoryController.SetItemCount(ItemType.Feed, 10);
 
 
 

@@ -6,6 +6,7 @@ public static class Consts
     public const float TOOLTIP_TIME = 0.5f;
 
     public const string SELL_EVENT = "SellEvent";
+    public const string CPURESET_EVENT = "CPUReset";
 }
 
 public static class Global
@@ -73,5 +74,6 @@ public enum Actions
     Sell = 2,
     Fertilize = 3,
     Incubate = 4,
-    Cook = 5
+    Cook = 5,
+    Feed = 6
 }
