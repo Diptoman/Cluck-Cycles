@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class LoopItem_Chick : LoopItem
 {
+    public AudioClip CookClip;
+    public AudioClip FeedClip;
+
     public override void Process()
     {
         base.Process();
@@ -13,6 +16,7 @@ public class LoopItem_Chick : LoopItem
         {
             case Actions.Cook:
                 FunctionContainerRef.DoNotReset();
+                MusicController.Instance.PlaySFX(CookClip);
                 break;
 
             case Actions.Feed:
@@ -26,6 +30,7 @@ public class LoopItem_Chick : LoopItem
                     {
                         InventoryController.SetItemCount(ItemType.Rooster, InventoryController.GetItemCount(ItemType.Rooster) + 1);
                     }
+                    MusicController.Instance.PlaySFX(FeedClip);
                     InventoryController.SetItemCount(ItemType.Feed, InventoryController.GetItemCount(ItemType.Feed) - 1);
                 }
                 FunctionContainerRef.DoNotReset();

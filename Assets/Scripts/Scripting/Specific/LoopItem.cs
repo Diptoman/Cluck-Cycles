@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class LoopItem : MonoBehaviour
 {
     public FunctionContainer FunctionContainerRef;
+    public AudioClip sellClip;
     protected ItemType itemType;
     protected Actions action;
 
@@ -20,6 +21,7 @@ public class LoopItem : MonoBehaviour
             Debug.Log("Selling index " + (int)itemType + " " + itemType);
             EventController.TriggerEvent(Consts.SELL_EVENT, (int)itemType);
             FunctionContainerRef.DoNotReset();
+            MusicController.Instance.PlaySFX(sellClip);
         }
     }
 }

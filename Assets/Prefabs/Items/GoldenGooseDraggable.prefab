@@ -247,6 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FunctionContainerRef: {fileID: 4426040959017759120}
+  sellClip: {fileID: 8300000, guid: 2370518f95c9c7b4989ffad59c98b2a5, type: 3}
 --- !u!1001 &1442646765306432746
 PrefabInstance:
   m_ObjectHideFlags: 0

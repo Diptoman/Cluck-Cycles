@@ -5,10 +5,13 @@ using PrimeTween;
 using Unity.Burst.CompilerServices;
 using TMPro;
 using UnityEngine.Events;
+using UnityEditor.PackageManager;
 
 public class ChickenProcessor : MonoBehaviour
 {
     public TextMeshPro errorText;
+    public AudioClip PlayClip;
+    public AudioClip ErrorClip;
     int currentLine = 0, currentLoopRemainingRepeat = 0, loopStartLine = 0;
     DraggableObject_Loop lastActiveLoop = null;
 
@@ -52,6 +55,7 @@ public class ChickenProcessor : MonoBehaviour
         ShowError("");
         if (!CluckController.IsProcessing)
         {
+            MusicController.Instance.PlaySFX(PlayClip);
             StartCoroutine(Process());
         }
     }
@@ -59,6 +63,8 @@ public class ChickenProcessor : MonoBehaviour
     void ShowError(string text)
     {
         errorText.text = text;
+
+        MusicController.Instance.PlaySFX(ErrorClip, true);
     }
 
     void Reset()

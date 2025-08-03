@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LoopItem_Egg : LoopItem
 {
+    public AudioClip CookClip;
     public override void Process()
     {
         base.Process();
@@ -13,6 +14,7 @@ public class LoopItem_Egg : LoopItem
             case Actions.Cook:
                 InventoryController.SetItemCount(ItemType.Omelette, InventoryController.GetItemCount(ItemType.Omelette) + 1);
                 FunctionContainerRef.DoNotReset();
+                MusicController.Instance.PlaySFX(CookClip);
                 break;
         }
     }

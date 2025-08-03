@@ -201,6 +201,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FunctionContainerRef: {fileID: 1317486550499125558}
+  sellClip: {fileID: 8300000, guid: 67453d72dab5c8e4bb01a6857b812f6f, type: 3}
+  HarvestClip: {fileID: 8300000, guid: 6df931cc27212af4f97e33a8d4f4edc7, type: 3}
 --- !u!114 &1674543460477168770
 MonoBehaviour:
   m_ObjectHideFlags: 0

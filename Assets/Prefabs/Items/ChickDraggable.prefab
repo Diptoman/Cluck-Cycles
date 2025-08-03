@@ -201,6 +201,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FunctionContainerRef: {fileID: 1317486550499125558}
+  sellClip: {fileID: 8300000, guid: 2370518f95c9c7b4989ffad59c98b2a5, type: 3}
+  CookClip: {fileID: 8300000, guid: 858f58ad117858e46b6f8ba982b03c73, type: 3}
+  FeedClip: {fileID: 8300000, guid: 67453d72dab5c8e4bb01a6857b812f6f, type: 3}
 --- !u!114 &3165685869422914560
 MonoBehaviour:
   m_ObjectHideFlags: 0

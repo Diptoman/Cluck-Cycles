@@ -248,6 +248,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FunctionContainerRef: {fileID: 4426040959017759120}
+  sellClip: {fileID: 8300000, guid: 67453d72dab5c8e4bb01a6857b812f6f, type: 3}
+  CluckClip: {fileID: 8300000, guid: 8a2c258c23d1a9949bda67a5abdd6101, type: 3}
+  LayEggClip: {fileID: 8300000, guid: 1d8bd2fa50569ca45a0bf246525c2523, type: 3}
+  WowClip: {fileID: 8300000, guid: d54e603b1cd221a41866ea7e12d4e113, type: 3}
+  CookClip: {fileID: 8300000, guid: 858f58ad117858e46b6f8ba982b03c73, type: 3}
 --- !u!1001 &1442646765306432746
 PrefabInstance:
   m_ObjectHideFlags: 0

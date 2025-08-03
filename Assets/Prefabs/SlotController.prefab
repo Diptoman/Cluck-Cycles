@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5756274888339219680}
   - component: {fileID: 6535840967346013269}
+  - component: {fileID: 5498821178470436942}
   m_Layer: 0
   m_Name: SlotController
   m_TagString: Untagged
@@ -51,3 +52,20 @@ MonoBehaviour:
   ProcessingLineMarkerPrefab: {fileID: -443349224881249567, guid: cd325933e8e1b864d975f0aea987e132, type: 3}
   ForEachLoopPrefab: {fileID: 1865822346028437138, guid: e59a30af1f3a7b3458c1b0fdcd4f8a40, type: 3}
   ForLoopPrefab: {fileID: 6521287765876981274, guid: 9d8177bd656bdb141aff930d8ee6580f, type: 3}
+--- !u!114 &5498821178470436942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8393660225107190595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2436470cc862f6c40a8f9d08929c0f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicTracks:
+  - {fileID: 8300000, guid: f90091bf96758e7459f09437c8bcf437, type: 3}
+  - {fileID: 8300000, guid: a01a6d616ca28c34fa21b27755824a79, type: 3}
+  - {fileID: 8300000, guid: d4e70ae553e03394691630d44942ecdf, type: 3}
+  audioSource: {fileID: 0}

@@ -201,6 +201,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FunctionContainerRef: {fileID: 1317486550499125558}
+  sellClip: {fileID: 8300000, guid: 2370518f95c9c7b4989ffad59c98b2a5, type: 3}
+  CluckClip: {fileID: 8300000, guid: 5b83e57a9c0edcf4f82accde3d0c73c7, type: 3}
+  FertilizeClip: {fileID: 8300000, guid: 74326de2f62e4a4448ff4d980cccbb05, type: 3}
+  CookClip: {fileID: 8300000, guid: 858f58ad117858e46b6f8ba982b03c73, type: 3}
 --- !u!114 &7245786319788565549
 MonoBehaviour:
   m_ObjectHideFlags: 0
