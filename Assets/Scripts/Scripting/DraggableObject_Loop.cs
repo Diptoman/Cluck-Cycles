@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class DraggableObject_Loop : DraggableObject
 {
+    //Note(Pranjal): Fuck this for now, text formatting later
+    public const string LOOP_TEXT = "for<color=#F7D308>(</color><color=#F7D308>i</color> <color=#F7D308>=</color> 1 to $<color=#F7D308>)</color>";
     private List<DraggableObject_Item> itemList = new List<DraggableObject_Item>();
     private int maxLoop = 19;
     public int LoopCount = 5;

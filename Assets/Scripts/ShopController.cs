@@ -20,7 +20,7 @@ public class ShopController
 
         for (var i = 0; i < shopSlots.Length; i++)
         {
-            shopSlots[i].Setup(ItemType.Invalid, 0);
+            shopSlots[i].Setup(ItemType.Invalid);
         }
     }
 
@@ -31,12 +31,11 @@ public class ShopController
 
     public static int GetPrice(int index)
     {
-        return Instance.shopSlots[index].price;
+        return Instance.shopSlots[index].buyPrice;
     }
 
     public static void SetItem(int index, ItemType type)
     {
-        var price = Global.GetItemInfo(type).buyPrice;
-        Instance.shopSlots[index].Setup(type, price);
+        Instance.shopSlots[index].Setup(type);
     }
 }

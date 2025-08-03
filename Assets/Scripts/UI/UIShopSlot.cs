@@ -3,6 +3,7 @@ using TMPro;
 
 public class UIShopSlot : MonoBehaviour
 {
+    public bool isForLoop;
     public ItemType itemType;
     public Sprite sprite;
     public SpriteRenderer slotSprite;
@@ -10,14 +11,24 @@ public class UIShopSlot : MonoBehaviour
     public FloatAnimation floatAnimText;
     public TextMeshPro priceText;
     public Color activeTextColor;
-    public int price { get; private set; }
+    public int buyPrice { get; private set; }
 
-    public void Setup(ItemType type, int price)
+    public void Setup(ItemType type)
     {
-        this.price = price;
+        var info = Global.GetItemInfo(type);
+        this.buyPrice = info.buyPrice;
         this.itemType = type;
-        priceText.SetText("$" + price);
-        slotSprite.sprite = Global.GetItemInfo(type).sprite;
+        priceText.SetText("$" + buyPrice);
+        slotSprite.sprite = info.sprite;
+    }
+
+    public void Reroll(ItemType type)
+    {
+        var info = Global.GetItemInfo(type);
+        this.buyPrice = info.GetBuyPriceRandom();
+        this.itemType = type;
+        priceText.SetText("$" + buyPrice);
+        slotSprite.sprite = info.sprite;
     }
 
     public void Update()
@@ -32,7 +43,7 @@ public class UIShopSlot : MonoBehaviour
             this.gameObject.SetActive(true);
         }
 
-        if (price <= Global.Money && itemType != ItemType.Invalid)
+        if (buyPrice <= Global.Money && itemType != ItemType.Invalid)
         {
             floatAnim?.SetActive(true);
             floatAnimText?.SetActive(true);
@@ -51,19 +62,25 @@ public class UIShopSlot : MonoBehaviour
     void OnMouseDown()
     {
         Debug.Log($"TRY BUY");
-        if (Global.Money >= price)
+        if (Global.Money >= buyPrice)
         {
-            Global.Money -= price;
+            Global.Money -= buyPrice;
             var current = InventoryController.GetItemCount(itemType);
             InventoryController.SetItemCount(itemType, current + 1);
-            RandomizeItem();
+            ReRollItem();
         }
         else
             Debug.Log($"Buy failed");
     }
 
-    void RandomizeItem()
+    void ReRollItem()
     {
+        if (isForLoop)
+            return;
 
+        var num = Global.availableInShop.Length;
+        var next = UnityEngine.Random.Range(0, num);
+        var newType = Global.availableInShop[next];
+        Reroll(newType);
     }
 }

@@ -11,8 +11,17 @@ public static class Consts
 
 public static class Global
 {
+    public static readonly ItemType[] availableInShop =
+    {
+        ItemType.Chicken,
+        ItemType.Rooster,
+        ItemType.Feed,
+        ItemType.Egg
+     };
+
     public static int Money = 5;
     public static ItemInfo[] itemSprites;
+
 
     public static ItemInfo GetItemInfo(ItemType type)
     {
@@ -47,8 +56,17 @@ public struct ItemInfo
     public Sprite sprite;
     public int sellPrice;
     public int buyPrice;
+    public int buyPriceMax;
     public bool isTransient;
     public GameObject draggableItem;
+
+    public int GetBuyPriceRandom()
+    {
+        if (buyPriceMax <= buyPrice)
+            return buyPrice;
+
+        return UnityEngine.Random.Range(buyPrice, buyPriceMax + 1);
+    }
 }
 
 
