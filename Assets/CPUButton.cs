@@ -13,7 +13,8 @@ public class CPUButton : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log($"TRY BUY CPU");
+        if (CluckController.IsProcessing)
+            return;
 
         var buyPrice = Global.CPUPrice;
         if (Global.Money >= buyPrice)
@@ -25,7 +26,5 @@ public class CPUButton : MonoBehaviour
             CluckController.ResetClucks();
             // PUT CPU CYCLES EDITING CODE HERE
         }
-        else
-            Debug.Log($"Buy failed");
     }
 }

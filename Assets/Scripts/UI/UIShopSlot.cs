@@ -94,7 +94,9 @@ public class UIShopSlot : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log($"TRY BUY");
+        if (CluckController.IsProcessing)
+            return;
+
         if (Global.Money >= buyPrice)
         {
             Global.Money -= buyPrice;

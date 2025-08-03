@@ -54,6 +54,9 @@ public class UIInventorySlot : MonoBehaviour
     private DraggableObject_Item draggedItem;
     void OnMouseDown()
     {
+        if (CluckController.IsProcessing)
+            return;
+
         var pos = transform.position;
         pos.z = -3f;
         var itemToSpawn = Global.GetItemInfo(itemType).draggableItem;

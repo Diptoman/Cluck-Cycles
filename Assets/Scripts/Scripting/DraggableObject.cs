@@ -49,7 +49,7 @@ public class DraggableObject : MonoBehaviour
                 Parent.transform.position = initialPosition;
                 if (destroyIfNotInSlot)
                 {
-                    GameObject.Destroy(this.gameObject);
+                    GameObject.Destroy(this.Parent.gameObject);
                 }
             }
         }
@@ -57,6 +57,9 @@ public class DraggableObject : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (CluckController.IsProcessing)
+            return;
+
         //Diff between centre and clicked point on plane
         dragOffset = Parent.transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         isDragging = true;

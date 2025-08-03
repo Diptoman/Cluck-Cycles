@@ -28,6 +28,9 @@ public class FunctionSelector : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (CluckController.IsProcessing)
+            return;
+
         if (IsRight)
         {
             FunctionContainer.AddIndex(1);
