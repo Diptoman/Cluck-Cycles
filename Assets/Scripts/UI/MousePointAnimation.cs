@@ -73,7 +73,8 @@ public class MousePointAnimation : MonoBehaviour
 
     void Update()
     {
-        var canReset = isActive && Input.GetKeyDown(KeyCode.Mouse0);
+        var isMouseClicked =  Input.GetKeyDown(KeyCode.Mouse0) && !CluckController.IsProcessing;
+        var canReset = isActive && isMouseClicked;
         if (canReset)
         {
             dynamicWeight = 1.5f;

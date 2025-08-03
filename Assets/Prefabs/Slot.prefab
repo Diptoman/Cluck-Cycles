@@ -103,9 +103,9 @@ MonoBehaviour:
   SlotTag: LoopSlot
   SlotPlacementOffset: {x: -2, y: 0, z: 0}
   DefaultColour: {r: 0.12941177, g: 0.1254902, b: 0.12941177, a: 1}
-  HighlightColour: {r: 0.1981577, g: 0.37295386, b: 0.5754717, a: 1}
-  OccupyColour: {r: 0.12941177, g: 0.1254902, b: 0.12941177, a: 1}
-  ReservedColour: {r: 0.3504806, g: 0.41509432, b: 0.35116795, a: 1}
+  HighlightColour: {r: 0.229085, g: 0.4308168, b: 0.6226415, a: 1}
+  OccupyColour: {r: 0.14117648, g: 0.30980393, b: 0.46666667, a: 1}
+  ReservedColour: {r: 0.1254902, g: 0.15294118, b: 0.1882353, a: 1}
   SlotNumText: {fileID: 5583751876190197357}
 --- !u!61 &3208253344483297185
 BoxCollider2D:
