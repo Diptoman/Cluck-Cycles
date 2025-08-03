@@ -59,19 +59,6 @@ public class SlotController : MonoBehaviour
         AddForLoop(1, 3);
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            AddForLoop(1, 2);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            AddForLoop(2, 5);
-        }
-    }
-
     public void SetSlotStatus(int num, SlotState state, int slotAmount = 1)
     {
         for (int i = num; i < num + slotAmount; i++)

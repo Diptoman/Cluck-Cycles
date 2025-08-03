@@ -951,10 +951,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2526589232682757159, guid: aa9bce09738483f4ba290a7ccb69c731, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526589232682757159, guid: aa9bce09738483f4ba290a7ccb69c731, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 3b2db456d7a887946bf7a4cc8d912a7e, type: 2}
+    - target: {fileID: 2526589232682757159, guid: aa9bce09738483f4ba290a7ccb69c731, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 414090230141198574, guid: 3b2db456d7a887946bf7a4cc8d912a7e, type: 2}
+    - target: {fileID: 2526589232682757159, guid: aa9bce09738483f4ba290a7ccb69c731, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5282772426409483697, guid: aa9bce09738483f4ba290a7ccb69c731, type: 3}
       propertyPath: m_Name
       value: Top
       objectReference: {fileID: 0}
+    - target: {fileID: 6595582557729407827, guid: aa9bce09738483f4ba290a7ccb69c731, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 414090230141198574, guid: 3b2db456d7a887946bf7a4cc8d912a7e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

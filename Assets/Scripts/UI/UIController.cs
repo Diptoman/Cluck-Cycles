@@ -29,7 +29,7 @@ public class UIController : MonoBehaviour
 
 
         //Test, remove later
-        InventoryController.SetItemCount(ItemType.Chicken, 3);
+        InventoryController.SetItemCount(ItemType.Chicken, 4);
 
 
 
