@@ -22,6 +22,7 @@ public class CPUButton : MonoBehaviour
             Global.CPUPrice += 1;
             CluckController.ClucksPerRun += 2;
             tooltip.text = tooltipText + Global.CPUPrice;
+            CluckController.ResetClucks();
             // PUT CPU CYCLES EDITING CODE HERE
         }
         else
