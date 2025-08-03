@@ -4,6 +4,7 @@ using UnityEngine;
 using PrimeTween;
 using Unity.Burst.CompilerServices;
 using TMPro;
+using UnityEngine.Events;
 
 public class ChickenProcessor : MonoBehaviour
 {
@@ -48,6 +49,7 @@ public class ChickenProcessor : MonoBehaviour
         SlotController.Instance.MarkSlot(currentLine);
         CluckController.IsProcessing = false;
         CluckController.ResetClucks();
+        EventController.TriggerEvent("CPUReset");
     }
 
     IEnumerator Process()

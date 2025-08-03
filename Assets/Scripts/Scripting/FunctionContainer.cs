@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEditor.Experimental.GraphView;
+using UnityEngine.Events;
 
 public class FunctionContainer : MonoBehaviour
 {
@@ -17,17 +18,32 @@ public class FunctionContainer : MonoBehaviour
     public TextMeshPro XText;
     public int currentIndex = 0;
     public int ItemInLoopAmount = 1;
+    private int OriginalItemInLoopAmount = 1;
+
+    UnityAction resetListener;
+
 
     void Start()
     {
         TextField.text = Functions[0].ToString() + "()";
         ShowSelector(false);
+
+        //Bind to boss death
+        resetListener = new UnityAction(OnReset);
+        EventController.StartListening("CPUReset", resetListener);
+
+    }
+
+    public void OnReset()
+    {
+        ItemInLoopAmount = OriginalItemInLoopAmount;
+        AmountText.text = ItemInLoopAmount.ToString();
     }
 
     void Update()
     {
         //Architecture fucked lmao
-        DraggableObject_Loop loop = DraggerRef.GetLoopReference();
+        /*DraggableObject_Loop loop = DraggerRef.GetLoopReference();
         if (loop != null)
         {
             if (!CluckController.IsProcessing)
@@ -39,6 +55,12 @@ public class FunctionContainer : MonoBehaviour
         {
             ItemInLoopAmount = 0;
         }
+        AmountText.text = ItemInLoopAmount.ToString();*/
+    }
+
+    public void DecrementItemCount()
+    {
+        ItemInLoopAmount--;
         AmountText.text = ItemInLoopAmount.ToString();
     }
 
@@ -66,6 +88,21 @@ public class FunctionContainer : MonoBehaviour
     public Actions GetSelectedAction()
     {
         return Functions[currentIndex];
+    }
+
+    public void SetUsableCount()
+    {
+        DraggableObject_Loop loop = DraggerRef.GetLoopReference();
+        ItemInLoopAmount = Mathf.Min(loop.GetLoopCount(), InventoryController.GetItemCount(itemType));
+        OriginalItemInLoopAmount = ItemInLoopAmount;
+        InventoryController.SetItemCount(itemType, InventoryController.GetItemCount(itemType) - ItemInLoopAmount);
+        AmountText.text = ItemInLoopAmount.ToString();
+    }
+
+    public void ResetItemCount()
+    {
+        InventoryController.SetItemCount(itemType, InventoryController.GetItemCount(itemType) + OriginalItemInLoopAmount);
+        ItemInLoopAmount = 0;
     }
 }
 

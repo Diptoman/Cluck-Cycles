@@ -126,6 +126,13 @@ public class DraggableObject_Loop : DraggableObject
     public void SetForEachAttachedItem(DraggableObject_Item item)
     {
         forEachAttachedItem = item;
+        foreach (DraggableObject_Item attachedItem in itemList)
+        {
+            if (attachedItem != null)
+            {
+                attachedItem.ResetItemCount();
+            }
+        }
     }
 
     public void SetLoopCount(int count)

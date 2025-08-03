@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Common;
 using PrimeTween;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DraggableObject_Item : DraggableObject
 {
@@ -97,7 +98,8 @@ public class DraggableObject_Item : DraggableObject
                 Parent.transform.SetParent(SlotController.Instance.GetLoopReference(slot.GetSlotNumber()).transform.parent);
                 SlotController.Instance.GetLoopReference(slot.GetSlotNumber()).SetActiveItem(slot.GetSlotNumber(), this); //Add this to loop
 
-                currentSlot = slot;
+                SetCurrentSlot(slot);
+                FunctionContainer.SetUsableCount();
 
                 FunctionContainer.ShowSelector(true);
             }
@@ -126,6 +128,7 @@ public class DraggableObject_Item : DraggableObject
         {
             if (currentSlot.SlotTag == "LoopSlot")
             {
+                FunctionContainer.ResetItemCount();
                 SlotController.Instance.GetLoopReference(currentSlot.GetSlotNumber()).SetActiveItem(currentSlot.GetSlotNumber(), null); //Remove this from loop
                 SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Reserved, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
 
@@ -135,7 +138,7 @@ public class DraggableObject_Item : DraggableObject
             if (currentSlot.SlotTag == "ForEachSlot")
             {
                 currentSlot.SetState(SlotState.Unoccupied);
-                currentSlot.transform.parent.GetComponent<DraggableObject_Loop>().SetForEachAttachedItem(null);
+                currentSlot.transform.parent.GetComponent<DraggerPointer>().DraggerRef.SetForEachAttachedItem(null);
             }
         }
     }
@@ -187,11 +190,17 @@ public class DraggableObject_Item : DraggableObject
 
     public void DecrementItemInLoop()
     {
-        FunctionContainer.ItemInLoopAmount--;
+        FunctionContainer.DecrementItemCount();
     }
 
     public int GetItemsInLoopRemaining()
     {
         return FunctionContainer.ItemInLoopAmount;
+    }
+
+    public void ResetItemCount()
+    {
+        FunctionContainer.ResetItemCount();
+        FunctionContainer.SetUsableCount();
     }
 }
