@@ -31,9 +31,9 @@ public static class Global
      };
 
     public static int Money = 5;
+    public static int CPUPrice = 20;
+
     public static ItemInfo[] itemSprites;
-
-
     public static ItemInfo GetItemInfo(ItemType type)
     {
         ItemInfo result = itemSprites[0];

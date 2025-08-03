@@ -16,6 +16,7 @@ public class TextUpdater : MonoBehaviour
     {
         UpdateMoney();
         UpdateClucks();
+        UpdateCPUSpeed();
     }
 
     private void UpdateMoney()
@@ -38,6 +39,20 @@ public class TextUpdater : MonoBehaviour
         lastClucksRemaining = CluckController.ClucksRemaining;
         clucksRemainingText.text = lastClucksRemaining.ToString();
         var anim = clucksRemainingText.GetComponent<QuickAnimation>();
+
+        if (anim != null)
+            anim.Trigger();
+    }
+
+    private void UpdateCPUSpeed()
+    {
+        if (CluckController.ClucksPerRun == lastCpuSpeed || cpuSpeed == null)
+            return;
+
+        lastCpuSpeed = CluckController.ClucksPerRun;
+        cpuSpeed.text = lastCpuSpeed + "M";
+
+        var anim = cpuSpeed.GetComponent<QuickAnimation>();
 
         if (anim != null)
             anim.Trigger();

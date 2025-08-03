@@ -4,6 +4,7 @@ using UnityEngine;
 public class TooltipBox : MonoBehaviour
 {
     public Vector2 offset;
+    public Vector2 screenBounds;
     public float onSpeed;
     public float offSpeed;
     public Vector2 animOffset;
@@ -17,7 +18,18 @@ public class TooltipBox : MonoBehaviour
     public void Show(string tooltip, Vector2 position)
     {
         var boxSize = box.size;
-        currentPos = position + boxSize * 0.5f + offset;
+        currentPos = position;// + boxSize * 0.5f + offset;
+
+        // if (currentPos.y > screenBounds.y)
+        //     currentPos.y = screenBounds.y;
+        // else if(currentPos.y < -screenBounds.y)
+        //     currentPos.y = -screenBounds.y;
+        
+        // if (currentPos.x > screenBounds.x)
+        //     currentPos.x = screenBounds.x;
+        // else if(currentPos.x < -screenBounds.x)
+        //     currentPos.x = -screenBounds.x;
+
         transform.SetPosXY(currentPos);
         targetWeight = 1;
         text.SetText(tooltip);

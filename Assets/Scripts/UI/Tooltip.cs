@@ -61,8 +61,8 @@ public class Tooltip : MonoBehaviour
             return;
 
         isVisible = true;
-
-        UIController.Instance.tooltip.Show(text, transform.position);
+        var pos = Camera.main.ScreenToWorldPoint(state.mousePosition);
+        UIController.Instance.tooltip.Show(text, pos);
     }
 
     private void Hide()

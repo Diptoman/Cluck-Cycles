@@ -1,4 +1,5 @@
 using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class MousePointAnimation : MonoBehaviour
@@ -15,7 +16,12 @@ public class MousePointAnimation : MonoBehaviour
         public Vector3 scale;
     }
 
-    public static Config config;
+    public static Config globalConfig;
+    public Config config => isCustom? customConfig : globalConfig;
+
+    public bool isCustom;
+    [ShowIf("isCustom")]
+    public Config customConfig;
     public Transform target;
     public float reduceIdleWeight = 0.25f;
     public FloatAnimation idleAnim;

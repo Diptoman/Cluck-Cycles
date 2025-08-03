@@ -40,7 +40,7 @@ public class QuickAnimation : MonoBehaviour
 
     void Update()
     {
-        var config = MousePointAnimation.config;
+        var config = MousePointAnimation.globalConfig;
 
         if (isActive)
             enterTimer += Time.deltaTime;

@@ -11,12 +11,12 @@ public class FloatAnimation : MonoBehaviour
 
     public Vector3 posSpeed;
     public Vector3 posAmount;
-    
+
     [NonSerialized]
     public float weight = 1f;
     private float randomStart;
 
-    public bool isActive { get; private set; }
+    public bool isActive;
 
     // Start is called before the first frame update
     void Start()

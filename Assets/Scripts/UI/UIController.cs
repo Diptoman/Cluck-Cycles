@@ -19,7 +19,7 @@ public class UIController : MonoBehaviour
     {
         Global.itemSprites = config.itemSprites;
 
-        MousePointAnimation.config = config.pointAnimConfig;
+        MousePointAnimation.globalConfig = config.pointAnimConfig;
         InitItems();
         ArrangeItems();
         InventoryController.Init(this);
@@ -44,7 +44,7 @@ public class UIController : MonoBehaviour
     void Update()
     {
 #if UNITY_EDITOR
-        MousePointAnimation.config = config.pointAnimConfig;
+        MousePointAnimation.globalConfig = config.pointAnimConfig;
 #endif
         ArrangeItems();
     }
