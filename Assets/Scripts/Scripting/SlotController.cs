@@ -14,7 +14,6 @@ public class SlotController : MonoBehaviour
         {
             Debug.Log($"Init instance of Slot controller");
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {

@@ -18,7 +18,6 @@ public class LoopItem : MonoBehaviour
 
         if (action == Actions.Sell)
         {
-            Debug.Log("Selling index " + (int)itemType + " " + itemType);
             EventController.TriggerEvent(Consts.SELL_EVENT, (int)itemType);
             FunctionContainerRef.DoNotReset();
             MusicController.Instance.PlaySFX(sellClip);

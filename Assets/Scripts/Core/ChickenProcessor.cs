@@ -84,7 +84,7 @@ public class ChickenProcessor : MonoBehaviour
         }
     }
 
-    void ShowError(string text)
+    public void ShowError(string text)
     {
         errorText.text = text;
 
