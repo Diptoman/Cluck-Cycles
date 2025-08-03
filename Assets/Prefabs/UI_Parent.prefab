@@ -4885,11 +4885,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7656733215602032278, guid: dfa8c0bfec11d454aa77d5fb2f036848, type: 3}
       propertyPath: screenBounds.x
-      value: 7
+      value: 7.2
       objectReference: {fileID: 0}
     - target: {fileID: 7656733215602032278, guid: dfa8c0bfec11d454aa77d5fb2f036848, type: 3}
       propertyPath: screenBounds.y
-      value: 4
+      value: 4.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
