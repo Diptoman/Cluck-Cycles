@@ -47,6 +47,7 @@ public struct ItemInfo
     public Sprite sprite;
     public int sellPrice;
     public int buyPrice;
+    public bool isTransient;
     public GameObject draggableItem;
 }
 

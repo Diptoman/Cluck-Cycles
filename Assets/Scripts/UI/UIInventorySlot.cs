@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class UIInventorySlot : MonoBehaviour
 {
@@ -11,6 +12,23 @@ public class UIInventorySlot : MonoBehaviour
     public FloatAnimation floatAnimText;
     public TextMeshPro text;
     public Color activeTextColor;
+
+    UnityAction resetListener;
+
+    void Start()
+    {
+        //Bind to Reset
+        resetListener = new UnityAction(OnReset);
+        EventController.StartListening("CPUReset", resetListener);
+    }
+
+    public void OnReset()
+    {
+        if (Global.GetItemInfo(itemType).isTransient)
+        {
+            SetStackSize(0);
+        }
+    }
 
     public void SetStackSize(int size)
     {
