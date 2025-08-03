@@ -181,6 +181,7 @@ MonoBehaviour:
   initialScale: {x: 0, y: 0, z: 0}
   currentSlot: {fileID: 0}
   lastAssignedSlot: {fileID: 0}
+  isForEach: 0
 --- !u!1 &7424895015595475681
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,6 +191,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3280453146926135076}
+  - component: {fileID: 6521287765876981274}
   m_Layer: 0
   m_Name: ForLoop
   m_TagString: Untagged
@@ -214,6 +216,19 @@ Transform:
   - {fileID: 4317615031364953125}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6521287765876981274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7424895015595475681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c4f6eabb962dbd4d9949f00c958e1a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DraggerRef: {fileID: 8276297409921709250}
 --- !u!1 &9122912760720333648
 GameObject:
   m_ObjectHideFlags: 0

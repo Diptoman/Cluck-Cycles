@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 8880534058255550847}
   - component: {fileID: 6463083933678846330}
   - component: {fileID: 1974408324323928189}
+  - component: {fileID: 8479300223599908159}
   m_Layer: 0
   m_Name: Dragger
   m_TagString: Untagged
@@ -218,6 +219,7 @@ MonoBehaviour:
   lastAssignedSlot: {fileID: 0}
   InsideLoopOffset: {x: 1.5, y: 0, z: 0}
   FunctionContainer: {fileID: 4426040959017759120}
+  itemType: 0
 --- !u!114 &1974408324323928189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +233,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: This is a very nice chicken. It can generate clucks or lay eggs.
+--- !u!114 &8479300223599908159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771257920729471803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db39b06f271268d44aaad16b2358e05b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FunctionContainerRef: {fileID: 4426040959017759120}
 --- !u!1001 &1442646765306432746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -257,15 +272,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
       propertyPath: Functions.Array.data[0]
-      value: Cluck()
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
       propertyPath: Functions.Array.data[1]
-      value: LayEggs()
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
       propertyPath: Functions.Array.data[2]
-      value: Sell()
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6224152527533836266, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
       propertyPath: m_LocalPosition.y

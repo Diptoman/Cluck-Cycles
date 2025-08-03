@@ -6,6 +6,9 @@ public class DraggableObject_Loop : DraggableObject
 {
     private List<DraggableObject_Item> itemList = new List<DraggableObject_Item>();
     private int maxLoop = 19;
+    private int LoopCount = 5;
+    public bool isForEach = false;
+    private DraggableObject_Item forEachAttachedItem;
 
     protected override void Init()
     {
@@ -106,5 +109,42 @@ public class DraggableObject_Loop : DraggableObject
         int index = globalSlotNum - currentSlotNum;
 
         itemList[index] = item;
+    }
+
+    public DraggableObject_Item GetItem(int lineInLoop)
+    {
+        return itemList[lineInLoop];
+    }
+
+    public void SetForEachAttachedItem(DraggableObject_Item item)
+    {
+        forEachAttachedItem = item;
+    }
+
+    public void SetLoopCount(int count)
+    {
+        //Set, check if free etc.
+    }
+
+    public int GetLoopCount()
+    {
+        if (!isForEach)
+            return LoopCount;
+        else
+        {
+            return InventoryController.GetItemCount(forEachAttachedItem.itemType);
+        }
+    }
+
+    public int GetCluckCount()
+    {
+        int totalActions = 0;
+        foreach (DraggableObject_Item item in itemList)
+        {
+            if (item != null)
+                totalActions++;
+        }
+
+        return totalActions * LoopCount;
     }
 }

@@ -6,7 +6,8 @@ using TMPro;
 
 public class FunctionContainer : MonoBehaviour
 {
-    public List<String> Functions = new List<string>();
+    public ItemType itemType;
+    public List<Actions> Functions = new List<Actions>();
     public TextMeshPro TextField;
     public FunctionSelector LeftSelector;
     public FunctionSelector RightSelector;
@@ -14,7 +15,7 @@ public class FunctionContainer : MonoBehaviour
 
     void Start()
     {
-        TextField.text = Functions[0];
+        TextField.text = Functions[0].ToString() + "()";
         ShowSelector(false);
     }
 
@@ -22,7 +23,7 @@ public class FunctionContainer : MonoBehaviour
     {
         currentIndex += num;
         currentIndex = Mathf.Clamp(currentIndex, 0, Functions.Count - 1);
-        TextField.text = Functions[currentIndex];
+        TextField.text = Functions[currentIndex].ToString() + "()";
     }
 
     public void ShowSelector(bool show)
@@ -31,4 +32,24 @@ public class FunctionContainer : MonoBehaviour
         LeftSelector.gameObject.SetActive(show);
         RightSelector.gameObject.SetActive(show);
     }
+
+    public ItemType GetSelectedItemType()
+    {
+        return itemType;
+    }
+
+    public Actions GetSelectedAction()
+    {
+        return Functions[currentIndex];
+    }
+}
+
+public enum Actions
+{
+    Cluck,
+    LayEggs,
+    Sell,
+    Fertilize,
+    Incubate,
+    Cook
 }

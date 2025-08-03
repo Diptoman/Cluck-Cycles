@@ -1,0 +1,120 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using PrimeTween;
+
+public class ChickenProcessor : MonoBehaviour
+{
+    int currentLine = 0, currentLoopRemainingRepeat = 0, loopStartLine = 0;
+    DraggableObject_Loop lastActiveLoop = null;
+
+    Vector3 initialScale;
+
+    void Start()
+    {
+        initialScale = this.transform.localScale;
+    }
+
+    void OnMouseEnter()
+    {
+        Tween.Scale(this.transform, initialScale * 1.2f, .25f);
+    }
+
+    void OnMouseExit()
+    {
+        Tween.Scale(this.transform, initialScale, .25f);
+    }
+
+    void OnMouseDown()
+    {
+        StartCoroutine(Process());
+    }
+
+    IEnumerator Process()
+    {
+        if (currentLine == 20)
+        {
+            currentLine = 0;
+            lastActiveLoop = null;
+            currentLoopRemainingRepeat = 0;
+            loopStartLine = 0;
+            SlotController.Instance.MarkSlot(currentLine);
+            yield break;
+        }
+
+        SlotController.Instance.MarkSlot(currentLine);
+
+        DraggableObject_Loop loop = SlotController.Instance.GetLoopReference(currentLine);
+        if (loop != null)
+        {
+            if (loop != lastActiveLoop) //New loop
+            {
+                lastActiveLoop = loop;
+                currentLoopRemainingRepeat = loop.GetLoopCount() - 1;
+                int clucksNeeded = loop.GetCluckCount();
+
+                //Check clucks needed
+                if (clucksNeeded <= CluckController.ClucksRemaining)
+                {
+                    CluckController.ClucksRemaining -= clucksNeeded;
+                    loopStartLine = currentLine + 1;
+                }
+                else
+                {
+                    //Throw error if not enough clucks
+                }
+            }
+
+            //Process this line
+            int itemIndex = currentLine - loopStartLine; //Relative pos of the item
+            if (itemIndex >= 0)
+            {
+                DraggableObject_Item item = loop.GetItem(itemIndex + 1); //Get the item, only if this isn't the loop header
+                if (item != null)
+                {
+                    item.Process();
+                }
+            }
+
+        }
+
+        //Set time to wait
+        float holdSpeed = .25f;
+        if (loop == null)
+        {
+            holdSpeed = .05f;
+        }
+
+        yield return new WaitForSeconds(holdSpeed);
+
+        //If next line is empty or another loop, check if we need to go back to the current loop
+        DraggableObject_Loop nextLineLoop = null;
+        if (currentLine < 19)
+        {
+            nextLineLoop = SlotController.Instance.GetLoopReference(currentLine + 1);
+        }
+
+
+        if (nextLineLoop == loop && loop != null) //Same loop
+        {
+            currentLine++;
+        }
+
+        if (nextLineLoop == null || nextLineLoop != loop) //If empty, or different loop
+        {
+            if (currentLoopRemainingRepeat > 0) //Do we need to repeat this loop?
+            {
+                currentLoopRemainingRepeat--;
+                currentLine = loopStartLine;
+            }
+            else
+            {
+                currentLine++; //Go to next line
+            }
+        }
+
+        StartCoroutine(Process());
+        yield break;
+    }
+
+}

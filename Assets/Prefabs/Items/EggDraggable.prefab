@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5331530056391427466}
   - component: {fileID: 2725664481091053653}
   - component: {fileID: 2790509242985909207}
+  - component: {fileID: 2129289581441100672}
   m_Layer: 0
   m_Name: Dragger
   m_TagString: Untagged
@@ -123,7 +124,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.14, y: 1.51}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1.14, y: 1.51}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -184,6 +185,20 @@ MonoBehaviour:
   lastAssignedSlot: {fileID: 0}
   InsideLoopOffset: {x: 1.5, y: 0, z: 0}
   FunctionContainer: {fileID: 1317486550499125558}
+  itemType: 1
+--- !u!114 &2129289581441100672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632640012603970015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb82986ff19af741a3d37550ff76408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FunctionContainerRef: {fileID: 1317486550499125558}
 --- !u!1 &5697291400538201252
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,15 +250,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
       propertyPath: Functions.Array.data[0]
-      value: Incubate()
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
       propertyPath: Functions.Array.data[1]
-      value: Sell()
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
       propertyPath: Functions.Array.data[2]
-      value: Fry()
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8552009118422752429, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
       propertyPath: m_LocalPosition.x

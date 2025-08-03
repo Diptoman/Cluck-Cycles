@@ -33,6 +33,8 @@ public class SlotController : MonoBehaviour
     public Vector3 StartLocation;
     public float SlotGap = .6f;
     public int numSlots = 20;
+    public ProcessingLine ProcessingLineMarkerPrefab;
+    private ProcessingLine spawnedMarker;
 
     private Dictionary<int, SlotState> SlotStates = new Dictionary<int, SlotState>();
     private Dictionary<int, SlotObject> SlotObjects = new Dictionary<int, SlotObject>();
@@ -47,7 +49,11 @@ public class SlotController : MonoBehaviour
             slot.Init(i);
             SlotStates[i] = SlotState.Unoccupied;
             SlotObjects[i] = slot;
+            LoopReference[i] = null;
         }
+
+        spawnedMarker = Instantiate(ProcessingLineMarkerPrefab, SlotObjects[0].transform.position + new Vector3(-2.2f, 0f, 0f), Quaternion.identity);
+        spawnedMarker.Reset();
     }
 
     public void SetSlotStatus(int num, SlotState state, int slotAmount = 1)
@@ -122,5 +128,11 @@ public class SlotController : MonoBehaviour
     public SlotObject GetSlotReference(int index)
     {
         return SlotObjects[index];
+    }
+
+    public void MarkSlot(int slotNum)
+    {
+        spawnedMarker.transform.position = SlotObjects[slotNum].transform.position + new Vector3(-2.2f, 0f, 0f);
+        spawnedMarker.Reset();
     }
 }

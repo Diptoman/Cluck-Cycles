@@ -8,6 +8,7 @@ public class DraggableObject_Item : DraggableObject
 {
     public Vector3 InsideLoopOffset = new Vector3(2f, 0f, 0f);
     public FunctionContainer FunctionContainer;
+    public ItemType itemType;
 
     protected override void CheckAndHighlightSlot(SlotObject slotObj)
     {
@@ -105,11 +106,13 @@ public class DraggableObject_Item : DraggableObject
         if (slot.SlotTag == "ForEachSlot")
         {
             isInSlot = true;
-            slot.SetState(SlotState.Highlighted);
+            slot.SetState(SlotState.Occupied);
 
             //Add original offset
             Parent.transform.position = slot.transform.position + slot.SlotPlacementOffset + new Vector3(0f, 0f, -.2f);
             Parent.transform.SetParent(slot.transform.parent);
+
+            slot.transform.parent.GetComponent<DraggerPointer>().DraggerRef.SetForEachAttachedItem(this);
 
             currentSlot = slot;
         }
@@ -132,6 +135,7 @@ public class DraggableObject_Item : DraggableObject
             if (currentSlot.SlotTag == "ForEachSlot")
             {
                 currentSlot.SetState(SlotState.Unoccupied);
+                currentSlot.transform.parent.GetComponent<DraggableObject_Loop>().SetForEachAttachedItem(null);
             }
         }
     }
@@ -163,5 +167,10 @@ public class DraggableObject_Item : DraggableObject
             }
             Parent.transform.SetParent(SlotController.Instance.GetLoopReference(slot.GetSlotNumber()).transform.parent);
         }*/
+    }
+
+    public void Process()
+    {
+        this.gameObject.GetComponent<LoopItem>().Process();
     }
 }
