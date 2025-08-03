@@ -17,70 +17,91 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 52fb28067b6c6de48a463af98cef63ee, type: 3}
     sellPrice: 0
     buyPrice: 0
-    isTransient: 0
     buyPriceMax: 0
+    isTransient: 0
     draggableItem: {fileID: 0}
   - type: 0
     sprite: {fileID: 21300000, guid: ef734e3e696dd5a40a6dfcdeb1bd5087, type: 3}
     sellPrice: 5
     buyPrice: 20
-    isTransient: 0
     buyPriceMax: 26
+    isTransient: 0
     draggableItem: {fileID: 938684619333870840, guid: a1e1cbf860730604697db7fa66ac92b5, type: 3}
   - type: 1
     sprite: {fileID: 21300000, guid: 56385e4f68f29f147ad66effccdd81be, type: 3}
     sellPrice: 1
     buyPrice: 5
-    isTransient: 0
     buyPriceMax: 9
+    isTransient: 0
     draggableItem: {fileID: 5697291400538201252, guid: ff4064aac279d0f4ba8bef7aef72fdc4, type: 3}
   - type: 2
     sprite: {fileID: 21300000, guid: 995ace15d09fc9a4d94af9bc5c9fdbc1, type: 3}
     sellPrice: 10
     buyPrice: 50
-    isTransient: 0
     buyPriceMax: 65
+    isTransient: 0
     draggableItem: {fileID: 5697291400538201252, guid: 5b7842f836a5e73439e4d8aeb3c352ff, type: 3}
   - type: 3
     sprite: {fileID: 21300000, guid: 178877f8dc9ade44aa28cc36e5abcb70, type: 3}
     sellPrice: 1
     buyPrice: 2
+    buyPriceMax: 5
     isTransient: 0
     draggableItem: {fileID: 5697291400538201252, guid: 45bcc459d367de94cb8595611c7b51cd, type: 3}
-    buyPriceMax: 5
-    draggableItem: {fileID: 0}
   - type: 4
     sprite: {fileID: 21300000, guid: 934b0b245f976f9468c8b64e149a6c57, type: 3}
     sellPrice: 1
     buyPrice: 2
+    buyPriceMax: 3
     isTransient: 0
     draggableItem: {fileID: 5697291400538201252, guid: 346ad587451c8fa4298f6e3a99826fd5, type: 3}
-    buyPriceMax: 3
-    draggableItem: {fileID: 0}
   - type: 5
     sprite: {fileID: 21300000, guid: e75c5be58fa8e63418f589338bde5d04, type: 3}
     sellPrice: 1
     buyPrice: 10
+    buyPriceMax: 0
     isTransient: 0
     draggableItem: {fileID: 5697291400538201252, guid: cd0d7fa0e1577684f96467921e6d378d, type: 3}
-    buyPriceMax: 0
-    draggableItem: {fileID: 0}
   - type: 6
     sprite: {fileID: 21300000, guid: f714102a40f8eb446ad7ea69a78ee6f7, type: 3}
     sellPrice: 2
     buyPrice: 5
     buyPriceMax: 0
+    isTransient: 0
+    draggableItem: {fileID: 5697291400538201252, guid: c19d980995e23c240a4fc0d1b25ec753, type: 3}
+  - type: 7
+    sprite: {fileID: 21300000, guid: 56385e4f68f29f147ad66effccdd81be, type: 3}
+    sellPrice: 5
+    buyPrice: 0
+    buyPriceMax: 0
+    isTransient: 0
+    draggableItem: {fileID: 5697291400538201252, guid: 1daebb6e5a82d3d45afc3f485d1f2fc5, type: 3}
+  - type: 8
+    sprite: {fileID: 0}
+    sellPrice: 30
+    buyPrice: 0
+    buyPriceMax: 0
+    isTransient: 0
+    draggableItem: {fileID: 938684619333870840, guid: 97141848927b2f24c8fba1bc5fa6473c, type: 3}
+  - type: 9
+    sprite: {fileID: 0}
+    sellPrice: 0
+    buyPrice: 0
+    buyPriceMax: 0
+    isTransient: 1
     draggableItem: {fileID: 0}
   - type: 10
     sprite: {fileID: 21300000, guid: 56385e4f68f29f147ad66effccdd81be, type: 3}
     sellPrice: 150
     buyPrice: 0
+    buyPriceMax: 0
     isTransient: 0
     draggableItem: {fileID: 5697291400538201252, guid: d891e2e8f5fb239469a4da7a1dcc99f0, type: 3}
   - type: 11
     sprite: {fileID: 21300000, guid: ef734e3e696dd5a40a6dfcdeb1bd5087, type: 3}
     sellPrice: 300
     buyPrice: 0
+    buyPriceMax: 0
     isTransient: 0
     draggableItem: {fileID: 938684619333870840, guid: 2d38966de9b44a74fbb191939bd0e447, type: 3}
   rows: 3
