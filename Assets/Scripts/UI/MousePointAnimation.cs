@@ -17,7 +17,7 @@ public class MousePointAnimation : MonoBehaviour
     }
 
     public static Config globalConfig;
-    public Config config => isCustom? customConfig : globalConfig;
+    public Config config => isCustom ? customConfig : globalConfig;
 
     public bool isCustom;
     [ShowIf("isCustom")]
@@ -51,7 +51,9 @@ public class MousePointAnimation : MonoBehaviour
 
     void OnMouseEnter()
     {
-        idleAnim.weight = reduceIdleWeight;
+        if (idleAnim != null)
+            idleAnim.weight = reduceIdleWeight;
+
         enterTimer = 0f;
         isActive = true;
         dynamicWeight = 1f;
@@ -63,7 +65,9 @@ public class MousePointAnimation : MonoBehaviour
 
     void OnMouseExit()
     {
-        idleAnim.weight = 1f;
+        if (idleAnim != null)
+            idleAnim.weight = 1f;
+
         isActive = false;
     }
 
