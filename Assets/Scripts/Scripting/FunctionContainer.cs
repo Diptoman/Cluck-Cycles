@@ -22,7 +22,6 @@ public class FunctionContainer : MonoBehaviour
     bool doNotReset = false;
 
     UnityAction resetListener;
-    UnityAction checkListener;
 
 
     void Start()
@@ -33,10 +32,6 @@ public class FunctionContainer : MonoBehaviour
         //Bind to Reset
         resetListener = new UnityAction(OnReset);
         EventController.StartListening("CPUReset", resetListener);
-
-        //Bind to  check
-        checkListener = new UnityAction(OnValueCheck);
-        EventController.StartListening("CheckYoValues", checkListener);
 
     }
 

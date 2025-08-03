@@ -17,7 +17,8 @@ public class LoopItem : MonoBehaviour
 
         if (action == Actions.Sell)
         {
-            EventController.TriggerEvent(Consts.SELL_EVENT, 2);
+            Debug.Log("Selling index " + (int)itemType + " " + itemType);
+            EventController.TriggerEvent(Consts.SELL_EVENT, (int)itemType);
             FunctionContainerRef.DoNotReset();
         }
     }
