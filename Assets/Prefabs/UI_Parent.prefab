@@ -1166,7 +1166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 6988204624207008177}
-  weight: 0.75
+  weight: 1
 --- !u!1 &4415019325187328179
 GameObject:
   m_ObjectHideFlags: 0
