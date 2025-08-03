@@ -34,4 +34,9 @@ public class UIInventorySlot : MonoBehaviour
             text.color = Color.gray;
         }
     }
+
+    void OnMouseDrag()
+    {
+        Debug.Log($"Draggin'");
+    }
 }

@@ -1,8 +1,8 @@
+using System;
 using UnityEngine;
 
 public class FloatAnimation : MonoBehaviour
 {
-    private float randomStart;
     private Vector3 startRot;
     private Vector3 startPos;
     public Vector3 rotOffset;
@@ -11,6 +11,10 @@ public class FloatAnimation : MonoBehaviour
 
     public Vector3 posSpeed;
     public Vector3 posAmount;
+    
+    [NonSerialized]
+    public float weight = 1f;
+    private float randomStart;
 
     public bool isActive { get; private set; }
 
@@ -19,7 +23,7 @@ public class FloatAnimation : MonoBehaviour
     {
         startRot = transform.localEulerAngles;
         startPos = transform.localPosition;
-        randomStart = Random.Range(0f, 5f);
+        randomStart = UnityEngine.Random.Range(0f, 5f);
     }
 
     public void SetActive(bool active)
@@ -38,12 +42,12 @@ public class FloatAnimation : MonoBehaviour
         var y = Mathf.Sin(rotSpeed.y * t + rotOffset.y) * rotAmount.y;
         var z = Mathf.Sin(rotSpeed.z * t + rotOffset.z) * rotAmount.z;
 
-        var finalAngles = startRot + new Vector3(x, y, z);
+        var finalAngles = startRot + new Vector3(x, y, z) * weight;
         transform.localEulerAngles = finalAngles;
 
         var posX = Mathf.Sin(posSpeed.x * t) * posAmount.x;
         var posY = Mathf.Sin(posSpeed.y * t) * posAmount.y;
         var posZ = Mathf.Sin(posSpeed.z * t) * posAmount.z;
-        transform.localPosition = startPos + new Vector3(posX, posY, posZ);
+        transform.localPosition = startPos + new Vector3(posX, posY, posZ) * weight;
     }
 }

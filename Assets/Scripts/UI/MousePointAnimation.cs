@@ -1,0 +1,77 @@
+using System;
+using UnityEngine;
+
+public class MousePointAnimation : MonoBehaviour
+{
+    [Serializable]
+    public struct Config
+    {
+        public float animSpeed;
+        public AnimationCurve posCurve;
+        public AnimationCurve rotCurve;
+        public AnimationCurve scaleCurve;
+        public Vector3 pos;
+        public Vector3 rot;
+        public Vector3 scale;
+    }
+
+    public static Config config;
+    public Transform target;
+    public float reduceIdleWeight = 0.25f;
+    public FloatAnimation idleAnim;
+    public float weight = 1f;
+
+    private Vector3 startPos;
+    private Vector3 startRot;
+    private Vector3 startScale;
+
+    private float randomRot;
+    private float enterTimer;
+    private bool isActive;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        if (target == null)
+            target = this.transform;
+
+        startRot = target.localEulerAngles;
+        startPos = target.localPosition;
+        startScale = target.localScale;
+    }
+
+    // Update is called once per frame
+
+    void OnMouseEnter()
+    {
+        idleAnim.weight = reduceIdleWeight;
+        enterTimer = 0f;
+        isActive = true;
+
+        randomRot = UnityEngine.Random.Range(0.75f, 1.25f);
+        if (randomRot > 1f)
+            randomRot = -randomRot;
+    }
+
+    void OnMouseExit()
+    {
+        idleAnim.weight = 1f;
+        isActive = false;
+    }
+
+    void Update()
+    {
+        if (isActive)
+            enterTimer += Time.deltaTime;
+        else
+            enterTimer = 0f;
+
+        var animTime = enterTimer * config.animSpeed;
+        animTime = Mathf.Clamp01(animTime);
+
+        target.localPosition = startPos + config.pos * config.posCurve.Evaluate(animTime) * weight;
+        target.localEulerAngles = startRot + config.rot * config.rotCurve.Evaluate(animTime) * weight * randomRot;
+        var scale = Vector3.one + config.scale * config.scaleCurve.Evaluate(animTime) * weight;
+        target.localScale = Vector3.Scale(scale, startScale);
+    }
+}
