@@ -284,11 +284,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
       propertyPath: Functions.Array.data[0]
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
       propertyPath: Functions.Array.data[1]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
       propertyPath: Functions.Array.data[2]
