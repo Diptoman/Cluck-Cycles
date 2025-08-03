@@ -206,6 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0539c501f168edc4485728a223a6bc99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyIfNotInSlot: 0
   Parent: {fileID: 938684619333870840}
   TargetSlotTag:
   - ForEachSlot
@@ -272,7 +273,7 @@ PrefabInstance:
       objectReference: {fileID: 6463083933678846330}
     - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
       propertyPath: Functions.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
       propertyPath: Functions.Array.data[0]
@@ -284,6 +285,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
       propertyPath: Functions.Array.data[2]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
+      propertyPath: Functions.Array.data[3]
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6224152527533836266, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}

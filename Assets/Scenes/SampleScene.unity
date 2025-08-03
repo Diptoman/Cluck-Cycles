@@ -247,6 +247,10 @@ PrefabInstance:
       propertyPath: itemToSpawn
       value: 
       objectReference: {fileID: 5697291400538201252, guid: ff4064aac279d0f4ba8bef7aef72fdc4, type: 3}
+    - target: {fileID: 7763452257701802359, guid: 09588861d506e1944bac5363e3546382, type: 3}
+      propertyPath: itemType
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1087,6 +1091,18 @@ PrefabInstance:
       propertyPath: tooltipBackground
       value: 
       objectReference: {fileID: 2800000, guid: f54014a38d274984a942fc950c2c9b64, type: 3}
+    - target: {fileID: 4426040959017759120, guid: a1e1cbf860730604697db7fa66ac92b5, type: 3}
+      propertyPath: Functions.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426040959017759120, guid: a1e1cbf860730604697db7fa66ac92b5, type: 3}
+      propertyPath: Functions.Array.data[2]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426040959017759120, guid: a1e1cbf860730604697db7fa66ac92b5, type: 3}
+      propertyPath: Functions.Array.data[3]
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8435962901900786618, guid: a1e1cbf860730604697db7fa66ac92b5, type: 3}
       propertyPath: Root
       value: 
