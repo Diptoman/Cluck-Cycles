@@ -29,10 +29,10 @@ public static class Global
 
     public static void ProcessEvent(string type, int intVal = 0, float floatVal = 0)
     {
-        Debug.Log($"Sell event");
         switch (type)
         {
             case Consts.SELL_EVENT:
+                Debug.Log($"Sell event");
                 Global.Money += GetItemInfo((ItemType)intVal).sellPrice;
                 break;
         }
@@ -75,5 +75,7 @@ public enum Actions
     Fertilize = 3,
     Incubate = 4,
     Cook = 5,
-    Feed = 6
+    Feed = 6,
+    Grow = 7,
+    Harvest = 8
 }
