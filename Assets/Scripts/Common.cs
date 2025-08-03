@@ -46,6 +46,18 @@ public static class Global
         return result;
     }
 
+    public static ItemInfo GetItemInfo(ItemInfo[] itemSprites, ItemType type)
+    {
+        ItemInfo result = itemSprites[0];
+        for (var i = 0; i < itemSprites.Length; i++)
+        {
+            var element = itemSprites[i];
+            if (element.type == type)
+                return element;
+        }
+        return result;
+    }
+
 
     public static void ProcessEvent(string type, int intVal = 0, float floatVal = 0)
     {
