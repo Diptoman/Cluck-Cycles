@@ -16,6 +16,8 @@ public class Restart : MonoBehaviour
     void OnMouseDown()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        CluckController.ClucksPerRun = 4;
+        Global.CPUPrice = 15;
     }
 
     void OnMouseEnter()

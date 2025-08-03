@@ -19,8 +19,8 @@ public class CPUButton : MonoBehaviour
         if (Global.Money >= buyPrice)
         {
             Global.Money -= buyPrice;
-            Global.CPUPrice += 5;
-            CluckController.ClucksPerRun++;
+            Global.CPUPrice += 1;
+            CluckController.ClucksPerRun += 2;
             tooltip.text = tooltipText + Global.CPUPrice;
             // PUT CPU CYCLES EDITING CODE HERE
         }
