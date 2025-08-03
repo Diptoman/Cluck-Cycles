@@ -54,6 +54,8 @@ public class UIShopSlot : MonoBehaviour
         if (Global.Money >= price)
         {
             Global.Money -= price;
+            var current = InventoryController.GetItemCount(itemType);
+            InventoryController.SetItemCount(itemType, current + 1);
             RandomizeItem();
         }
         else
