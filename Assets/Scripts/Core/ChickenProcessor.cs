@@ -5,7 +5,6 @@ using PrimeTween;
 using Unity.Burst.CompilerServices;
 using TMPro;
 using UnityEngine.Events;
-using UnityEditor.PackageManager;
 
 public class ChickenProcessor : MonoBehaviour
 {
