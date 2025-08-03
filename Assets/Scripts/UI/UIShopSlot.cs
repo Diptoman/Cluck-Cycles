@@ -3,7 +3,6 @@ using TMPro;
 
 public class UIShopSlot : MonoBehaviour
 {
-    public bool isForLoop;
     public ItemType itemType;
     public Sprite sprite;
     public SpriteRenderer slotSprite;
@@ -13,8 +12,19 @@ public class UIShopSlot : MonoBehaviour
     public Color activeTextColor;
     public int buyPrice { get; private set; }
 
+    public bool isForLoop;
+    public int loopSlots = 1;
+    public int loopNum = 2;
+
     public void Setup(ItemType type)
     {
+        if (isForLoop)
+        {
+            buyPrice = 12;
+            priceText.SetText("$" + buyPrice);
+            return;
+        }
+
         var info = Global.GetItemInfo(type);
         this.buyPrice = info.buyPrice;
         this.itemType = type;
@@ -22,18 +32,30 @@ public class UIShopSlot : MonoBehaviour
         slotSprite.sprite = info.sprite;
     }
 
-    public void Reroll(ItemType type)
+    public void Reroll()
     {
-        var info = Global.GetItemInfo(type);
+        if (isForLoop)
+        {
+            buyPrice = 12;
+            priceText.SetText("$" + buyPrice);
+            return;
+        }
+
+        var num = Global.availableInShop.Length;
+        var next = UnityEngine.Random.Range(0, num);
+        var newType = Global.availableInShop[next];
+
+        var info = Global.GetItemInfo(newType);
         this.buyPrice = info.GetBuyPriceRandom();
-        this.itemType = type;
+        this.itemType = newType;
         priceText.SetText("$" + buyPrice);
         slotSprite.sprite = info.sprite;
     }
 
     public void Update()
     {
-        if (itemType == ItemType.Invalid)
+        var isValid = isForLoop || itemType != ItemType.Invalid;
+        if (!isValid)
         {
             this.gameObject.SetActive(false);
             return;
@@ -43,7 +65,7 @@ public class UIShopSlot : MonoBehaviour
             this.gameObject.SetActive(true);
         }
 
-        if (buyPrice <= Global.Money && itemType != ItemType.Invalid)
+        if (buyPrice <= Global.Money && isValid)
         {
             floatAnim?.SetActive(true);
             floatAnimText?.SetActive(true);
@@ -65,22 +87,19 @@ public class UIShopSlot : MonoBehaviour
         if (Global.Money >= buyPrice)
         {
             Global.Money -= buyPrice;
-            var current = InventoryController.GetItemCount(itemType);
-            InventoryController.SetItemCount(itemType, current + 1);
-            ReRollItem();
+
+            if (isForLoop)
+            {
+                SlotController.Instance.AddForLoop(loopSlots, loopNum);
+            }
+            else
+            {
+                var current = InventoryController.GetItemCount(itemType);
+                InventoryController.SetItemCount(itemType, current + 1);
+            }
+            Reroll();
         }
         else
             Debug.Log($"Buy failed");
-    }
-
-    void ReRollItem()
-    {
-        if (isForLoop)
-            return;
-
-        var num = Global.availableInShop.Length;
-        var next = UnityEngine.Random.Range(0, num);
-        var newType = Global.availableInShop[next];
-        Reroll(newType);
     }
 }

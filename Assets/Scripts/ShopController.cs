@@ -20,8 +20,14 @@ public class ShopController
 
         for (var i = 0; i < shopSlots.Length; i++)
         {
-            shopSlots[i].Setup(ItemType.Invalid);
+            // shopSlots[i].Setup(ItemType.Invalid);
+            shopSlots[i].Reroll();
         }
+
+        // shopSlots[3].Reroll();
+        // shopSlots[4].Reroll();
+        // shopSlots[5].Reroll();
+        // ShopController.SetItem(1, ItemType.Chicken);
     }
 
     public static void Destroy()
