@@ -20,6 +20,7 @@ public class MousePointAnimation : MonoBehaviour
     public float reduceIdleWeight = 0.25f;
     public FloatAnimation idleAnim;
     public float weight = 1f;
+    private float dynamicWeight = 1f;
 
     private Vector3 startPos;
     private Vector3 startRot;
@@ -47,6 +48,7 @@ public class MousePointAnimation : MonoBehaviour
         idleAnim.weight = reduceIdleWeight;
         enterTimer = 0f;
         isActive = true;
+        dynamicWeight = 1f;
 
         randomRot = UnityEngine.Random.Range(0.75f, 1.25f);
         if (randomRot > 1f)
@@ -61,7 +63,16 @@ public class MousePointAnimation : MonoBehaviour
 
     void Update()
     {
-        if (isActive)
+        var canReset = isActive && Input.GetKeyDown(KeyCode.Mouse0);
+        if (canReset)
+        {
+            dynamicWeight = 1.5f;
+            randomRot = UnityEngine.Random.Range(1f, 1.5f);
+            if (randomRot > 1.25f)
+                randomRot = -randomRot;
+        }
+
+        if (isActive && !canReset)
             enterTimer += Time.deltaTime;
         else
             enterTimer = 0f;
@@ -69,9 +80,9 @@ public class MousePointAnimation : MonoBehaviour
         var animTime = enterTimer * config.animSpeed;
         animTime = Mathf.Clamp01(animTime);
 
-        target.localPosition = startPos + config.pos * config.posCurve.Evaluate(animTime) * weight;
-        target.localEulerAngles = startRot + config.rot * config.rotCurve.Evaluate(animTime) * weight * randomRot;
-        var scale = Vector3.one + config.scale * config.scaleCurve.Evaluate(animTime) * weight;
+        target.localPosition = startPos + config.pos * config.posCurve.Evaluate(animTime) * weight * dynamicWeight;
+        target.localEulerAngles = startRot + config.rot * config.rotCurve.Evaluate(animTime) * weight * dynamicWeight * randomRot;
+        var scale = Vector3.one + config.scale * config.scaleCurve.Evaluate(animTime) * weight * dynamicWeight;
         target.localScale = Vector3.Scale(scale, startScale);
     }
 }

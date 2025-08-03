@@ -1,3 +1,5 @@
+using System;
+using UnityEngine;
 
 public static class Consts
 {
@@ -5,6 +7,34 @@ public static class Consts
 
     public const string SELL_EVENT = "SellEvent";
 }
+
+public static class Global
+{
+    public static int Money = 5;
+    public static ItemInfo[] itemSprites;
+
+    public static ItemInfo GetItemInfo(ItemType type)
+    {
+        ItemInfo result = itemSprites[0];
+        for (var i = 0; i < itemSprites.Length; i++)
+        {
+            var element = itemSprites[i];
+            if (element.type == type)
+                return element;
+        }
+        return result;
+    }
+}
+
+[Serializable]
+public struct ItemInfo
+{
+    public ItemType type;
+    public Sprite sprite;
+    public int sellPrice;
+    public int buyPrice;
+}
+
 
 public enum ItemType
 {

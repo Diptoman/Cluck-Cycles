@@ -12,10 +12,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9b315e041f74246900013993169cf3, type: 3}
   m_Name: UIControllerConfig
   m_EditorClassIdentifier: 
+  itemSprites:
+  - type: -1
+    sprite: {fileID: 21300000, guid: 52fb28067b6c6de48a463af98cef63ee, type: 3}
+    sellPrice: 0
+    buyPrice: 0
+  - type: 0
+    sprite: {fileID: 21300000, guid: ef734e3e696dd5a40a6dfcdeb1bd5087, type: 3}
+    sellPrice: 5
+    buyPrice: 20
+  - type: 1
+    sprite: {fileID: 21300000, guid: 56385e4f68f29f147ad66effccdd81be, type: 3}
+    sellPrice: 1
+    buyPrice: 5
+  - type: 2
+    sprite: {fileID: 21300000, guid: 995ace15d09fc9a4d94af9bc5c9fdbc1, type: 3}
+    sellPrice: 10
+    buyPrice: 50
+  - type: 3
+    sprite: {fileID: 21300000, guid: 178877f8dc9ade44aa28cc36e5abcb70, type: 3}
+    sellPrice: 1
+    buyPrice: 2
+  - type: 4
+    sprite: {fileID: 21300000, guid: 934b0b245f976f9468c8b64e149a6c57, type: 3}
+    sellPrice: 1
+    buyPrice: 2
+  - type: 5
+    sprite: {fileID: 21300000, guid: e75c5be58fa8e63418f589338bde5d04, type: 3}
+    sellPrice: 1
+    buyPrice: 10
+  - type: 6
+    sprite: {fileID: 21300000, guid: f714102a40f8eb446ad7ea69a78ee6f7, type: 3}
+    sellPrice: 2
+    buyPrice: 5
   rows: 3
   columns: 5
   gridSize: {x: 2.3200002, y: 1.8000001}
   gridPadding: {x: 0.2, y: 0.2}
+  shopRows: 2
+  shopColumns: 3
+  shopGridSize: {x: 2.4733334, y: 1.27}
+  shopGridPadding: {x: 0.2, y: 0.2}
   pointAnimConfig:
     animSpeed: 3
     posCurve:

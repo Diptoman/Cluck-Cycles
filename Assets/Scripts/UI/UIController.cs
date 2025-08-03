@@ -8,23 +8,41 @@ public class UIController : MonoBehaviour
     [InlineEditor]
     public UIControllerConfig config;
     public UIInventorySlot[] itemSlots;
+    public UIShopSlot[] shopSlots;
     public SpriteRenderer inventoryBase;
+    public SpriteRenderer shopBase;
     public Transform slotsParent;
+    public Transform shopSlotsParent;
     public TooltipBox tooltip;
     // Start is called before the first frame update
     void Start()
     {
+        Global.itemSprites = config.itemSprites;
+
         MousePointAnimation.config = config.pointAnimConfig;
         InitItems();
         ArrangeItems();
         InventoryController.Init(this);
+        ShopController.Init(this);
         Instance = this;
         tooltip.Hide(isForced: true);
+
 
         //Test, remove later
         InventoryController.SetItemCount(ItemType.Chicken, 23);
         InventoryController.SetItemCount(ItemType.Egg, 18);
         InventoryController.SetItemCount(ItemType.Rooster, 5);
+
+
+
+
+
+
+        //More test stuff
+        Global.Money = 10;
+
+        ShopController.SetItem(0, ItemType.Egg);
+        ShopController.SetItem(1, ItemType.Chicken);
     }
 
     // Update is called once per frame
@@ -38,29 +56,18 @@ public class UIController : MonoBehaviour
 
     private void InitItems()
     {
-        var slots = inventoryBase.GetComponentsInChildren<UIInventorySlot>();
-        itemSlots = slots;
+        itemSlots = inventoryBase.GetComponentsInChildren<UIInventorySlot>(); ;
+        shopSlots = shopBase.GetComponentsInChildren<UIShopSlot>();
 
         var parentX = -inventoryBase.size.x / 2 + config.gridSize.x / 2;
         var parentY = -inventoryBase.size.y / 2 + config.gridSize.y / 2;
         var z = slotsParent.transform.localPosition.z;
         slotsParent.transform.localPosition = new Vector3(parentX, parentY, z);
 
-        for (var i = 0; i < itemSlots.Length; i++)
-        {
-            itemSlots[i].SetStackSize(0);
-            var isValid = i < (int)ItemType.MAX;
-
-            if (isValid)
-            {
-                itemSlots[i].itemType = (ItemType)i;
-                itemSlots[i].slotSprite.sprite = itemSlots[i].sprite;
-            }
-            else
-            {
-                itemSlots[i].itemType = ItemType.Invalid;
-            }
-        }
+        parentX = -shopBase.size.x / 2 + config.shopGridSize.x / 2;
+        parentY = -shopBase.size.y / 2 + config.shopGridSize.y / 2;
+        z = shopSlotsParent.transform.localPosition.z;
+        shopSlotsParent.transform.localPosition = new Vector3(parentX, parentY, z);
     }
 
     private void ArrangeItems()
@@ -84,6 +91,27 @@ public class UIController : MonoBehaviour
 
                 tf.SetPosXYLocal(x, y);
                 slot.slotBox.size = config.gridSize;
+            }
+        }
+
+        var shopSize = shopBase.size - config.shopGridPadding;
+        config.shopGridSize.x = shopSize.x / config.shopColumns;
+        config.shopGridSize.y = shopSize.y / config.shopRows;
+
+        for (int i = 0; i < config.shopRows; i++)
+        {
+            for (int j = 0; j < config.shopColumns; j++)
+            {
+                var index = i * config.shopColumns + j;
+                if (index >= shopSlots.Length)
+                    continue;
+
+                var slot = shopSlots[index];
+                var tf = slot.transform;
+                var x = j * config.shopGridSize.x + config.shopGridPadding.x / 2;
+                var y = (config.shopRows - 1 - i) * config.shopGridSize.y + config.shopGridPadding.y / 2;
+
+                tf.SetPosXYLocal(x, y);
             }
         }
     }

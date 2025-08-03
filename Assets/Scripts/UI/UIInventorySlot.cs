@@ -4,7 +4,6 @@ using TMPro;
 public class UIInventorySlot : MonoBehaviour
 {
     public ItemType itemType;
-    public Sprite sprite;
     public int stackSize { get; private set; }
     public SpriteRenderer slotBox;
     public SpriteRenderer slotSprite;
