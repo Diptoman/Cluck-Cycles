@@ -218,6 +218,7 @@ MonoBehaviour:
   initialScale: {x: 0, y: 0, z: 0}
   currentSlot: {fileID: 0}
   lastAssignedSlot: {fileID: 0}
+  SlotClip: {fileID: 8300000, guid: f53f6a3fb437df64585eee972b1a676c, type: 3}
   InsideLoopOffset: {x: 1.5, y: 0, z: 0}
   FunctionContainer: {fileID: 4426040959017759120}
   itemType: 0

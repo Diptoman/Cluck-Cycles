@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 public class DraggableObject_Item : DraggableObject
 {
+    public AudioClip SlotClip;
     public Vector3 InsideLoopOffset = new Vector3(2f, 0f, 0f);
     public FunctionContainer FunctionContainer;
     public ItemType itemType;
@@ -108,6 +109,8 @@ public class DraggableObject_Item : DraggableObject
                             FunctionContainer.ShowSelector(true);
 
                             EventController.TriggerEvent("CheckYoValues");
+
+                            MusicController.Instance.PlaySFX(SlotClip);
                         }
                     }
                 }
@@ -128,6 +131,8 @@ public class DraggableObject_Item : DraggableObject
                     FunctionContainer.ShowSelector(true);
 
                     EventController.TriggerEvent("CheckYoValues");
+
+                    MusicController.Instance.PlaySFX(SlotClip);
                 }
 
             }
