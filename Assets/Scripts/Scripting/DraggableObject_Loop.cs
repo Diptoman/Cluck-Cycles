@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DraggableObject_Loop : DraggableObject
 {
     private List<DraggableObject_Item> itemList = new List<DraggableObject_Item>();
     private int maxLoop = 19;
-    private int LoopCount = 5;
+    public int LoopCount = 5;
     public bool isForEach = false;
+    public TextMeshPro LoopCountText;
     private DraggableObject_Item forEachAttachedItem;
 
     protected override void Init()
@@ -17,6 +19,11 @@ public class DraggableObject_Loop : DraggableObject
         for (int i = 0; i < maxLoop; i++)
         {
             itemList.Add(null);
+        }
+
+        if (LoopCountText)
+        {
+            LoopCountText.text = LoopCount.ToString();
         }
     }
 
@@ -132,8 +139,13 @@ public class DraggableObject_Loop : DraggableObject
             return LoopCount;
         else
         {
-            return InventoryController.GetItemCount(forEachAttachedItem.itemType);
+            if (forEachAttachedItem != null)
+            {
+                return InventoryController.GetItemCount(forEachAttachedItem.itemType);
+            }
         }
+
+        return 0;
     }
 
     public int GetCluckCount()

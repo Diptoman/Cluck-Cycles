@@ -570,6 +570,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ForLoop
       objectReference: {fileID: 0}
+    - target: {fileID: 8276297409921709250, guid: 9d8177bd656bdb141aff930d8ee6580f, type: 3}
+      propertyPath: LoopCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276297409921709250, guid: 9d8177bd656bdb141aff930d8ee6580f, type: 3}
+      propertyPath: AdditionalSlotsToReserve
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -769,6 +777,10 @@ PrefabInstance:
       propertyPath: TargetSlotTag.Array.data[2]
       value: InventorySlot
       objectReference: {fileID: 0}
+    - target: {fileID: 1317486550499125558, guid: ff4064aac279d0f4ba8bef7aef72fdc4, type: 3}
+      propertyPath: itemType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5697291400538201252, guid: ff4064aac279d0f4ba8bef7aef72fdc4, type: 3}
       propertyPath: m_Name
       value: EggDraggable
@@ -818,6 +830,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1604973000818291887, guid: ff4064aac279d0f4ba8bef7aef72fdc4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 3044724031977519209, guid: ff4064aac279d0f4ba8bef7aef72fdc4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 5295363402609284616, guid: ff4064aac279d0f4ba8bef7aef72fdc4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: ff4064aac279d0f4ba8bef7aef72fdc4, type: 3}
@@ -989,6 +1007,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4135097979148315657, guid: a1e1cbf860730604697db7fa66ac92b5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 388958443485176015, guid: a1e1cbf860730604697db7fa66ac92b5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 7374709474485767854, guid: a1e1cbf860730604697db7fa66ac92b5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: a1e1cbf860730604697db7fa66ac92b5, type: 3}

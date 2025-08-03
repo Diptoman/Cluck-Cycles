@@ -181,7 +181,9 @@ MonoBehaviour:
   initialScale: {x: 0, y: 0, z: 0}
   currentSlot: {fileID: 0}
   lastAssignedSlot: {fileID: 0}
+  LoopCount: 5
   isForEach: 0
+  LoopCountText: {fileID: 8238473905270203965}
 --- !u!1 &7424895015595475681
 GameObject:
   m_ObjectHideFlags: 0

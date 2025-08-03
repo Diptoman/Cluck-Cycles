@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PrimeTween;
+using Unity.Burst.CompilerServices;
 
 public class ChickenProcessor : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class ChickenProcessor : MonoBehaviour
 
     IEnumerator Process()
     {
+        CluckController.IsProcessing = true;
         if (currentLine == 20)
         {
             currentLine = 0;
@@ -39,10 +41,15 @@ public class ChickenProcessor : MonoBehaviour
             currentLoopRemainingRepeat = 0;
             loopStartLine = 0;
             SlotController.Instance.MarkSlot(currentLine);
+            CluckController.IsProcessing = false;
+            CluckController.ResetClucks();
             yield break;
         }
 
         SlotController.Instance.MarkSlot(currentLine);
+
+        //Speed
+        float holdSpeed = .25f;
 
         DraggableObject_Loop loop = SlotController.Instance.GetLoopReference(currentLine);
         if (loop != null)
@@ -62,6 +69,7 @@ public class ChickenProcessor : MonoBehaviour
                 else
                 {
                     //Throw error if not enough clucks
+                    Debug.Log("Clucks needed " + clucksNeeded + " but we have " + CluckController.ClucksRemaining);
                 }
             }
 
@@ -72,14 +80,24 @@ public class ChickenProcessor : MonoBehaviour
                 DraggableObject_Item item = loop.GetItem(itemIndex + 1); //Get the item, only if this isn't the loop header
                 if (item != null)
                 {
-                    item.Process();
+                    if (item.GetItemsInLoopRemaining() > 0)
+                    {
+                        item.Process();
+                    }
+                    else
+                    {
+                        holdSpeed = .05f;
+                    }
+                }
+                else
+                {
+                    holdSpeed = 0.05f;
                 }
             }
 
         }
 
         //Set time to wait
-        float holdSpeed = .25f;
         if (loop == null)
         {
             holdSpeed = .05f;

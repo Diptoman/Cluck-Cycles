@@ -37,7 +37,7 @@ public class DraggableObject_Item : DraggableObject
             }
         }
 
-        if (slotObj.SlotTag == "ForEachSlot")
+        if (slotObj.SlotTag == "ForEachSlot" && (slotObj.GetSlotState() != SlotState.Occupied))
         {
             //If anything is selected, unhighlight it
             if (currentSlot)
@@ -172,5 +172,26 @@ public class DraggableObject_Item : DraggableObject
     public void Process()
     {
         this.gameObject.GetComponent<LoopItem>().Process();
+        DecrementItemInLoop();
+    }
+
+    public DraggableObject_Loop GetLoopReference()
+    {
+        if (currentSlot && currentSlot.SlotTag == "LoopSlot")
+        {
+            return SlotController.Instance.GetLoopReference(currentSlot.GetSlotNumber());
+        }
+
+        return null;
+    }
+
+    public void DecrementItemInLoop()
+    {
+        FunctionContainer.ItemInLoopAmount--;
+    }
+
+    public int GetItemsInLoopRemaining()
+    {
+        return FunctionContainer.ItemInLoopAmount;
     }
 }
