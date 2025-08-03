@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5835352317910264090}
   - component: {fileID: 8384615839772197715}
-  - component: {fileID: 7089947833654571267}
+  - component: {fileID: 7271053363648998494}
   - component: {fileID: 2725664481091053653}
   - component: {fileID: 2790509242985909207}
-  - component: {fileID: 517007611015564687}
+  - component: {fileID: 6063960072776451223}
   m_Layer: 0
   m_Name: Dragger
   m_TagString: Untagged
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 70
-  m_Sprite: {fileID: 21300000, guid: 995ace15d09fc9a4d94af9bc5c9fdbc1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e75c5be58fa8e63418f589338bde5d04, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7089947833654571267
+--- !u!61 &7271053363648998494
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,14 +124,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.0185184, y: 6.0185184}
+    oldSize: {x: 6, y: 6}
     newSize: {x: 1.14, y: 1.51}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.0185184, y: 6.0185184}
+  m_Size: {x: 6, y: 6}
   m_EdgeRadius: 0
 --- !u!50 &2725664481091053653
 Rigidbody2D:
@@ -186,8 +186,8 @@ MonoBehaviour:
   lastAssignedSlot: {fileID: 0}
   InsideLoopOffset: {x: 1.5, y: 0, z: 0}
   FunctionContainer: {fileID: 1317486550499125558}
-  itemType: 2
---- !u!114 &517007611015564687
+  itemType: 5
+--- !u!114 &6063960072776451223
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1632640012603970015}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8f74103fbadc0044aa4935a656e426d, type: 3}
+  m_Script: {fileID: 11500000, guid: 47d9217e75cedc245915bb5fca30fd04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FunctionContainerRef: {fileID: 1317486550499125558}
@@ -210,7 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8517298099270389831}
   m_Layer: 0
-  m_Name: RoosterDraggable
+  m_Name: FertilizedEggDraggable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -247,7 +247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
       propertyPath: itemType
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
       propertyPath: DraggerRef
@@ -255,22 +255,18 @@ PrefabInstance:
       objectReference: {fileID: 2790509242985909207}
     - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
       propertyPath: Functions.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
-      propertyPath: Functions.Array.data[0]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
-      propertyPath: Functions.Array.data[1]
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
-      propertyPath: Functions.Array.data[2]
+      propertyPath: Functions.Array.data[0]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
+      propertyPath: Functions.Array.data[1]
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
-      propertyPath: Functions.Array.data[3]
+      propertyPath: Functions.Array.data[2]
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8552009118422752429, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
