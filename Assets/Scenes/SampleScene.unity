@@ -122,25 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &39230776 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3909633614386252202, guid: 09588861d506e1944bac5363e3546382, type: 3}
-  m_PrefabInstance: {fileID: 103606625}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &39230782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 39230776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: Chicks can feed on this to grow, or you can grow this into crops for even
-    more feed!
 --- !u!1001 &103606625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -149,46 +130,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 285491927577454533, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      propertyPath: m_Color.b
-      value: 0.5019608
-      objectReference: {fileID: 0}
-    - target: {fileID: 285491927577454533, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      propertyPath: m_Color.g
-      value: 0.5019608
-      objectReference: {fileID: 0}
-    - target: {fileID: 285491927577454533, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      propertyPath: m_Color.r
-      value: 0.5019608
-      objectReference: {fileID: 0}
-    - target: {fileID: 390711035570861840, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 995ace15d09fc9a4d94af9bc5c9fdbc1, type: 3}
-    - target: {fileID: 1025961689987570164, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      propertyPath: m_SpriteTilingProperty.border.w
-      value: 0.0925926
-      objectReference: {fileID: 0}
-    - target: {fileID: 1025961689987570164, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      propertyPath: m_SpriteTilingProperty.border.x
-      value: 0.12962963
-      objectReference: {fileID: 0}
-    - target: {fileID: 1025961689987570164, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      propertyPath: m_SpriteTilingProperty.border.y
-      value: 0.10185185
-      objectReference: {fileID: 0}
-    - target: {fileID: 1025961689987570164, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      propertyPath: m_SpriteTilingProperty.border.z
-      value: 0.10185185
-      objectReference: {fileID: 0}
-    - target: {fileID: 1025961689987570164, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.5092593
-      objectReference: {fileID: 0}
-    - target: {fileID: 1025961689987570164, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.5185185
-      objectReference: {fileID: 0}
     - target: {fileID: 1466955636429055913, guid: 09588861d506e1944bac5363e3546382, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -229,133 +170,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1491789446515602014, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      propertyPath: itemType
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2454835188517646478, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      propertyPath: m_SortingOrder
-      value: 101
-      objectReference: {fileID: 0}
-    - target: {fileID: 2657188857673439027, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      propertyPath: itemType
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2967273627320783198, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      propertyPath: m_SortingOrder
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3150834462433416048, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: ef734e3e696dd5a40a6dfcdeb1bd5087, type: 3}
-    - target: {fileID: 4300632338952478674, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 56385e4f68f29f147ad66effccdd81be, type: 3}
     - target: {fileID: 5289269797416058576, guid: 09588861d506e1944bac5363e3546382, type: 3}
       propertyPath: m_Name
       value: UI_Parent
       objectReference: {fileID: 0}
-    - target: {fileID: 6160833564944521653, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      propertyPath: itemType
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7763452257701802359, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      propertyPath: itemType
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8000600213391525893, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      propertyPath: text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8427224264382658966, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 56385e4f68f29f147ad66effccdd81be, type: 3}
-    - target: {fileID: 8910859901307452885, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      propertyPath: itemType
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 8359833546173237808, guid: 09588861d506e1944bac5363e3546382, type: 3}
-    - {fileID: 2133968252950900161, guid: 09588861d506e1944bac5363e3546382, type: 3}
-    - {fileID: 9106287324114693666, guid: 09588861d506e1944bac5363e3546382, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1811493750774311897, guid: 09588861d506e1944bac5363e3546382, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 6976573228218769423, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 200264636}
     - targetCorrespondingSourceObject: {fileID: 1550896468662775259, guid: 09588861d506e1944bac5363e3546382, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 724378049896721564, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1437021098}
     - targetCorrespondingSourceObject: {fileID: 9176543302581264712, guid: 09588861d506e1944bac5363e3546382, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 4423083848733984354, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 991255836}
     - targetCorrespondingSourceObject: {fileID: 5203297144873225142, guid: 09588861d506e1944bac5363e3546382, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 3909633614386252202, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 39230782}
     - targetCorrespondingSourceObject: {fileID: 4834033051448951934, guid: 09588861d506e1944bac5363e3546382, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 6926349455575075470, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1537613268}
     - targetCorrespondingSourceObject: {fileID: 1534450243522938714, guid: 09588861d506e1944bac5363e3546382, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 3317260916223732254, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1622909973}
     - targetCorrespondingSourceObject: {fileID: 6583531782673197002, guid: 09588861d506e1944bac5363e3546382, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 5357698415578875014, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 238114016}
     - targetCorrespondingSourceObject: {fileID: 4543707812935960914, guid: 09588861d506e1944bac5363e3546382, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 3626856516855796875, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 566883467}
     - targetCorrespondingSourceObject: {fileID: 5116386824133515615, guid: 09588861d506e1944bac5363e3546382, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 2468473583152060457, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 827142490}
     - targetCorrespondingSourceObject: {fileID: 6275176575109518845, guid: 09588861d506e1944bac5363e3546382, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 5574219260977747874, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1689327998}
     - targetCorrespondingSourceObject: {fileID: 4039652579981892214, guid: 09588861d506e1944bac5363e3546382, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 9009529443802510031, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 113699283}
     - targetCorrespondingSourceObject: {fileID: 602469937561403163, guid: 09588861d506e1944bac5363e3546382, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 907423678996118601, guid: 09588861d506e1944bac5363e3546382, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 344584604}
     - targetCorrespondingSourceObject: {fileID: 8774122009834615197, guid: 09588861d506e1944bac5363e3546382, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -417,62 +275,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 09588861d506e1944bac5363e3546382, type: 3}
---- !u!1 &113699277 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9009529443802510031, guid: 09588861d506e1944bac5363e3546382, type: 3}
-  m_PrefabInstance: {fileID: 103606625}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &113699283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113699277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: Golden egg is worth a lotta money!
---- !u!1 &200264630 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6976573228218769423, guid: 09588861d506e1944bac5363e3546382, type: 3}
-  m_PrefabInstance: {fileID: 103606625}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &200264636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 200264630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: This is a nice chicken. Chickens can only lay fertilized eggs if roosters
-    have fertilized before.
---- !u!1 &238114010 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5357698415578875014, guid: 09588861d506e1944bac5363e3546382, type: 3}
-  m_PrefabInstance: {fileID: 103606625}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &238114016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 238114010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: This is a small chick. If you feed it chicken feed, it will grow, but if
-    you don't have enough feed while in a loop, it will die.
 --- !u!1001 &332327165
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -543,24 +345,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42a777ea04a11c94f94f9e725cd64bc5, type: 3}
---- !u!1 &344584598 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 907423678996118601, guid: 09588861d506e1944bac5363e3546382, type: 3}
-  m_PrefabInstance: {fileID: 103606625}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &344584604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 344584598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: Looks like a chicken did something fishy? Golden geese pay a lot!
 --- !u!1 &370467710
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,24 +653,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &566883461 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3626856516855796875, guid: 09588861d506e1944bac5363e3546382, type: 3}
-  m_PrefabInstance: {fileID: 103606625}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &566883467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 566883461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: This is an omelette made from the heat of the CPU.
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,43 +735,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &827142484 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2468473583152060457, guid: 09588861d506e1944bac5363e3546382, type: 3}
-  m_PrefabInstance: {fileID: 103606625}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &827142490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827142484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: This is a CPU fried chicken. You can sell it!
---- !u!1 &991255830 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4423083848733984354, guid: 09588861d506e1944bac5363e3546382, type: 3}
-  m_PrefabInstance: {fileID: 103606625}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &991255836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 991255830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: This is a rooster. It generates more clucks, and can be used to produce fertile
-    eggs (fertilize before laying eggs).
 --- !u!82 &1051039793 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 7660880718718711588, guid: e69db2b8ada67df4b99bc1e5bd793a9b, type: 3}
@@ -1199,171 +928,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Run your Chicken Processing Unit.
---- !u!1 &1437021092 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 724378049896721564, guid: 09588861d506e1944bac5363e3546382, type: 3}
-  m_PrefabInstance: {fileID: 103606625}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1437021098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1437021092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: This is an unfertilized egg. It won't hatch, but you can cook or sell it!
---- !u!1 &1537613262 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6926349455575075470, guid: 09588861d506e1944bac5363e3546382, type: 3}
-  m_PrefabInstance: {fileID: 103606625}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1537613268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1537613262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: You can harvest crops for more feed, or sell them!
---- !u!1 &1622909967 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3317260916223732254, guid: 09588861d506e1944bac5363e3546382, type: 3}
-  m_PrefabInstance: {fileID: 103606625}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1622909973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1622909967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: Fertilized eggs can hatch into either a chicken or a rooster, or something
-    even more special.
---- !u!1 &1689327992 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5574219260977747874, guid: 09588861d506e1944bac5363e3546382, type: 3}
-  m_PrefabInstance: {fileID: 103606625}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1689327998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1689327992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: This is... ahem... rooster fertilizer. It is transient, and cannot be dragged.
-    It's created by roosters during a run, and used for fertilizing eggs.
---- !u!1 &1717142927
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1717142929}
-  - component: {fileID: 1717142928}
-  - component: {fileID: 1717142930}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!61 &1717142928
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1717142927}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!4 &1717142929
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1717142927}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.15, y: 0.06, z: -0.13030653}
-  m_LocalScale: {x: 18.494, y: 18.494, z: 18.494}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1717142930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1717142927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: TEST TEST ETEXT
 --- !u!1 &2070489562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1842,4 +1406,3 @@ SceneRoots:
   - {fileID: 7354079571252871997}
   - {fileID: 6033602607396011284}
   - {fileID: 2799995828552964158}
-  - {fileID: 1717142929}

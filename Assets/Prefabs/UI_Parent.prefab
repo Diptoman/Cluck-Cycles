@@ -2389,7 +2389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: CPU Speed. Click to upgrade for $
+  text: 
 --- !u!114 &4262286694664140209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2543,6 +2543,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5498926675753727021}
+    - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1416328894117497974}
   m_SourcePrefab: {fileID: 100100000, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
 --- !u!1 &2468473583152060457 stripped
 GameObject:
@@ -2550,6 +2553,19 @@ GameObject:
   m_PrefabInstance: {fileID: 154158438963775796}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &5498926675753727021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2468473583152060457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: This is a CPU fried chicken. You can sell it!
+--- !u!114 &1416328894117497974
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2709,6 +2725,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6681073528512638445}
+    - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1372541108351010785}
   m_SourcePrefab: {fileID: 100100000, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
 --- !u!1 &3317260916223732254 stripped
 GameObject:
@@ -2716,6 +2735,20 @@ GameObject:
   m_PrefabInstance: {fileID: 1038975643991882499}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &6681073528512638445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3317260916223732254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Fertilized eggs can hatch into either a chicken or a rooster, or something
+    even more special.
+--- !u!114 &1372541108351010785
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2872,6 +2905,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3087778833639818062}
+    - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3531804010723719623}
   m_SourcePrefab: {fileID: 100100000, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
 --- !u!1 &3626856516855796875 stripped
 GameObject:
@@ -2879,6 +2915,19 @@ GameObject:
   m_PrefabInstance: {fileID: 1312596040207451542}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &3087778833639818062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3626856516855796875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: This is an omelette made from the heat of the CPU.
+--- !u!114 &3531804010723719623
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3135,6 +3184,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7493641988460920412}
+    - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7570166835235929129}
   m_SourcePrefab: {fileID: 100100000, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
 --- !u!1 &3909633614386252202 stripped
 GameObject:
@@ -3142,6 +3194,20 @@ GameObject:
   m_PrefabInstance: {fileID: 1595302188111698103}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &7493641988460920412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3909633614386252202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Chicks can feed on this to grow, or you can grow this into crops for even
+    more feed!
+--- !u!114 &7570166835235929129
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3302,6 +3368,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5095182652639206791}
+    - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 79305116643573470}
   m_SourcePrefab: {fileID: 100100000, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
 --- !u!1 &4423083848733984354 stripped
 GameObject:
@@ -3309,6 +3378,20 @@ GameObject:
   m_PrefabInstance: {fileID: 2090684796272957311}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &5095182652639206791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4423083848733984354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: This is a rooster. It generates more clucks, and can be used to produce fertile
+    eggs (fertilize before laying eggs).
+--- !u!114 &79305116643573470
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3453,15 +3536,15 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 56385e4f68f29f147ad66effccdd81be, type: 3}
     - target: {fileID: 2997617755734645316, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_Color.b
-      value: 0.5
+      value: 0.5019608
       objectReference: {fileID: 0}
     - target: {fileID: 2997617755734645316, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_Color.g
-      value: 0.5
+      value: 0.5019608
       objectReference: {fileID: 0}
     - target: {fileID: 2997617755734645316, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_Color.r
-      value: 0.5
+      value: 0.5019608
       objectReference: {fileID: 0}
     - target: {fileID: 5016564010393796144, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3526,6 +3609,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3285614461770968626}
+    - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7587232699564726818}
   m_SourcePrefab: {fileID: 100100000, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
 --- !u!1 &724378049896721564 stripped
 GameObject:
@@ -3533,6 +3619,19 @@ GameObject:
   m_PrefabInstance: {fileID: 3057917837080886657}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &3285614461770968626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724378049896721564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: This is an unfertilized egg. It won't hatch, but you can cook or sell it!
+--- !u!114 &7587232699564726818
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3688,6 +3787,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4159664849766693998}
+    - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6886647992938663806}
   m_SourcePrefab: {fileID: 100100000, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
 --- !u!1 &907423678996118601 stripped
 GameObject:
@@ -3695,6 +3797,19 @@ GameObject:
   m_PrefabInstance: {fileID: 3239698824741072212}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &4159664849766693998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907423678996118601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Looks like a chicken did something fishy? Golden geese pay a lot!
+--- !u!114 &6886647992938663806
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3854,6 +3969,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1709662242292998485}
+    - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2055845667679209022}
   m_SourcePrefab: {fileID: 100100000, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
 --- !u!4 &424277000914757027 stripped
 Transform:
@@ -3877,6 +3995,19 @@ GameObject:
   m_PrefabInstance: {fileID: 4646940537220471699}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1709662242292998485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6926349455575075470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: You can harvest crops for more feed, or sell them!
+--- !u!114 &2055845667679209022
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4024,6 +4155,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5687142445095590312}
+    - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5968922182686718658}
   m_SourcePrefab: {fileID: 100100000, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
 --- !u!4 &373174168710762274 stripped
 Transform:
@@ -4047,6 +4181,20 @@ GameObject:
   m_PrefabInstance: {fileID: 4662260867304042770}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &5687142445095590312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6976573228218769423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: This is a nice chicken. Chickens can only lay fertilized eggs if roosters
+    have fertilized before.
+--- !u!114 &5968922182686718658
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4274,6 +4422,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2691080544087716581}
+    - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8902538890509669775}
   m_SourcePrefab: {fileID: 100100000, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
 --- !u!4 &1798137767203757538 stripped
 Transform:
@@ -4297,6 +4448,19 @@ GameObject:
   m_PrefabInstance: {fileID: 6731243887045845970}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &2691080544087716581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9009529443802510031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Golden egg is worth a lotta money!
+--- !u!114 &8902538890509669775
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4440,6 +4604,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2964842956039319437}
+    - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1216560308895304051}
   m_SourcePrefab: {fileID: 100100000, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
 --- !u!114 &1419234396288164218 stripped
 MonoBehaviour:
@@ -4463,6 +4630,20 @@ GameObject:
   m_PrefabInstance: {fileID: 7653928861249754523}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &2964842956039319437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5357698415578875014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: This is a small chick. If you feed it chicken feed, it will grow, but if
+    you don't have enough feed while in a loop, it will die.
+--- !u!114 &1216560308895304051
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4615,6 +4796,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3996735770296680338}
+    - targetCorrespondingSourceObject: {fileID: 2333544026321867037, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2359625712139973700}
   m_SourcePrefab: {fileID: 100100000, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
 --- !u!114 &1491789446515602014 stripped
 MonoBehaviour:
@@ -4638,6 +4822,20 @@ GameObject:
   m_PrefabInstance: {fileID: 7870589072813475519}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &3996735770296680338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5574219260977747874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: This is... ahem... rooster fertilizer. It is transient, and cannot be dragged.
+    It's created by roosters during a run, and used for fertilizing eggs.
+--- !u!114 &2359625712139973700
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
