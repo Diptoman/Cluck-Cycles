@@ -36,6 +36,7 @@ public class MusicController : MonoBehaviour
     private AudioSource[] SFXsources;
 
     private int currentTrackIndex = 0;
+    public bool IsSFXOn = true, IsMusicOn = true;
 
     void Start()
     {
@@ -54,8 +55,16 @@ public class MusicController : MonoBehaviour
         }
     }
 
+    public void TurnOffMusic()
+    {
+        audioSource.Stop();
+    }
+
     void PlayNextTrack()
     {
+        if (!IsMusicOn)
+            return;
+
         currentTrackIndex = Random.Range(0, musicTracks.Length);
 
         audioSource.clip = musicTracks[currentTrackIndex];
@@ -64,6 +73,9 @@ public class MusicController : MonoBehaviour
 
     public void PlaySFX(AudioClip clip, bool force = false)
     {
+        if (!IsSFXOn)
+            return;
+
         if (force == true)
         {
             SFXsources[0].clip = clip;
