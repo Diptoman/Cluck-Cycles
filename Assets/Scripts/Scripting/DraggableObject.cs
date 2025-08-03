@@ -15,14 +15,14 @@ public class DraggableObject : MonoBehaviour
 
     void Start()
     {
-        initialPosition = this.transform.position;
-        initialScale = this.transform.localScale;
+
         Init();
     }
 
     protected virtual void Init()
     {
-
+        initialPosition = this.transform.position;
+        initialScale = this.transform.localScale;
     }
 
     void Update()

@@ -56,6 +56,12 @@ public class DraggableObject_Loop : DraggableObject
         currentSlot = null;
     }
 
+    public void AssignSlot(SlotObject slot)
+    {
+        Init();
+        CheckAndAssignSlot(slot);
+    }
+
     protected override void CheckAndAssignSlot(SlotObject slot)
     {
         base.CheckAndAssignSlot(slot);
@@ -137,7 +143,11 @@ public class DraggableObject_Loop : DraggableObject
 
     public void SetLoopCount(int count)
     {
-        //Set, check if free etc.
+        LoopCount = count;
+        if (LoopCountText)
+        {
+            LoopCountText.text = LoopCount.ToString();
+        }
     }
 
     public int GetLoopCount()

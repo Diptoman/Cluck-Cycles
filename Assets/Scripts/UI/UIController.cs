@@ -22,7 +22,7 @@ public class UIController : MonoBehaviour
 
         //Test, remove later
         InventoryController.SetItemCount(ItemType.Chicken, 3);
-        InventoryController.SetItemCount(ItemType.Egg, 16);
+        InventoryController.SetItemCount(ItemType.Egg, 5);
     }
 
     // Update is called once per frame

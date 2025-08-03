@@ -34,6 +34,8 @@ public class SlotController : MonoBehaviour
     public float SlotGap = .6f;
     public int numSlots = 20;
     public ProcessingLine ProcessingLineMarkerPrefab;
+    public DraggerPointer ForEachLoopPrefab;
+    public DraggerPointer ForLoopPrefab;
     private ProcessingLine spawnedMarker;
 
     private Dictionary<int, SlotState> SlotStates = new Dictionary<int, SlotState>();
@@ -54,6 +56,19 @@ public class SlotController : MonoBehaviour
 
         spawnedMarker = Instantiate(ProcessingLineMarkerPrefab, SlotObjects[0].transform.position + new Vector3(-2.2f, 0f, 0f), Quaternion.identity);
         spawnedMarker.Reset();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            AddForEachLoop(3);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            AddForLoop(2, 5);
+        }
     }
 
     public void SetSlotStatus(int num, SlotState state, int slotAmount = 1)
@@ -134,5 +149,36 @@ public class SlotController : MonoBehaviour
     {
         spawnedMarker.transform.position = SlotObjects[slotNum].transform.position + new Vector3(-2.2f, 0f, 0f);
         spawnedMarker.Reset();
+    }
+
+    public bool AddForEachLoop(int amount)
+    {
+        for (int i = 0; i < numSlots - amount; i++)
+        {
+            if (GetSlotAvailability(i, amount + 1))
+            {
+                DraggerPointer spawnedLoop = Instantiate(ForEachLoopPrefab);
+                spawnedLoop.DraggerRef.AdditionalSlotsToReserve = amount;
+                spawnedLoop.DraggerRef.AssignSlot(SlotObjects[i]);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public bool AddForLoop(int amount, int loopCount)
+    {
+        for (int i = 0; i < numSlots - amount; i++)
+        {
+            if (GetSlotAvailability(i, amount + 1))
+            {
+                DraggerPointer spawnedLoop = Instantiate(ForLoopPrefab);
+                spawnedLoop.DraggerRef.AdditionalSlotsToReserve = amount;
+                spawnedLoop.DraggerRef.SetLoopCount(loopCount);
+                spawnedLoop.DraggerRef.AssignSlot(SlotObjects[i]);
+                return true;
+            }
+        }
+        return false;
     }
 }
