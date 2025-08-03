@@ -65,7 +65,9 @@ public enum ItemType
     Omelette = 7,
     FriedChicken = 8,
     ChickenSperm = 9,
-    MAX = 10 //Move this down and increase it as you add more
+    GoldenEgg = 10,
+    GoldenGoose = 11,
+    MAX = 12 //Move this down and increase it as you add more
 }
 
 public enum Actions

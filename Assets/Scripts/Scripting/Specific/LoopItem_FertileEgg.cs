@@ -16,7 +16,14 @@ public class LoopItem_Fertile : LoopItem
                 break;
 
             case Actions.Incubate:
-                InventoryController.SetItemCount(ItemType.Chick, InventoryController.GetItemCount(ItemType.Chick) + 1);
+                if (Random.Range(0, 15) == 0)
+                {
+                    InventoryController.SetItemCount(ItemType.GoldenGoose, InventoryController.GetItemCount(ItemType.GoldenGoose) + 1);
+                }
+                else
+                {
+                    InventoryController.SetItemCount(ItemType.Chick, InventoryController.GetItemCount(ItemType.Chick) + 1);
+                }
                 FunctionContainerRef.DoNotReset();
                 break;
         }

@@ -79,6 +79,18 @@ MonoBehaviour:
     buyPrice: 0
     isTransient: 1
     draggableItem: {fileID: 0}
+  - type: 10
+    sprite: {fileID: 21300000, guid: 56385e4f68f29f147ad66effccdd81be, type: 3}
+    sellPrice: 150
+    buyPrice: 0
+    isTransient: 0
+    draggableItem: {fileID: 5697291400538201252, guid: d891e2e8f5fb239469a4da7a1dcc99f0, type: 3}
+  - type: 11
+    sprite: {fileID: 21300000, guid: ef734e3e696dd5a40a6dfcdeb1bd5087, type: 3}
+    sellPrice: 300
+    buyPrice: 0
+    isTransient: 0
+    draggableItem: {fileID: 938684619333870840, guid: 2d38966de9b44a74fbb191939bd0e447, type: 3}
   rows: 3
   columns: 5
   gridSize: {x: 2.3200002, y: 1.8000001}
