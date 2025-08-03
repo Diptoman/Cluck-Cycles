@@ -17,6 +17,9 @@ public static class Global
     public static int LoopNumMin = 2;
     public static int loopNumMax = 4;
 
+    public const int SLOTS_CAP = 5;
+    public const int NUM_CAP = 10;
+
     public static int GetRandomLoopPrice(int loopNum, int loopSlots)
     {
         return loopNum * 4 + loopSlots * 10 + UnityEngine.Random.Range(0, 5);

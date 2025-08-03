@@ -42,7 +42,7 @@ public class UIShopSlot : MonoBehaviour
     {
         if (isForLoop)
         {
-            loopNum = Random.Range(Global.LoopNumMin, Global.LoopSlotsMax + 1);
+            loopNum = Random.Range(Global.LoopNumMin, Global.loopNumMax + 1);
             loopSlots = Random.Range(Global.LoopSlotsMin, Global.LoopSlotsMax + 1);
             buyPrice = Global.GetRandomLoopPrice(loopNum, loopSlots);
 
@@ -104,6 +104,14 @@ public class UIShopSlot : MonoBehaviour
             if (isForLoop)
             {
                 SlotController.Instance.AddForLoop(loopSlots, loopNum);
+                Global.loopNumMax++;
+                Global.LoopSlotsMax++;
+
+                if(Global.loopNumMax > Global.NUM_CAP)
+                    Global.loopNumMax = Global.NUM_CAP;
+                
+                if(Global.LoopSlotsMax > Global.SLOTS_CAP)
+                    Global.LoopSlotsMax = Global.SLOTS_CAP;
             }
             else
             {
