@@ -19,8 +19,10 @@ public class FunctionContainer : MonoBehaviour
     public int currentIndex = 0;
     public int ItemInLoopAmount = 1;
     private int OriginalItemInLoopAmount = 1;
+    bool doNotReset = false;
 
     UnityAction resetListener;
+    UnityAction checkListener;
 
 
     void Start()
@@ -28,16 +30,34 @@ public class FunctionContainer : MonoBehaviour
         TextField.text = Functions[0].ToString() + "()";
         ShowSelector(false);
 
-        //Bind to boss death
+        //Bind to Reset
         resetListener = new UnityAction(OnReset);
         EventController.StartListening("CPUReset", resetListener);
+
+        //Bind to  check
+        checkListener = new UnityAction(OnValueCheck);
+        EventController.StartListening("CheckYoValues", checkListener);
 
     }
 
     public void OnReset()
     {
-        ItemInLoopAmount = OriginalItemInLoopAmount;
-        AmountText.text = ItemInLoopAmount.ToString();
+        if (!doNotReset)
+        {
+            ItemInLoopAmount = OriginalItemInLoopAmount;
+            AmountText.text = ItemInLoopAmount.ToString();
+        }
+    }
+
+    public void OnValueCheck()
+    {
+        if (DraggerRef.currentSlot.GetSlotNumber() == -1)
+            return;
+        if (SlotController.Instance.GetLoopReference(DraggerRef.currentSlot.GetSlotNumber()).isForEach)
+        {
+            ResetItemCount();
+            SetUsableCount();
+        }
     }
 
     void Update()
@@ -56,6 +76,15 @@ public class FunctionContainer : MonoBehaviour
             ItemInLoopAmount = 0;
         }
         AmountText.text = ItemInLoopAmount.ToString();*/
+        if (doNotReset && ItemInLoopAmount == 0)
+        {
+            DraggerRef.Remove();
+        }
+    }
+
+    public void DoNotReset()
+    {
+        doNotReset = true;
     }
 
     public void DecrementItemCount()
@@ -101,17 +130,10 @@ public class FunctionContainer : MonoBehaviour
 
     public void ResetItemCount()
     {
-        InventoryController.SetItemCount(itemType, InventoryController.GetItemCount(itemType) + OriginalItemInLoopAmount);
-        ItemInLoopAmount = 0;
+        if (!doNotReset)
+        {
+            InventoryController.SetItemCount(itemType, InventoryController.GetItemCount(itemType) + OriginalItemInLoopAmount);
+            ItemInLoopAmount = 0;
+        }
     }
-}
-
-public enum Actions
-{
-    Cluck,
-    LayEggs,
-    Sell,
-    Fertilize,
-    Incubate,
-    Cook
 }

@@ -86,28 +86,50 @@ public class DraggableObject_Item : DraggableObject
         {
             if (SlotController.Instance.AreSlotsHighlighted(slot.GetSlotNumber(), AdditionalSlotsToReserve + AmountOfSlotsThisTakes))
             {
-                isInSlot = true;
-                SlotController.Instance.SetSlotStatus(slot.GetSlotNumber(), SlotState.Occupied, AmountOfSlotsThisTakes); //Occupy
-                SlotController.Instance.SetSlotStatus(slot.GetSlotNumber() + AmountOfSlotsThisTakes, SlotState.Reserved, AdditionalSlotsToReserve); //Reserve
-
-                Parent.transform.position = slot.transform.position + slot.SlotPlacementOffset + InsideLoopOffset + new Vector3(0f, 0f, -.2f);
-                //Add original offset
-                /*if (slot.GetSlotNumber() % 2 == 1)
+                DraggableObject_Loop LoopRef = SlotController.Instance.GetLoopReference(slot.GetSlotNumber());
+                if (LoopRef.isForEach)
                 {
-                    Parent.transform.position = slot.transform.position + slot.SlotPlacementOffset + InsideLoopOffset + new Vector3(0f, 0f, -.2f);
+                    if (LoopRef.GetForEachAttachedItem() != null)
+                    {
+                        if (LoopRef.GetForEachAttachedItem().itemType != itemType)
+                        {
+                            isInSlot = true;
+                            SlotController.Instance.SetSlotStatus(slot.GetSlotNumber(), SlotState.Occupied, AmountOfSlotsThisTakes); //Occupy
+                            SlotController.Instance.SetSlotStatus(slot.GetSlotNumber() + AmountOfSlotsThisTakes, SlotState.Reserved, AdditionalSlotsToReserve); //Reserve
+
+                            Parent.transform.position = slot.transform.position + slot.SlotPlacementOffset + InsideLoopOffset + new Vector3(0f, 0f, -.2f);
+
+                            Parent.transform.SetParent(SlotController.Instance.GetLoopReference(slot.GetSlotNumber()).transform.parent);
+                            SlotController.Instance.GetLoopReference(slot.GetSlotNumber()).SetActiveItem(slot.GetSlotNumber(), this); //Add this to loop
+
+                            SetCurrentSlot(slot);
+                            FunctionContainer.SetUsableCount();
+
+                            FunctionContainer.ShowSelector(true);
+
+                            EventController.TriggerEvent("CheckYoValues");
+                        }
+                    }
                 }
                 else
                 {
-                    Parent.transform.position = slot.transform.position + slot.SlotPlacementOffset + InsideLoopOffset + new Vector3(-.5f, 0f, -.2f);
-                }*/
+                    isInSlot = true;
+                    SlotController.Instance.SetSlotStatus(slot.GetSlotNumber(), SlotState.Occupied, AmountOfSlotsThisTakes); //Occupy
+                    SlotController.Instance.SetSlotStatus(slot.GetSlotNumber() + AmountOfSlotsThisTakes, SlotState.Reserved, AdditionalSlotsToReserve); //Reserve
 
-                Parent.transform.SetParent(SlotController.Instance.GetLoopReference(slot.GetSlotNumber()).transform.parent);
-                SlotController.Instance.GetLoopReference(slot.GetSlotNumber()).SetActiveItem(slot.GetSlotNumber(), this); //Add this to loop
+                    Parent.transform.position = slot.transform.position + slot.SlotPlacementOffset + InsideLoopOffset + new Vector3(0f, 0f, -.2f);
 
-                SetCurrentSlot(slot);
-                FunctionContainer.SetUsableCount();
+                    Parent.transform.SetParent(SlotController.Instance.GetLoopReference(slot.GetSlotNumber()).transform.parent);
+                    SlotController.Instance.GetLoopReference(slot.GetSlotNumber()).SetActiveItem(slot.GetSlotNumber(), this); //Add this to loop
 
-                FunctionContainer.ShowSelector(true);
+                    SetCurrentSlot(slot);
+                    FunctionContainer.SetUsableCount();
+
+                    FunctionContainer.ShowSelector(true);
+
+                    EventController.TriggerEvent("CheckYoValues");
+                }
+
             }
         }
 
@@ -137,6 +159,8 @@ public class DraggableObject_Item : DraggableObject
                 FunctionContainer.ResetItemCount();
                 SlotController.Instance.GetLoopReference(currentSlot.GetSlotNumber()).SetActiveItem(currentSlot.GetSlotNumber(), null); //Remove this from loop
                 SlotController.Instance.SetSlotStatus(currentSlot.GetSlotNumber(), SlotState.Reserved, AdditionalSlotsToReserve + AmountOfSlotsThisTakes);
+
+                EventController.TriggerEvent("CheckYoValues");
 
                 FunctionContainer.ShowSelector(false);
             }
@@ -213,6 +237,15 @@ public class DraggableObject_Item : DraggableObject
     public void Cleanup()
     {
         FunctionContainer.ResetItemCount();
+        Destroy(transform.parent.gameObject);
+    }
+
+    public void Remove()
+    {
+        if (currentSlot != null)
+        {
+            SlotController.Instance.GetLoopReference(currentSlot.GetSlotNumber()).SetActiveItem(currentSlot.GetSlotNumber(), null); //Remove this from loop
+        }
         Destroy(transform.parent.gameObject);
     }
 }

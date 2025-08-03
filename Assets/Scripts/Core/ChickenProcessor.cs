@@ -14,9 +14,27 @@ public class ChickenProcessor : MonoBehaviour
 
     Vector3 initialScale;
 
+    float speedMultiplier = 1f;
+
     void Start()
     {
         initialScale = this.transform.localScale;
+    }
+
+    void Update()
+    {
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+
+        if (scroll > 0f)
+        {
+            speedMultiplier *= 2f;
+            speedMultiplier = Mathf.Clamp(speedMultiplier, 8f, .25f);
+        }
+        else if (scroll < 0f)
+        {
+            speedMultiplier /= 2f;
+            speedMultiplier = Mathf.Clamp(speedMultiplier, 8f, .25f);
+        }
     }
 
     void OnMouseEnter()
@@ -32,7 +50,10 @@ public class ChickenProcessor : MonoBehaviour
     void OnMouseDown()
     {
         ShowError("");
-        StartCoroutine(Process());
+        if (!CluckController.IsProcessing)
+        {
+            StartCoroutine(Process());
+        }
     }
 
     void ShowError(string text)
@@ -120,7 +141,7 @@ public class ChickenProcessor : MonoBehaviour
             holdSpeed = .05f;
         }
 
-        yield return new WaitForSeconds(holdSpeed);
+        yield return new WaitForSeconds(holdSpeed * speedMultiplier);
 
         //If next line is empty or another loop, check if we need to go back to the current loop
         DraggableObject_Loop nextLineLoop = null;

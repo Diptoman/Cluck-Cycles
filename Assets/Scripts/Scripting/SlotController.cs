@@ -62,7 +62,7 @@ public class SlotController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            AddForEachLoop(3);
+            AddForLoop(1, 2);
         }
 
         if (Input.GetKeyDown(KeyCode.Return))
@@ -180,5 +180,20 @@ public class SlotController : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void ResetForEachCounts()
+    {
+        for (int i = 0; i < numSlots; i++)
+        {
+            DraggableObject_Loop loopTest = LoopReference[i];
+            if (loopTest != null)
+            {
+                if (loopTest.isForEach)
+                {
+                    loopTest.ResetForEachCounts();
+                }
+            }
+        }
     }
 }

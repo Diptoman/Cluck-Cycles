@@ -22,8 +22,8 @@ public class UIController : MonoBehaviour
         tooltip.Hide(isForced: true);
 
         //Test, remove later
-        InventoryController.SetItemCount(ItemType.Chicken, 3);
-        InventoryController.SetItemCount(ItemType.Egg, 5);
+        InventoryController.SetItemCount(ItemType.Chicken, 23);
+        InventoryController.SetItemCount(ItemType.Egg, 18);
     }
 
     // Update is called once per frame

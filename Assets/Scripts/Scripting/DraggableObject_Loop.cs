@@ -120,7 +120,7 @@ public class DraggableObject_Loop : DraggableObject
         if (Input.GetMouseButtonDown(1))
         {
             CheckAndUnAssignSlot();
-            foreach(DraggableObject_Item item in itemList)
+            foreach (DraggableObject_Item item in itemList)
             {
                 if (item != null)
                 {
@@ -158,6 +158,20 @@ public class DraggableObject_Loop : DraggableObject
         }
     }
 
+    public void ResetForEachCounts()
+    {
+        if (isForEach)
+        {
+            foreach (DraggableObject_Item attachedItem in itemList)
+            {
+                if (attachedItem != null)
+                {
+                    attachedItem.ResetItemCount();
+                }
+            }
+        }
+    }
+
     public void SetLoopCount(int count)
     {
         LoopCount = count;
@@ -180,6 +194,11 @@ public class DraggableObject_Loop : DraggableObject
         }
 
         return 0;
+    }
+
+    public DraggableObject_Item GetForEachAttachedItem()
+    {
+        return forEachAttachedItem;
     }
 
     public int GetCluckCount()
