@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5835352317910264090}
   - component: {fileID: 8384615839772197715}
-  - component: {fileID: 5331530056391427466}
+  - component: {fileID: 5088677283433273887}
   - component: {fileID: 2725664481091053653}
   - component: {fileID: 2790509242985909207}
   - component: {fileID: 2129289581441100672}
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8517298099270389831}
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &5331530056391427466
+--- !u!61 &5088677283433273887
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,7 +131,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.14, y: 1.51}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!50 &2725664481091053653
 Rigidbody2D:
@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0539c501f168edc4485728a223a6bc99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyIfNotInSlot: 0
   Parent: {fileID: 5697291400538201252}
   TargetSlotTag:
   - ForEachSlot
@@ -254,15 +255,15 @@ PrefabInstance:
       objectReference: {fileID: 2790509242985909207}
     - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
       propertyPath: Functions.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
       propertyPath: Functions.Array.data[0]
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
       propertyPath: Functions.Array.data[1]
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2983981493323431290, guid: 33e69531e8ffa0c42b3bd2ca6dc981b7, type: 3}
       propertyPath: Functions.Array.data[2]

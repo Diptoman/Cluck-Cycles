@@ -10,12 +10,9 @@ public class LoopItem_Egg : LoopItem
 
         switch (action)
         {
-            case Actions.Incubate:
-                InventoryController.SetItemCount(ItemType.Chick, InventoryController.GetItemCount(ItemType.Chick) + 1);
-                break;
-
             case Actions.Cook:
                 InventoryController.SetItemCount(ItemType.Omelette, InventoryController.GetItemCount(ItemType.Omelette) + 1);
+                FunctionContainerRef.DoNotReset();
                 break;
         }
     }

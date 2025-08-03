@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoopItem_Chicken : LoopItem
+public class LoopItem_Rooster : LoopItem
 {
     public override void Process()
     {
@@ -12,11 +12,11 @@ public class LoopItem_Chicken : LoopItem
         switch (action)
         {
             case Actions.Cluck:
-                CluckController.ClucksRemaining += 1;
+                CluckController.ClucksRemaining += 2;
                 break;
 
-            case Actions.LayEggs:
-                InventoryController.SetItemCount(ItemType.Egg, InventoryController.GetItemCount(ItemType.Egg) + 1);
+            case Actions.Fertilize:
+                InventoryController.SetItemCount(ItemType.ChickenSperm, InventoryController.GetItemCount(ItemType.ChickenSperm) + 1);
                 break;
 
             case Actions.Cook:
