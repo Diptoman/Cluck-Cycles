@@ -9,6 +9,30 @@ using UnityEditor.PackageManager;
 
 public class ChickenProcessor : MonoBehaviour
 {
+    #region Singleton script
+    public static ChickenProcessor Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Debug.Log($"Init instance of Slot controller");
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Debug.Log($"Destroy instance of Slot controller");
+            Destroy(gameObject);
+        }
+    }
+
+    public static void Destroy()
+    {
+        Instance = null;
+    }
+    #endregion
+
     public TextMeshPro errorText;
     public AudioClip PlayClip;
     public AudioClip ErrorClip;
@@ -31,12 +55,12 @@ public class ChickenProcessor : MonoBehaviour
         if (scroll > 0f)
         {
             speedMultiplier *= 2f;
-            speedMultiplier = Mathf.Clamp(speedMultiplier, 8f, .25f);
+            speedMultiplier = Mathf.Clamp(speedMultiplier, .25f, 8f);
         }
         else if (scroll < 0f)
         {
             speedMultiplier /= 2f;
-            speedMultiplier = Mathf.Clamp(speedMultiplier, 8f, .25f);
+            speedMultiplier = Mathf.Clamp(speedMultiplier, .25f, 8f);
         }
     }
 
@@ -65,6 +89,11 @@ public class ChickenProcessor : MonoBehaviour
         errorText.text = text;
 
         MusicController.Instance.PlaySFX(ErrorClip, true);
+    }
+
+    public float GetGameSpeed()
+    {
+        return speedMultiplier;
     }
 
     void Reset()
@@ -147,7 +176,7 @@ public class ChickenProcessor : MonoBehaviour
             holdSpeed = .05f;
         }
 
-        yield return new WaitForSeconds(holdSpeed * speedMultiplier);
+        yield return new WaitForSeconds(holdSpeed / speedMultiplier);
 
         //If next line is empty or another loop, check if we need to go back to the current loop
         DraggableObject_Loop nextLineLoop = null;
