@@ -170,11 +170,74 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1709662242292998485, guid: 09588861d506e1944bac5363e3546382, type: 3}
+      propertyPath: text
+      value: You can harvest crops for more feed, or sell them! Sells for $2.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2691080544087716581, guid: 09588861d506e1944bac5363e3546382, type: 3}
+      propertyPath: text
+      value: Golden egg is worth a lotta money! Sells for $150.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964842956039319437, guid: 09588861d506e1944bac5363e3546382, type: 3}
+      propertyPath: text
+      value: This is a small chick. If you feed it chicken feed, it will grow, but
+        if you don't have enough feed while in a loop, it will die. Sells for $2.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3087778833639818062, guid: 09588861d506e1944bac5363e3546382, type: 3}
+      propertyPath: text
+      value: This is an omelette made from the heat of the CPU. Sells for $10.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3285614461770968626, guid: 09588861d506e1944bac5363e3546382, type: 3}
+      propertyPath: text
+      value: This is an unfertilized egg. It won't hatch, but you can cook or sell
+        it! Sells for $1.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4159664849766693998, guid: 09588861d506e1944bac5363e3546382, type: 3}
+      propertyPath: text
+      value: Looks like a chicken did something fishy? Golden geese pay a lot! Sells
+        for $300.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5095182652639206791, guid: 09588861d506e1944bac5363e3546382, type: 3}
+      propertyPath: text
+      value: This is a rooster. It generates more clucks, and can be used to produce
+        fertile eggs (fertilize before laying eggs). Sells for $10.
+      objectReference: {fileID: 0}
     - target: {fileID: 5289269797416058576, guid: 09588861d506e1944bac5363e3546382, type: 3}
       propertyPath: m_Name
       value: UI_Parent
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5498926675753727021, guid: 09588861d506e1944bac5363e3546382, type: 3}
+      propertyPath: text
+      value: This is a CPU fried chicken. You can sell it! Sells for $35.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687142445095590312, guid: 09588861d506e1944bac5363e3546382, type: 3}
+      propertyPath: text
+      value: This is a nice chicken. Chickens can only lay fertilized eggs if roosters
+        have fertilized before. Sells for $10.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6681073528512638445, guid: 09588861d506e1944bac5363e3546382, type: 3}
+      propertyPath: text
+      value: Fertilized eggs can hatch into either a chicken or a rooster, or something
+        even more special. Sells for $1.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7493641988460920412, guid: 09588861d506e1944bac5363e3546382, type: 3}
+      propertyPath: text
+      value: Chicks can feed on this to grow, or you can grow this into crops for
+        even more feed! Sells for $1.
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5968922182686718658, guid: 09588861d506e1944bac5363e3546382, type: 3}
+    - {fileID: 7587232699564726818, guid: 09588861d506e1944bac5363e3546382, type: 3}
+    - {fileID: 79305116643573470, guid: 09588861d506e1944bac5363e3546382, type: 3}
+    - {fileID: 7570166835235929129, guid: 09588861d506e1944bac5363e3546382, type: 3}
+    - {fileID: 2055845667679209022, guid: 09588861d506e1944bac5363e3546382, type: 3}
+    - {fileID: 1372541108351010785, guid: 09588861d506e1944bac5363e3546382, type: 3}
+    - {fileID: 1216560308895304051, guid: 09588861d506e1944bac5363e3546382, type: 3}
+    - {fileID: 3531804010723719623, guid: 09588861d506e1944bac5363e3546382, type: 3}
+    - {fileID: 1416328894117497974, guid: 09588861d506e1944bac5363e3546382, type: 3}
+    - {fileID: 2359625712139973700, guid: 09588861d506e1944bac5363e3546382, type: 3}
+    - {fileID: 8902538890509669775, guid: 09588861d506e1944bac5363e3546382, type: 3}
+    - {fileID: 6886647992938663806, guid: 09588861d506e1944bac5363e3546382, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -950,7 +1013,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3778073738019271338, guid: 84a7f2ba9d6997b41b47c1821dded84c, type: 3}
-      insertIndex: 3
+      insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 84a7f2ba9d6997b41b47c1821dded84c, type: 3}
 --- !u!1001 &7354079571252871997
