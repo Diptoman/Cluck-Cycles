@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 1261870399666612468}
   - component: {fileID: 4028921740122052406}
   - component: {fileID: 8276297409921709250}
+  - component: {fileID: 3390900811650536918}
   m_Layer: 0
   m_Name: Dragger
   m_TagString: Untagged
@@ -440,6 +441,20 @@ MonoBehaviour:
   LoopCount: 5
   isForEach: 0
   LoopCountText: {fileID: 6747297232464634474}
+--- !u!114 &3390900811650536918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2257697579241557757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8186a92b2c027b7498d6aa52be3440d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Click and drag to move. Right click to delete (you won't get money back,
+    be careful).
 --- !u!1 &7424895015595475681
 GameObject:
   m_ObjectHideFlags: 0
