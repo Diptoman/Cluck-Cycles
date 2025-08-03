@@ -20,14 +20,8 @@ public class ShopController
 
         for (var i = 0; i < shopSlots.Length; i++)
         {
-            // shopSlots[i].Setup(ItemType.Invalid);
-            shopSlots[i].Reroll();
+            shopSlots[i].Setup();
         }
-
-        // shopSlots[3].Reroll();
-        // shopSlots[4].Reroll();
-        // shopSlots[5].Reroll();
-        // ShopController.SetItem(1, ItemType.Chicken);
     }
 
     public static void Destroy()
@@ -38,10 +32,5 @@ public class ShopController
     public static int GetPrice(int index)
     {
         return Instance.shopSlots[index].buyPrice;
-    }
-
-    public static void SetItem(int index, ItemType type)
-    {
-        Instance.shopSlots[index].Setup(type);
     }
 }

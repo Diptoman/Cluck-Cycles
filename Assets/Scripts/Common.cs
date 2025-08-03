@@ -11,6 +11,17 @@ public static class Consts
 
 public static class Global
 {
+    //Shop loop randomization values, can be increased as game progresses
+    public static int LoopSlotsMin = 1;
+    public static int LoopSlotsMax = 2;
+    public static int LoopNumMin = 2;
+    public static int loopNumMax = 4;
+
+    public static int GetRandomLoopPrice(int loopNum, int loopSlots)
+    {
+        return loopNum * 4 + loopSlots * 10 + UnityEngine.Random.Range(0, 5);
+    }
+
     public static readonly ItemType[] availableInShop =
     {
         ItemType.Chicken,

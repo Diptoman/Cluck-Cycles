@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using Sirenix.OdinInspector;
 
 public class UIShopSlot : MonoBehaviour
 {
@@ -10,33 +11,43 @@ public class UIShopSlot : MonoBehaviour
     public FloatAnimation floatAnimText;
     public TextMeshPro priceText;
     public Color activeTextColor;
-    public int buyPrice { get; private set; }
+    public int buyPrice;
 
+    [Header("ForLoop")]
     public bool isForLoop;
-    public int loopSlots = 1;
     public int loopNum = 2;
+    public int loopSlots = 1;
 
-    public void Setup(ItemType type)
+    public TextMeshPro loopNumText;
+    public TextMeshPro loopSlotsText;
+
+    [Button("Setup")]
+    public void Setup()
     {
         if (isForLoop)
         {
-            buyPrice = 12;
+            loopNumText.SetText(loopNum.ToString());
+            loopSlotsText.SetText($"({loopSlots})");
             priceText.SetText("$" + buyPrice);
             return;
         }
 
-        var info = Global.GetItemInfo(type);
-        this.buyPrice = info.buyPrice;
-        this.itemType = type;
-        priceText.SetText("$" + buyPrice);
+        var info = Global.GetItemInfo(itemType);
         slotSprite.sprite = info.sprite;
+        buyPrice = info.GetBuyPriceRandom();
+        priceText.SetText("$" + buyPrice);
     }
 
     public void Reroll()
     {
         if (isForLoop)
         {
-            buyPrice = 12;
+            loopNum = Random.Range(Global.LoopNumMin, Global.LoopSlotsMax + 1);
+            loopSlots = Random.Range(Global.LoopSlotsMin, Global.LoopSlotsMax + 1);
+            buyPrice = Global.GetRandomLoopPrice(loopNum, loopSlots);
+
+            loopNumText.SetText(loopNum.ToString());
+            loopSlotsText.SetText($"({loopSlots})");
             priceText.SetText("$" + buyPrice);
             return;
         }

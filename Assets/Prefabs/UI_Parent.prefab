@@ -2192,6 +2192,10 @@ PrefabInstance:
       value: UI_InventorySlot (9)
       objectReference: {fileID: 0}
     - target: {fileID: 2997617755734645316, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ef734e3e696dd5a40a6dfcdeb1bd5087, type: 3}
+    - target: {fileID: 2997617755734645316, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_Color.b
       value: 0.5
       objectReference: {fileID: 0}
@@ -2285,7 +2289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8757836162672063713, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: itemType
-      value: -1
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2474,6 +2478,10 @@ PrefabInstance:
       value: UI_InventorySlot (8)
       objectReference: {fileID: 0}
     - target: {fileID: 2997617755734645316, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 56385e4f68f29f147ad66effccdd81be, type: 3}
+    - target: {fileID: 2997617755734645316, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_Color.b
       value: 0.5
       objectReference: {fileID: 0}
@@ -2567,7 +2575,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8757836162672063713, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: itemType
-      value: -1
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2601,6 +2609,18 @@ PrefabInstance:
     - target: {fileID: 2658132027741726101, guid: 5618c4bfb12666f44a9b6c9f0db7de1f, type: 3}
       propertyPath: m_Name
       value: UI_ShopSlot_Loop (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849236235204503060, guid: 5618c4bfb12666f44a9b6c9f0db7de1f, type: 3}
+      propertyPath: loopNum
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849236235204503060, guid: 5618c4bfb12666f44a9b6c9f0db7de1f, type: 3}
+      propertyPath: buyPrice
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849236235204503060, guid: 5618c4bfb12666f44a9b6c9f0db7de1f, type: 3}
+      propertyPath: loopSlots
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4692635844899752632, guid: 5618c4bfb12666f44a9b6c9f0db7de1f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2641,6 +2661,18 @@ PrefabInstance:
     - target: {fileID: 4692635844899752632, guid: 5618c4bfb12666f44a9b6c9f0db7de1f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849418832343011288, guid: 5618c4bfb12666f44a9b6c9f0db7de1f, type: 3}
+      propertyPath: m_text
+      value: $40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6280340345053824629, guid: 5618c4bfb12666f44a9b6c9f0db7de1f, type: 3}
+      propertyPath: m_text
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875112527171117406, guid: 5618c4bfb12666f44a9b6c9f0db7de1f, type: 3}
+      propertyPath: m_text
+      value: (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2965,6 +2997,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_ShopSlot_Loop (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2849236235204503060, guid: 5618c4bfb12666f44a9b6c9f0db7de1f, type: 3}
+      propertyPath: loopNum
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849236235204503060, guid: 5618c4bfb12666f44a9b6c9f0db7de1f, type: 3}
+      propertyPath: buyPrice
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 4692635844899752632, guid: 5618c4bfb12666f44a9b6c9f0db7de1f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.5733333
@@ -3004,6 +3044,14 @@ PrefabInstance:
     - target: {fileID: 4692635844899752632, guid: 5618c4bfb12666f44a9b6c9f0db7de1f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849418832343011288, guid: 5618c4bfb12666f44a9b6c9f0db7de1f, type: 3}
+      propertyPath: m_text
+      value: $25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6280340345053824629, guid: 5618c4bfb12666f44a9b6c9f0db7de1f, type: 3}
+      propertyPath: m_text
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3144,6 +3192,10 @@ PrefabInstance:
       value: UI_InventorySlot (12)
       objectReference: {fileID: 0}
     - target: {fileID: 2997617755734645316, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 995ace15d09fc9a4d94af9bc5c9fdbc1, type: 3}
+    - target: {fileID: 2997617755734645316, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_Color.b
       value: 0.5
       objectReference: {fileID: 0}
@@ -3237,7 +3289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8757836162672063713, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: itemType
-      value: -1
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3740,6 +3792,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4653770472446962265, guid: dceab4d7dae399846ae2508157473f70, type: 3}
+      propertyPath: itemType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653770472446962265, guid: dceab4d7dae399846ae2508157473f70, type: 3}
       propertyPath: slotSprite
       value: 
       objectReference: {fileID: 195647147830493519}
@@ -3932,6 +3988,10 @@ PrefabInstance:
       value: UI_InventorySlot (11)
       objectReference: {fileID: 0}
     - target: {fileID: 2997617755734645316, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 56385e4f68f29f147ad66effccdd81be, type: 3}
+    - target: {fileID: 2997617755734645316, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: m_Color.b
       value: 0.5
       objectReference: {fileID: 0}
@@ -4025,7 +4085,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8757836162672063713, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: itemType
-      value: -1
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4444,7 +4504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8757836162672063713, guid: 34f5a854b359e8542ad708d472361a59, type: 3}
       propertyPath: itemType
-      value: -1
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4478,6 +4538,10 @@ PrefabInstance:
     - target: {fileID: 2658132027741726101, guid: 5618c4bfb12666f44a9b6c9f0db7de1f, type: 3}
       propertyPath: m_Name
       value: UI_ShopSlot_Loop
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849236235204503060, guid: 5618c4bfb12666f44a9b6c9f0db7de1f, type: 3}
+      propertyPath: buyPrice
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4692635844899752632, guid: 5618c4bfb12666f44a9b6c9f0db7de1f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4587,6 +4651,10 @@ PrefabInstance:
     - target: {fileID: 2738348707663431413, guid: dceab4d7dae399846ae2508157473f70, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653770472446962265, guid: dceab4d7dae399846ae2508157473f70, type: 3}
+      propertyPath: itemType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4653770472446962265, guid: dceab4d7dae399846ae2508157473f70, type: 3}
       propertyPath: slotSprite
@@ -4742,6 +4810,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2738348707663431413, guid: dceab4d7dae399846ae2508157473f70, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653770472446962265, guid: dceab4d7dae399846ae2508157473f70, type: 3}
+      propertyPath: itemType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4653770472446962265, guid: dceab4d7dae399846ae2508157473f70, type: 3}
