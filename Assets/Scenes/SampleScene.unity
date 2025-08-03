@@ -202,9 +202,17 @@ PrefabInstance:
       propertyPath: itemType
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 2454835188517646478, guid: 09588861d506e1944bac5363e3546382, type: 3}
+      propertyPath: m_SortingOrder
+      value: 101
+      objectReference: {fileID: 0}
     - target: {fileID: 2657188857673439027, guid: 09588861d506e1944bac5363e3546382, type: 3}
       propertyPath: itemType
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2967273627320783198, guid: 09588861d506e1944bac5363e3546382, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3150834462433416048, guid: 09588861d506e1944bac5363e3546382, type: 3}
       propertyPath: m_Sprite
@@ -317,6 +325,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 4982170964813543045, guid: 09588861d506e1944bac5363e3546382, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 4022302948035684332, guid: 09588861d506e1944bac5363e3546382, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 8539423892460783777, guid: 09588861d506e1944bac5363e3546382, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 09588861d506e1944bac5363e3546382, type: 3}
