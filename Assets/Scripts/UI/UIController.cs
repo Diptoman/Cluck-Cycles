@@ -90,6 +90,8 @@ public class UIController : MonoBehaviour
 
                 tf.SetPosXYLocal(x, y);
                 slot.slotBox.size = config.gridSize;
+                slot.itemType = (ItemType)index;
+                slot.slotSprite.sprite = Global.GetItemInfo(config.itemSprites, (ItemType)index).sprite;
             }
         }
 

@@ -22,6 +22,8 @@ public class InventoryController
         {
             itemIdToSlotMap[i] = controller.itemSlots[i];
             itemIdToSlotMap[i].itemType = (ItemType)i;
+
+            controller.itemSlots[i].slotSprite.sprite = Global.GetItemInfo((ItemType)i).sprite;
         }
     }
 
