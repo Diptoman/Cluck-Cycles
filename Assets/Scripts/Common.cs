@@ -28,10 +28,11 @@ public static class Global
 
     public static void ProcessEvent(string type, int intVal = 0, float floatVal = 0)
     {
+        Debug.Log($"Sell event");
         switch (type)
         {
             case Consts.SELL_EVENT:
-                Global.Money += intVal;
+                Global.Money += GetItemInfo((ItemType)intVal).sellPrice;
                 break;
         }
         return;
